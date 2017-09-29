@@ -193,6 +193,18 @@ crontab -e -u OTHERUSER
 0 23 1 * *
 # Every Sunday at 11PM
 0 23 * * 0
+# The FreeBSD implementation of cron introduced the useful shortcuts which can be used instead
+# of the afforementioned FIVE-part time elements. These shortcuts are listed below:
+> @reboot (Run once, at startup of cron)
+> @yearly (Run once a year, "0 0 1 1 *")
+> @annually (same as @yearly)
+> @monthly (Run once a month, "0 0 1 * *")
+> @weekly (Run once a week, "0 0 * * 0")
+> @daily (Run once a day, "0 0 * * *")
+> @midnight (same as @daily)
+> @hourly (Run once an hour, "0	* * * *")
+> @every_minute (Run once a minute, "*/1 * * * *")
+> @every_second (Run once a second)
 # To add a new automated process to cron, you must first select or create a shell script (a file
 # ending in  .sh) which contains the instructions needed for the desired process. That script file
 # will then be saved (as a hidden file so as to protect it). 
@@ -575,6 +587,10 @@ URL: http://www.graphviz.org/Documentation/dotguide.pdf
 URL: https://apps.ubuntu.com/cat/applications/natty/xdot/
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
+
+
+
+
 
 
 
