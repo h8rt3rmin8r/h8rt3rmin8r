@@ -2,43 +2,50 @@
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
-### LAST UPDATED: 20170928
-### CREATED BY: h8rt3rmin8r ( 161803398@email.tg )
-### PUBLIC KEY: http://h8rt3rmin8r.com
-### DESCRIPTION: Each section of this document is clearly marked. All major titles begin with ">>>"
-### and are in all-caps. All minor titles begin with "#" and are in all-caps. All terminal commands
-### are written with no indent and no preceding symbols.
+UPDATED: 20170929
+CREDITS: h8rt3rmin8r ( 161803398@email.tg )
+PUBKEY: http://h8rt3rmin8r.com
+SYNTAX: pkg-config
+----------------------------------------------------------------------------------------------------
+# Each section of this document is clearly marked. All major titles begin with an numeric tag
+# and are in all-caps. All minor titles begin with "#" and are in all-caps. All terminal commands
+# are written with no indent and no preceding symbols. Resulting terminal outputs are indicated
+# by the "OUTPUT: " flag followed by the corresponding output. 
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> TABLE OF CONTENTS
-
-####################################################################################################
-----------------------------------------------------------------------------------------------------
-
-> LINUX NAVIGATION & ESSENTIALS 
-> HARDWARE AND PROCESS MANAGEMENT
-> KEY CODING AND DEV TOOLS
-> EXTENDED GLOBAL REGEX PRINT
-> NETWORKING COMMANDS & TOOLS
-> BUILDING & RUNNING SHELL SCRIPTS
-> PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
-> LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
-> WORKING WITH THE WAVES BLOCKCHAIN
-> PERMISSIONS AND USER ACCESS
-> WORKING WITH PPAs
-> COMMANDS FOR DELETING FILES
-> BUILD MIND MAPS WITH GRAPHVIZ-DEV
+> 01: LINUX NAVIGATION & ESSENTIALS 
+> 02: HARDWARE AND PROCESS MANAGEMENT
+> 03: KEY CODING AND DEV TOOLS
+> 04: EXTENDED GLOBAL REGEX PRINT
+> 05: NETWORKING COMMANDS & TOOLS
+> 06: BUILDING & RUNNING SHELL SCRIPTS
+> 07: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
+> 08: LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
+> 09: WORKING WITH THE WAVES BLOCKCHAIN
+> 10: PERMISSIONS AND USER ACCESS
+> 11: WORKING WITH PPAs
+> 12: COMMANDS FOR DELETING FILES
+> 13: BUILD MIND MAPS WITH GRAPHVIZ-DEV
 
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> LINUX NAVIGATION & ESSENTIALS 
+01: LINUX NAVIGATION & ESSENTIALS 
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # FIND THE LOCATION OF A FILE NAMED "MyFile"
 whereis MyFile
+----------------------------------------------------------------------------------------------------
+# REALPATH
+# Find the real file path to a specified file or folder
+# Install with the following command:
+sudo apt-get install realpath
+# Proper syntax for realpath:
+realpath TARGETFILE.txt
+# Example output in the terminal after you run the command above
+/var/www/public_files/TARGETFILE.txt
 ----------------------------------------------------------------------------------------------------
 # FIND OUT WHERE YOU ARE
 # Print the name of the current/working directory
@@ -93,15 +100,6 @@ firefox ./result.html
 # ENCRYPT/DECRYPT FILES AND MESSAGES
 gpg
 ----------------------------------------------------------------------------------------------------
-# REALPATH
-# Find the real file path to a specified file or folder
-# Install with the following command:
-sudo apt-get install realpath
-# Proper syntax for realpath:
-realpath TARGETFILE.txt
-# Example output in the terminal after you run the command above
-/var/www/public_files/TARGETFILE.txt
-----------------------------------------------------------------------------------------------------
 # COUNT THE LINES, WORDS, AND CHARACTERS CONTAINED IN A FILE
 # This simple program is excellent for comparing versions of files, among other things.
 # To search a text document named "awesome.txt" with this tool, run the following command:
@@ -109,11 +107,11 @@ wc awesome.txt
 # The output will include three number sets which correspond to the following:
 # [# of new lines] [# of words] [# of characters]
 # To learn more about this tool, read the documentation at the following location: 
-http://manpages.ubuntu.com/manpages/trusty/man1/wc.1.html
+firefox http://manpages.ubuntu.com/manpages/trusty/man1/wc.1.html
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> HARDWARE AND PROCESS MANAGEMENT
+02: HARDWARE AND PROCESS MANAGEMENT
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -153,7 +151,7 @@ htop
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> KEY CODING AND DEV TOOLS 
+03: KEY CODING AND DEV TOOLS 
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -175,7 +173,7 @@ gcloud init
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> EXTENDED GLOBAL REGEX PRINT
+04: EXTENDED GLOBAL REGEX PRINT
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -197,7 +195,7 @@ egrep <flags> '<regular expression>' <filename>
 # The set of all lowercase letters would be input as:
 [a-z]
 # To learn more, visit the following site:
-http://www.cs.columbia.edu/~tal/3261/fall07/handout/egrep_mini-tutorial.htm
+firefox http://www.cs.columbia.edu/~tal/3261/fall07/handout/egrep_mini-tutorial.htm
 ----------------------------------------------------------------------------------------------------
 # Example-1
 # Match all lines in searchfile.txt which start with a non-empty bitstring, followed 
@@ -215,7 +213,7 @@ egrep -i '\<the\>' myletter.txt
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> NETWORKING COMMANDS & TOOLS
+05: NETWORKING COMMANDS & TOOLS
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -224,9 +222,11 @@ egrep -i '\<the\>' myletter.txt
 # for checking your IP address. Use the following command:
 curl https://domains.google.com/checkip && echo ' '
 # Create a shortcut for this process:
-alias checkip='curl https://domains.google.com/checkip && echo '
+alias checkip='curl https://domains.google.com/checkip && echo " -- "`date`'
 # After creating this shortcut, you can check your system IP address with the following:
 checkip
+# The output will look like this:
+OUTPUT: 192.168.0.1 -- Mon Jan 01 08:31:49 EDT 2017
 ----------------------------------------------------------------------------------------------------
 # NETSTAT
 # Get a general overview of the network status for your system
@@ -240,13 +240,13 @@ netstat -pln
 # Use the wget tool to copy, download, or mirror entire websites. 
 # Download site with links not adjusted for static use, which means, all internal hyperlinks on 
 # the site will point to their original locations online.
-wget -m https://google.com
+wget -m https://example.com
 # Download the site with links adjusted to reference the other files downloaded, allowing for easy
 # offline and local viewing of the site:
-wget -m -k https://google.com
+wget -m -k https://example.com
 # To avoid flagging your IP address on the servers of the site that you are scraping, add a 
 # "wait time" in between the requests being sent with the "-w" flag like this:
-wget -m -k -w 5 https://google.com/
+wget -m -k -w 5 https://example.com/
 # Note that the number ("5") in the example above is the number of seconds to wait. This can be
 # adjusted to minutes by appending the suffix of "m" for minutes, "h" for hours, or "d" for days.
 ----------------------------------------------------------------------------------------------------
@@ -260,7 +260,7 @@ sudo arp-scan --interface=eth0 --localnet
 # run the following command
 ifconfig
 # Learn more about the arp-scan tool at the following address: 
-http://manpages.ubuntu.com/manpages/zesty/en/man1/arp-scan.1.html
+firefox http://manpages.ubuntu.com/manpages/zesty/en/man1/arp-scan.1.html
 ----------------------------------------------------------------------------------------------------
 # LSOF 
 # List Process IDs with corresponding port numbers and what external IP addresses are
@@ -289,7 +289,7 @@ route -n
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> BUILDING & RUNNING SHELL SCRIPTS
+06: BUILDING & RUNNING SHELL SCRIPTS
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -317,7 +317,7 @@ chmod +x /path/to/yourscript.sh
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
+07: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -335,11 +335,11 @@ sudo apt-get install monodevelop
 monodevelop
 # Create your first ASP.NET program
 # Read the short tutorial here: 
-http://www.monodevelop.com/documentation/creating-aspnet-projects/
+firefox http://www.monodevelop.com/documentation/creating-aspnet-projects/
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
+08: LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -350,7 +350,7 @@ curl https://bittrex.com/api/v1.1/public/getcurrencies | json-tool | nano bittre
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> WORKING WITH THE WAVES BLOCKCHAIN
+09: WORKING WITH THE WAVES BLOCKCHAIN
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -365,7 +365,7 @@ journalctl -u waves.service -f
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> PERMISSIONS AND USER ACCESS 
+10: PERMISSIONS AND USER ACCESS 
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -407,7 +407,7 @@ sudo getent group
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> WORKING WITH PPAs 
+11: WORKING WITH PPAs 
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -434,7 +434,7 @@ sudo ppa-purge ppa-url
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> COMMANDS FOR DELETING FILES 
+12: COMMANDS FOR DELETING FILES 
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
@@ -485,17 +485,17 @@ shred
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 
->>> BUILD MIND MAPS WITH GRAPHVIZ-DEV 
+13: BUILD MIND MAPS WITH GRAPHVIZ-DEV 
 
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # BASIC INFORMATION
 # Project Website
-http://www.graphviz.org/
+firefox http://www.graphviz.org/
 # Live web-version
-http://www.webgraphviz.com/
+firefox http://www.webgraphviz.com/
 # Launchpad Profile
-https://launchpad.net/~gviz-adm/+archive/ubuntu/graphviz-dev
+firefox https://launchpad.net/~gviz-adm/+archive/ubuntu/graphviz-dev
 ----------------------------------------------------------------------------------------------------
 # INSTALLING GRAPHVIZ
 # NOTE: Do not use the instructions located on the Graphviz website for installing the program
@@ -509,12 +509,12 @@ sudo apt-get install graphviz-dev
 # LEARN TO DRAW FOR GRAPHVIZ
 # Graphviz (and the xdot tool below) read/write files called "dot" files. 
 # Here is the official guide to creating and working with dot files:
-http://www.graphviz.org/Documentation/dotguide.pdf
+firefox http://www.graphviz.org/Documentation/dotguide.pdf
 ----------------------------------------------------------------------------------------------------
 # ADDITIONAL FEATURES IN THE xdot TOOL
 # You can also add the additional graphical features available in the xdot tool
 # xdot can read and explore files created by graphviz. Get xdot here:
-https://apps.ubuntu.com/cat/applications/natty/xdot/
+firefox https://apps.ubuntu.com/cat/applications/natty/xdot/
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
