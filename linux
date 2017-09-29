@@ -5,6 +5,7 @@
 UPDATED: 20170929
 CREDITS: h8rt3rmin8r ( 161803398@email.tg )
 PUBKEY: http://h8rt3rmin8r.com
+SOURCE: http://h8rt3rmin8r.com/linux
 SYNTAX: pkg-config
 ----------------------------------------------------------------------------------------------------
 # Each section of this document is clearly marked in the following ways: 
@@ -581,4 +582,3 @@ URL: https://apps.ubuntu.com/cat/applications/natty/xdot/
 ### "think outside the box" ###
 ###   ($) ¯\_(ツ)_/¯ (฿)    ###
 ###############################
-
