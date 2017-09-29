@@ -2,37 +2,39 @@
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
-###
-### LAST UPDATED: 20170919
+### LAST UPDATED: 20170928
 ### CREATED BY: h8rt3rmin8r ( 161803398@email.tg )
-###
-### Each section of this document is clearly marked. All major titles begin with "###" and are
-### in all-caps. All minor titles begin with "#" and are in all-caps. All terminal commands are 
-### written with no indent and no preceding symbols.
-###
+### PUBLIC KEY: http://h8rt3rmin8r.com
+### DESCRIPTION: Each section of this document is clearly marked. All major titles begin with ">>>"
+### and are in all-caps. All minor titles begin with "#" and are in all-caps. All terminal commands
+### are written with no indent and no preceding symbols.
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### TABLE OF CONTENTS
+
+>>> TABLE OF CONTENTS
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
-### 
-### LINUX NAVIGATION & ESSENTIALS 
-### HARDWARE AND PROCESS MANAGEMENT
-### KEY CODING AND DEV TOOLS
-### EXTENDED GLOBAL REGEX PRINT: "grep"
-### NETWORKING COMMANDS & TOOLS
-### BUILDING & RUNNING SHELL SCRIPTS
-### PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
-### LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
-### WORKING WITH THE WAVES BLOCKCHAIN
-### PERMISSIONS AND USER ACCESS
-### WORKING WITH PPAs
-### COMMANDS FOR DELETING FILES
-### BUILD MIND MAPS WITH GRAPHVIZ-DEV
-### 
+
+> LINUX NAVIGATION & ESSENTIALS 
+> HARDWARE AND PROCESS MANAGEMENT
+> KEY CODING AND DEV TOOLS
+> EXTENDED GLOBAL REGEX PRINT
+> NETWORKING COMMANDS & TOOLS
+> BUILDING & RUNNING SHELL SCRIPTS
+> PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
+> LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
+> WORKING WITH THE WAVES BLOCKCHAIN
+> PERMISSIONS AND USER ACCESS
+> WORKING WITH PPAs
+> COMMANDS FOR DELETING FILES
+> BUILD MIND MAPS WITH GRAPHVIZ-DEV
+
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### LINUX NAVIGATION & ESSENTIALS 
+
+>>> LINUX NAVIGATION & ESSENTIALS 
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # FIND THE LOCATION OF A FILE NAMED "MyFile"
@@ -110,7 +112,9 @@ wc awesome.txt
 http://manpages.ubuntu.com/manpages/trusty/man1/wc.1.html
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### HARDWARE AND PROCESS MANAGEMENT
+
+>>> HARDWARE AND PROCESS MANAGEMENT
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # INXI 
@@ -148,7 +152,9 @@ htop
 # at the bottom of the terminal screen 
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### KEY CODING AND DEV TOOLS 
+
+>>> KEY CODING AND DEV TOOLS 
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # RUN LYNX, THE TEXT-ONLY WEB BROWSER IN TERMINAL
@@ -168,7 +174,9 @@ code
 gcloud init
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### EXTENDED GLOBAL REGEX PRINT: "grep"
+
+>>> EXTENDED GLOBAL REGEX PRINT
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # ABOUT GREP
@@ -206,7 +214,9 @@ egrep -c '10*10*10*10*10*10*10*10*10*10*1' lots_o_bits
 egrep -i '\<the\>' myletter.txt
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### NETWORKING COMMANDS & TOOLS
+
+>>> NETWORKING COMMANDS & TOOLS
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # CHECK YOUR COMPUTER'S PUBLIC IP ADDRESS
@@ -233,11 +243,11 @@ netstat -pln
 wget -m https://google.com
 # Download the site with links adjusted to reference the other files downloaded, allowing for easy
 # offline and local viewing of the site:
-wget -mk https://google.com
+wget -m -k https://google.com
 # To avoid flagging your IP address on the servers of the site that you are scraping, add a 
 # "wait time" in between the requests being sent with the "-w" flag like this:
-wget -mk -w 20 https://google.com/
-# Note that the number ("20") in the example above is the number of seconds to wait. This can be
+wget -m -k -w 5 https://google.com/
+# Note that the number ("5") in the example above is the number of seconds to wait. This can be
 # adjusted to minutes by appending the suffix of "m" for minutes, "h" for hours, or "d" for days.
 ----------------------------------------------------------------------------------------------------
 # ARP-SCAN
@@ -278,7 +288,9 @@ route
 route -n
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### BUILDING & RUNNING SHELL SCRIPTS
+
+>>> BUILDING & RUNNING SHELL SCRIPTS
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # RUN .sh SCRIPT IN THE TERMINAL (V1)
@@ -304,7 +316,9 @@ chmod +x /path/to/yourscript.sh
 ./yourscript.sh
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
+
+>>> PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # Add Mono development packages to Ubuntu
@@ -324,7 +338,9 @@ monodevelop
 http://www.monodevelop.com/documentation/creating-aspnet-projects/
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
+
+>>> LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # First make the alias "shortcut" phrase in your terminal:
@@ -333,7 +349,9 @@ alias json-tool='python -m json.tool'
 curl https://bittrex.com/api/v1.1/public/getcurrencies | json-tool | nano bittrex-getcurrencies.txt
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### WORKING WITH THE WAVES BLOCKCHAIN
+
+>>> WORKING WITH THE WAVES BLOCKCHAIN
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # WAVES PLATFORM (LITE CLIENT AND FULL NODE)
@@ -346,7 +364,9 @@ sudo systemctl enable waves.service
 journalctl -u waves.service -f
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### PERMISSIONS AND USER ACCESS 
+
+>>> PERMISSIONS AND USER ACCESS 
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # ADD A NEW USER
@@ -386,7 +406,9 @@ compgen -g
 sudo getent group
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### WORKING WITH PPAs 
+
+>>> WORKING WITH PPAs 
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # ADD A NEW PPA
@@ -411,7 +433,9 @@ sudo ppa-purge ppa-url
 # NOTE: The URL of the PPA you wish to purge can be found in your sources list
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### COMMANDS FOR DELETING FILES 
+
+>>> COMMANDS FOR DELETING FILES 
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # THE TERMINAL COMMAND FOR DELETING FILES 
@@ -460,7 +484,9 @@ sudo rm -f /*
 shred
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
-### BUILD MIND MAPS WITH GRAPHVIZ-DEV 
+
+>>> BUILD MIND MAPS WITH GRAPHVIZ-DEV 
+
 ####################################################################################################
 ----------------------------------------------------------------------------------------------------
 # BASIC INFORMATION
