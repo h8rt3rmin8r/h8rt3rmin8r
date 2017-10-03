@@ -16,7 +16,7 @@
 # DESCRIPTION OF ESSENTIAL FUNCTIONS:
 # NOTE: ALL FUNCTIONS ARE PERFORMED ONE TIME EVERY HOUR OF THE DAY
 
-# Fetch system's public IP address, current user, and date/time and append it to:
+# Fetch system's public IP address, current user, and date/time and append it to: 
 # ~/.CRON/cronip.log
 # Fetch system's public IP address and date/time and append it to:
 # ~/.CRON/datip.log
@@ -68,6 +68,7 @@ echo 'CRONIP: date logged into dateip.log' >> ~/.CRON/cronip.log
 # Fetch the system IP address from the Google Domains server
 # and record it into the dateip.log file
 echo `curl https://domains.google.com/checkip` >> ~/.CRON/dateip.log
+echo '-----------------------------------------------------' >> ~/.CRON/dateip.log
 echo 'CRONIP: IP logged into dateip.log' >> ~/.CRON/cronip.log
 
 # Fetch the system IP address from the Google Domains server
@@ -86,6 +87,7 @@ echo 'CRONIP: notification sent to desktop' >> ~/.CRON/cronip.log
 
 # Record the date and time of successful completion into the cronip.log file
 echo 'CRONIP: fetch complete -- '`date` >> ~/.CRON/cronip.log
+echo '-----------------------------------------------------' >> ~/.CRON/cronip.log
 
 # -----------------------------------------------------------------------------------
 
