@@ -9,13 +9,14 @@
 # Credits: h8rt3rmin8r
 # Email: 161803398@email.tg
 # PGP Key: http://h8rt3rmin8r.com
+# Updated: 20171003-0207
 
 # -----------------------------------------------------------------------------------
 
 # DESCRIPTION OF ESSENTIAL FUNCTIONS:
 # NOTE: ALL FUNCTIONS ARE PERFORMED ONE TIME EVERY HOUR OF THE DAY
 
-# Fetch system's public IP address, current user, and date/time and append it to: 
+# Fetch system's public IP address, current user, and date/time and append it to:
 # ~/.CRON/cronip.log
 # Fetch system's public IP address and date/time and append it to:
 # ~/.CRON/datip.log
@@ -33,6 +34,7 @@
 # date
 # whoami
 # curl
+# notify-send
 
 # -----------------------------------------------------------------------------------
 
@@ -77,6 +79,10 @@ echo 'CRONIP: IP logged into ip.log' >> ~/.CRON/cronip.log
 # and overwrite it onto the lastip.html file
 echo 'CRONIP last fetch ('`date`') -- '`curl https://domains.google.com/checkip` > lastip.html
 echo 'CRONIP: IP updated in lastip.html' >> ~/.CRON/cronip.log
+
+# Push notification to desktop
+notify-send "CRONIP" "FETCH COMPLETE: `date`"
+echo 'CRONIP: notification sent to desktop' >> ~/.CRON/cronip.log
 
 # Record the date and time of successful completion into the cronip.log file
 echo 'CRONIP: fetch complete -- '`date` >> ~/.CRON/cronip.log
