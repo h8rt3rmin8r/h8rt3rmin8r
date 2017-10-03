@@ -6,6 +6,7 @@
 
 # Script Source: http://h8rt3rmin8r.com/sh/cronip.sh
 # ReadMe Source: http://h8rt3rmin8r.com/sh/cronip.txt
+# Terminal Clone: curl https://pastebin.com/raw/SestReQb && echo '  '
 # Credits: h8rt3rmin8r
 # Email: 161803398@email.tg
 # PGP Key: http://h8rt3rmin8r.com
