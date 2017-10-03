@@ -1,12 +1,12 @@
 ####################################################################################################
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
-UPDATED: 20171002
+#--------------------------------------------------------------------------------------------------#
+UPDATED: 20171003
 CREDITS: h8rt3rmin8r ( 161803398@email.tg )
 PUBKEY: http://h8rt3rmin8r.com
 SOURCE: http://h8rt3rmin8r.com/linux
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 # Each section of this document is clearly marked in the following ways: 
 > Major titles begin with a four digit numeric tag and are in all-caps
 > Minor titles begin with a four digit numeric tag and are in all-caps
@@ -15,7 +15,7 @@ SOURCE: http://h8rt3rmin8r.com/linux
 > Online references are indicated with the "URL: " flag followed by the reference link
 > Program specific flags begin with a single "-"
 > List items begin with ">"
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 > 0100: LINUX NAVIGATION & ESSENTIALS 
@@ -32,16 +32,16 @@ SOURCE: http://h8rt3rmin8r.com/linux
 > 1200: COMMANDS FOR DELETING FILES
 > 1300: BUILD MIND MAPS WITH GRAPHVIZ-DEV
 
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0100: LINUX NAVIGATION & ESSENTIALS 
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0101: FIND THE LOCATION OF A FILE NAMED "MyFile"
 whereis MyFile
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0102: REALPATH
 # Find the real file path to a specified file or folder
 # Install with the following command:
@@ -50,15 +50,15 @@ sudo apt-get install realpath
 realpath TARGETFILE.txt
 # Example output in the terminal after you run the command above
 OUTPUT: /var/www/public_files/TARGETFILE.txt
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0103: FIND OUT WHERE YOU ARE
 # Print the name of the current/working directory
 pwd
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0104: MAKE A NEW FOLDER NAMED "MyNewFolder"
 # The following command will create a new folder in your current directory:
 mkdir MyNewFolder
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0105: MOVE AND RENAME FILES
 # Moving and renaming files are considered the same exact function since, on a basic level, they 
 # are the same (renaming is nothing more than moving data from one file name to another file name).
@@ -69,7 +69,7 @@ mv "OLD LOCATION" "NEW LOCATION"
 mv /home/user/Downloads/MY-DOC.txt /home/user/Documents/MY-DOC.txt
 # As stated previously, moving and renaming files is the same process. Below is an example:
 mv /home/user/MY-OldName-DOC.txt /home/user/MY-NewName-DOC.txt
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0106: COPY FILES IN THE TERMINAL 
 # (A LIVE EXAMPLE)
 sudo cp -avr /home/h8rt3rmin8r/SomeEpicFilev2.0.rar /var/www/html
@@ -79,17 +79,17 @@ OUTPUT: '/home/h8rt3rmin8r/SomeEpicFilev2.0.rar' -> '/var/www/html/SomeEpicFilev
 ls
 # The output printed in the terminal was as follows:
 OUTPUT: SomeEpicFilev2.0.rar  index.html
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0107: SYNCRONIZE ONE DIRECTORY WITH ANOTHER
 # NOTE: This command works across SSH and remote connections as well as local files/folders
 rsync
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0108: EXTRACTING .rar ARCHIVES
 # Unpack a .rar archive with the "unrar" tool. First install it with the following command:
 sudo apt-get install unrar-free
 # Now unpack the archive (Example archive named: "ARCHIVE.rar") with this command:
 unrar e ARCHIVE.rar
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0109: EXTRACTING .xz AND .tgz ARCHIVES
 # Unpack a .xz archive with the tar command. First make sure you have the necessary utility
 # package installed by running the following command: 
@@ -98,22 +98,22 @@ sudo apt-get install xz-utils
 tar -xf ARCHIVE.tar.xz
 # The -xf flag works with a large number of other compression types as well. So basically, if in
 # doubt, just use the -xf flag with tar.
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0110: EXTRACTING .gzip AND .bzip2 ARCHIVES
 # Unpack the .gzip and .bzip2 archive types with the tar command:
 tar -xfz ARCHIVE.gzip
 tar -xfz ARCHIVE.bzip2
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0111: PRINT SYSTEM FILE TREE AS HTML
 sudo apt-get update
 sudo apt-get install tree
 tree -H ./ > result.html
 # View the "result.html" tree:
 xdg-open result.html
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0112: ENCRYPT/DECRYPT FILES AND MESSAGES
 gpg
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0113: COUNT THE LINES, WORDS, AND CHARACTERS CONTAINED IN A FILE
 # This simple program is excellent for comparing versions of files, among other things.
 # To search a text document named "awesome.txt" with this tool, run the following command:
@@ -122,25 +122,25 @@ wc awesome.txt
 # [# of new lines] [# of words] [# of characters]
 # To learn more about this tool, read the documentation at the following location: 
 URL: http://manpages.ubuntu.com/manpages/trusty/man1/wc.1.html
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0200: HARDWARE AND PROCESS MANAGEMENT
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0201: INXI 
 # The full system component explorer tool
 # Install inxi with the following command
 sudo apt-get install inxi
 # Run inxi with the following command
 inxi
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0202: LSHW
 # List all hardware installed on your system
 # NOTE: You need to run this command with "sudo" permissions
 sudo lshw
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0203: LIVE TABLE OF ALL RUNNING PROCESSES
 > METHOD 1
 watch -n 1 'ps -e -o pid,uname,cmd,pmem,pcpu --sort=-pmem,-pcpu | head -15'
@@ -161,7 +161,7 @@ sudo apt install htop
 htop
 # You can kill/end processes graphically using htop! Simply refer to the options displayed
 # at the bottom of the terminal screen 
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0204: CRON AND CRONTAB
 # cron is the tool which automates things for you
 # crontab is the tool which dictates the actions of cron (for each system user)
@@ -211,13 +211,13 @@ chmod u+x ~/.MyScript.sh
 # Assuming you have a shell script with the name "MyScript.sh" located in your user's home
 # directory, you could run this script in cron by adding the following entry to crontab:
 0 23 * * * ~/.MyScript.sh
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0300: KEY CODING AND DEV TOOLS 
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0301: LYNX
 # lynx is a useful text-only terminal-based web browser
 # (AFTER INSTALL) run lynx with the following command: 
@@ -226,26 +226,26 @@ lynx
 lynx -listonly -dump url.example.com
 # Output the result of the link list dump into a text file in your current directory
 lynx -listonly -dump url.example.com | nano url.example.com.txt
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0302: VISUAL STUDIO CODE
 # (AFTER INSTALL) run Microsoft Visual Studio Code with the following command:
 code
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0303: GOOGLE CLOUD SDK
 # Launch Google Cloud SDK and initialize a new project
 gcloud init
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0400: EXTENDED GLOBAL REGEX PRINT
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0401: ABOUT GREP
 # egrep is an acronym for "Extended Global Regular Expressions Print". 
 # It is a program which scans a specified file line by line, returning lines that contain a 
 # pattern matching a given regular expression.
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0402: STANDARD egrep COMMAND SYNTAX
 # Example:
 egrep <flags> '<regular expression>' <filename>
@@ -275,13 +275,13 @@ egrep -c '10*10*10*10*10*10*10*10*10*10*1' lots_o_bits
 > Example-4
 # List all the lines in myletter.txt containing the word the insensitive of case.
 egrep -i '\<the\>' myletter.txt
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0500: NETWORKING COMMANDS & TOOLS
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0501: CHECK YOUR PUBLIC IP ADDRESS
 # Find out your current public IP address by using curl on the Google domain tool
 # for checking your IP address. Use the following command:
@@ -292,7 +292,7 @@ alias checkip='curl https://domains.google.com/checkip && echo " -- "`date`'
 checkip
 # The output will look like this:
 OUTPUT: 192.168.0.1 -- Mon Jan 01 08:31:49 EDT 2017
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0502: NETSTAT
 # Get a general overview of the network status for your system
 netstat
@@ -300,7 +300,7 @@ netstat
 netstat -tunlp
 # List all active ports and connections (internal & external)
 netstat -pln
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0503: WGET
 # Use the wget tool to copy, download, or mirror entire websites. 
 # Download site with links not adjusted for static use, which means, all internal hyperlinks on 
@@ -314,7 +314,7 @@ wget -m -k https://example.com
 wget -m -k -w 5 https://example.com/
 # Note that the number ("5") in the example above is the number of seconds to wait. This can be
 # adjusted to minutes by appending the suffix of "m" for minutes, "h" for hours, or "d" for days.
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0504: ARP-SCAN
 # Full network analysis tool to see what IPs are connected to the local network
 # Install with the following
@@ -326,39 +326,39 @@ sudo arp-scan --interface=eth0 --localnet
 ifconfig
 # Learn more about the arp-scan tool at the following address: 
 firefox http://manpages.ubuntu.com/manpages/zesty/en/man1/arp-scan.1.html
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0505: LSOF 
 # List Process IDs with corresponding port numbers and what external IP addresses are
 # connected to them
 lsof -i -P
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0506: NETWORK MAPPING UTILITY
 # (AFTER INSTALL) run nmap with the following command:
 nmap
 # Scan the open ports and status of a specific IP address (this example uses the IP address
 # of 192.168.1.50 as an example) with the following command: 
 nmap 192.168.1.50
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0507: DISPLAY LOCAL GATEWAY
 ip r
 # Additionally, you can use the following command in netstat:
 netstat -r -n
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0508: DISPLAY THE LOCAL DNS INFORMATION
 cat /etc/resolv.conf
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0509: KERNEL IP ROUTING TABLE
 # Display the system kernel's IP routing table with the following command:
 route
 # View the same table with IP addresses instead of gateway names with this command:
 route -n
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0600: BUILDING & RUNNING SHELL SCRIPTS
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0601: RUN SHELL SCRIPTS
 > METHOD 1
 # Once you are in the correct current folder you can run the script like this:
@@ -380,12 +380,12 @@ chmod +x /path/to/yourscript.sh
 # Since . refers to the current directory: if yourscript.sh is in the current 
 # directory, you can simplify this to:
 ./yourscript.sh
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0602: SHELL SCRIPT SYNTAX CONSIDERATIONS
 # Always begin a new script file with the following opening line (including the hashtag "#"):
 #! /bin/bash
 # Be very careful to avoid leaving white space in locations such as the end of a line
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0603: OPENING FILES LOCALLY
 # One feature of a script that is often overlooked is portability. In order to be able to use a
 # script on a different system it is important to not lock your script into an unflexible 
@@ -398,13 +398,13 @@ realpath MyFile.txt
 xdg-open
 # Couple this command with realpath like this:
 xdg-open `realpath MyFile.txt`
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0700: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0701: DEPENDENCIES AND INSTALL
 # Add Mono development packages to Ubuntu
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 
@@ -421,24 +421,24 @@ monodevelop
 # Create your first ASP.NET program
 # Read the short tutorial here: 
 URL: http://www.monodevelop.com/documentation/creating-aspnet-projects/
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0800: LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 # (OPTIONAL) make the alias "shortcut" phrase in your terminal:
 alias json-tool='python -m json.tool'
 # Now pull all currency pairs from the internet and write them into a text file like this:
 curl https://bittrex.com/api/v1.1/public/getcurrencies | json-tool | nano bittrex-getcurrencies.txt
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0900: WORKING WITH THE WAVES BLOCKCHAIN
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 0901: WAVES PLATFORM (LITE CLIENT AND FULL NODE)
 # Systemd users can start the node with 
 sudo systemctl start waves.service 
@@ -448,61 +448,61 @@ sudo systemctl start waves.service
 sudo systemctl enable waves.service
 # If you are using the systemd Waves node, you can view your live logs with the following command:
 journalctl -u waves.service -f
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 1000: PERMISSIONS AND USER ACCESS 
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1001: ADD A NEW USER
 sudo adduser username1 username1 username3
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1002: DISCOVER WHAT YOUR USERNAME IS
 whoami
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1003: DISCOVER WHAT USER GROUPS EXIST
 groups
-----------------------------------------------------------------------------------------------------
-1004: DISCOVER USER (bob)'s GROUP MEMBERSHIPS
+#--------------------------------------------------------------------------------------------------#
+1004: DISCOVER USER (bob)s GROUP MEMBERSHIPS
 groups bob
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1005: FIND OWNER AND GROUP OF A DIRECTORY
 sudo ls -l /path/to/file
 # such that the third column of the output is the owner (user) and the fourth column 
 # of the output is the group
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1006: GIVE USER OWNERSHIP OF A DIRECTORY
 sudo chown -R username directory
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1007: GIVE FULL READ/WRITE PERMISSIONS
 sudo chmod -R u+rX directory
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1008: MAKE A FILE ("MyScript.File") EXECUTABLE
 sudo chmod +x MyScript.File
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1009: VIEW ALL USER ACCOUNTS ON THE SYSTEM
 compgen -u
 # The following command will also perform this function but is said by some to be more thorough
 sudo getent passwd
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1010: VIEW ALL USER-GROUPS ON THE SYSTEM
 compgen -g
 # Also the following:
 sudo getent group
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 1100: WORKING WITH PPAs 
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1101: ADD A NEW PPA
 sudo add-apt-repository ppa:PPA_NAME/ppa
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1102: LIST ALL PPAs ADDED TO YOUR SYSTEM
 sudo ls /etc/apt/sources.list.d
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1103: REMOVE PPA FROM UPDATE SOURCES
 > METHOD 1
 # NOTE: Does not remove any software
@@ -510,20 +510,20 @@ sudo add-apt-repository --remove ppa:PPA_NAME/ppa
 > METHOD 2
 # NOTE: Does not remove any software
 sudo rm -i /etc/apt/sources.list.d/PPA_NAME.list
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1104: REMOVE PPA FROM SOURCES AND UNINSTALL SOFTWARE
 # Install the ppa-purge tool
 sudo apt-get install ppa-purge
 # Use the ppa-purge tool with this command
 sudo ppa-purge ppa-url
 # NOTE: The URL of the PPA you wish to purge can be found in your sources list
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 1200: COMMANDS FOR DELETING FILES 
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1201: THE TERMINAL COMMAND FOR DELETING FILES 
 rm 
 1202: GENERAL FORMATTING AND SYNTAX 
@@ -531,7 +531,7 @@ rm [-f|i|I|q|R|r|v] [file]
 # rm removes a file if you specify a correct path for it 
 # Sometimes you may not have the write permissions for a file, in that case it asks 
 # you for confirmation. Type yes if you want to delete it.
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1203: OPTIONS FOR rm
 -f
 # Deletes read-only files immediately without any confirmation.
@@ -553,7 +553,7 @@ rm [-f|i|I|q|R|r|v] [file]
 -I
 # Prompts every time when an attempt is made to delete for than 3 files at a time or while
 # removing recursively. 
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1204: IMPORTANT PRECAUTIONS
 # Never type the following command into a terminal:
 sudo rm -R / 
@@ -563,18 +563,18 @@ sudo rm -r /
 # data of all the mounted volumes until you want to wipe of everything from your system.
 # Another command to avoid using is:
 sudo rm -f /*
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1205: ADDITIONAL NOTES
 # It is possible to recover files deleted through rm
 # If you want to permanently delete a file use the command:
 shred
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 1300: BUILD MIND MAPS WITH GRAPHVIZ-DEV 
 
 ####################################################################################################
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1301: BASIC INFORMATION
 # Project Website
 firefox http://www.graphviz.org/
@@ -582,7 +582,7 @@ firefox http://www.graphviz.org/
 firefox http://www.webgraphviz.com/
 # Launchpad Profile
 firefox https://launchpad.net/~gviz-adm/+archive/ubuntu/graphviz-dev
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1302: INSTALLING GRAPHVIZ
 # NOTE: Do not use the instructions located on the Graphviz website for installing the program
 # onto an Ubuntu system. The instructions are outdated and have many errors. Instead, use the 
@@ -591,17 +591,17 @@ sudo apt-get install graphviz-dev
 # Program files are automatically installed into the following locations on your system:
 /usr/lib/graphviz 
 /usr/include/graphviz
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1303: LEARN TO DRAW FOR GRAPHVIZ
 # Graphviz (and the xdot tool below) read/write files called "dot" files. 
 # Here is the official guide to creating and working with dot files:
 URL: http://www.graphviz.org/Documentation/dotguide.pdf
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 1304: ADDITIONAL FEATURES IN THE xdot TOOL
 # You can also add the additional graphical features available in the xdot tool
 # xdot can read and explore files created by graphviz. Get xdot here:
 URL: https://apps.ubuntu.com/cat/applications/natty/xdot/
-----------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 
