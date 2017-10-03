@@ -55,7 +55,7 @@ echo 'DATE {'`date`'}' >> ~/.CRON/cronip.log
 # Record the name of the current user into the cronip.log file
 echo 'USER {'`whoami`'}' >> ~/.CRON/cronip.log
 
-# Fetch the system IP address from the Google Domains server 
+# Fetch the system IP address from the Google Domains server
 # and record it into the cronip.log file
 echo 'PUBLIC_IP {'`curl https://domains.google.com/checkip`'}' >> ~/.CRON/cronip.log
 
@@ -63,12 +63,12 @@ echo 'PUBLIC_IP {'`curl https://domains.google.com/checkip`'}' >> ~/.CRON/cronip
 echo '(' `date` ')' >> ~/.CRON/dateip.log
 echo 'CRONIP: date logged into dateip.log' >> ~/.CRON/cronip.log
 
-# Fetch the system IP address from the Google Domains server 
+# Fetch the system IP address from the Google Domains server
 # and record it into the dateip.log file
 echo `curl https://domains.google.com/checkip` >> ~/.CRON/dateip.log
 echo 'CRONIP: IP logged into dateip.log' >> ~/.CRON/cronip.log
 
-# Fetch the system IP address from the Google Domains server 
+# Fetch the system IP address from the Google Domains server
 # and record it into the ip.log file
 echo `curl https://domains.google.com/checkip` >> ~/.CRON/ip.log
 echo 'CRONIP: IP logged into ip.log' >> ~/.CRON/cronip.log
