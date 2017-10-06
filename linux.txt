@@ -2,7 +2,7 @@
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-UPDATED: 20171003
+UPDATED: 20171006
 CREDITS: h8rt3rmin8r ( 161803398@email.tg )
 PUBKEY: http://h8rt3rmin8r.com
 SOURCE: http://h8rt3rmin8r.com/linux
@@ -234,6 +234,34 @@ code
 0303: GOOGLE CLOUD SDK
 # Launch Google Cloud SDK and initialize a new project
 gcloud init
+#--------------------------------------------------------------------------------------------------#
+0304: XMLSTARLET
+# Perform many different operations on XML file types using the terminal tool, xmlstarlet.
+# Install with the following command:
+sudo apt-get install xmlstarlet
+# Generate plain text table from XML document
+xml sel -T -t -m /xml/table/rec -v "@id" -o "|" -v numField -o "|" -v stringField -n xml/table.xml
+Result Output:
+1|123|String Value
+2|346|Text Value
+3|-23|stringValue
+# Generate plain text table from XML document
+xml sel -T -t -m /xml/table/rec -v "concat(@id,'|',numField,'|',stringField)" -n xml/table.xml
+Result Output:
+1|123|String Value
+2|346|Text Value
+3|-23|stringValue
+# Generate plain text table from XML document
+xml sel -T \
+    -t -o "===================" -n \
+       -m xml/table/rec -v "concat(@id,'|',numField,'|',stringField)" -n \
+    -t -o "===================" -n xml/table.xml
+Result Output:
+===================
+1|123|String Value
+2|346|Text Value
+3|-23|stringValue
+===================
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
