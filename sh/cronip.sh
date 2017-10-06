@@ -36,6 +36,8 @@
 # whoami
 # curl
 # notify-send
+# html2text
+# xmlstarlet
 
 # -----------------------------------------------------------------------------------
 
@@ -73,11 +75,11 @@ echo 'PUBLIC_IP {'`curl -sS https://domains.google.com/checkip`'}' >> ~/.CRON/cr
 
 # Fetch the system Geolocation IP data and record the data into
 # the cronip.log file
-echo 'GEO_IP_COUNTRY {' `curl -sS 'http://ip-api.com/xml/?fields=1'` '}' >> ~/.CRON/cronip.log
-echo 'GEO_IP_LOCAL {' `curl -sS 'http://ip-api.com/xml/?fields=24'` '}' >> ~/.CRON/cronip.log
+# echo 'GEO_IP_COUNTRY {' `curl -sS 'http://ip-api.com/xml/?fields=1' | html2text` '}' >> ~/.CRON/cronip.log
+# echo 'GEO_IP_LOCAL {' `curl -sS 'http://ip-api.com/xml/?fields=24' | html2text` '}' >> ~/.CRON/cronip.log
 
 # Check if proxy is detected and record the results
-echo 'PROXY_DETECTED {' curl -sS  http://ip-api.com/xml/?fields=131072`'}' >> ~/.CRON/cronip.log
+# echo 'PROXY_DETECTED {' curl -sS  'http://ip-api.com/xml/?fields=131072' | html2text`'}' >> ~/.CRON/cronip.log
 
 # Record the current date and time into the dateip.log file
 echo '(' `date` ')' >> ~/.CRON/dateip.log
