@@ -2,7 +2,7 @@
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-UPDATED: 20171006
+UPDATED: 20171008
 CREDITS: h8rt3rmin8r ( 161803398@email.tg )
 PUBKEY: http://h8rt3rmin8r.com
 SOURCE: http://h8rt3rmin8r.com/linux
@@ -412,7 +412,8 @@ chmod +x /path/to/yourscript.sh
 0602: SHELL SCRIPT SYNTAX CONSIDERATIONS
 # Always begin a new script file with the following opening line (including the hashtag "#"):
 #! /bin/bash
-# Be very careful to avoid leaving white space in locations such as the end of a line
+# Be very careful to avoid unintentionally leaving white space
+# Pay attention to every last detail as the smallest mistake can cause the script to not function
 #--------------------------------------------------------------------------------------------------#
 0603: OPENING FILES LOCALLY
 # One feature of a script that is often overlooked is portability. In order to be able to use a
@@ -426,7 +427,55 @@ realpath MyFile.txt
 xdg-open
 # Couple this command with realpath like this:
 xdg-open `realpath MyFile.txt`
-#--------------------------------------------------------------------------------------------------#
+# -------------------------------------------------------------------------------
+0604: BUILD A STRING FROM VARIABLE INPUTS
+# Example (1):
+var="${var}string"
+# Example (2):
+# Using concatenation to combine variables into the name of a file
+NAME=$(echo ${FILENAME}_${EXTENSION})
+# Example (3):
+_p="/delta"
+_u="aqua"
+    # [... now join the two $vars]
+out="${_p}${_u}"
+echo "${_p}${_u}"
+echo "${_p} and ${_u}"
+echo "${_p}/${_u}"
+echo "Output: $out"
+# --------------------------------------------------------------------------
+0605: REFERENCE LINES IN A TEXT FILE TO BE USED IN A CURL FUNCTION
+# Use lines from a source text file as inclusions in a curl function
+cr=$'\r'
+while read line
+do
+    line="${line%$cr}"
+    curl "https://gdata.youtube.com/feeds/api/users/${line}/subscriptions?v=2&alt=json" \
+         > "/home/user/archive/$line"
+done < textfile.txt
+# --------------------------------------------------------------------------
+0606: CORRECT USE OF CURLY BRACKETS
+# Use ${ } to enclosure a variable.
+# Without curly brackets:
+VAR="foo"
+echo $VAR
+echo $VARbar
+# would give
+foo
+# ...and nothing else because the variable $VARbar doesn't exist.
+# With curly brackets:
+VAR="foo"
+echo ${VAR}
+echo ${VAR}bar
+# would give
+foo
+foobar
+# Enclosing the first $VAR is not necessary, but a good practice.
+# See the sample script below: 
+#!/bin/sh
+WEBSITE="danydiop" 
+/usr/bin/mysqldump --opt -u root --ppassword ${WEBSITE} > ${WEBSITE}.sql
+# --------------------------------------------------------------------------
 ####################################################################################################
 
 0700: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
@@ -635,10 +684,9 @@ URL: https://apps.ubuntu.com/cat/applications/natty/xdot/
 
 
 
-
-
-
 ###############################
+###                         ###
 ### "think outside the box" ###
 ###   ($) ¯\_(ツ)_/¯ (฿)    ###
+###                         ###
 ###############################
