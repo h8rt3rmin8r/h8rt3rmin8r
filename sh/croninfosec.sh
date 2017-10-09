@@ -8,7 +8,7 @@
 # Credits: h8rt3rmin8r
 # Email: 161803398@email.tg
 # PGP Key: http://h8rt3rmin8r.com
-# Updated: 20171008-1718
+# Updated: 20171008-2010
 # -----------------------------------------------------------------------------------
 # This shell script is designed to check your connection to the PIA VPN service
 # This script will also run general checks on network service health
@@ -40,24 +40,24 @@
 # contains a copy of the entire contents of this README file. Save that new
 # script file as "croninfosec.sh".
 # MAKE THE SCRIPT EXECUTABLE WITH THE FOLLOWING COMMAND:
-# chmod +x ~/.CRON/croninfosec.sh
+# sudo chmod +x ~/.CRON/croninfosec.sh
 # -----------------------------------------------------------------------------------
 #! /bin/bash
 echo `date`' -- CRONINFOSEC: starting security check' >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: checking status of services' >> ~/.CRON/croninfosec.log
 echo `service --status-all` >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: running network-manager status check' >> ~/.CRON/croninfosec.log
-echo `service network-manager status` >> ~/.CRON/croninfosec.log
+echo `sudo service network-manager status` >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: network-manager status check complete' >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: running openvpn status check' >> ~/.CRON/croninfosec.log
-echo `service openvpn status` >> ~/.CRON/croninfosec.log
+echo `sudo service openvpn status` >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: openvpn status check complete' >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: running IP address check' >> ~/.CRON/croninfosec.log
 echo `curl https://domains.google.com/checkip` >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: IP address check complete' >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: running self-target nmap scan' >> ~/.CRON/croninfosec.log
-VAR=`curl https://domains.google.com/checkip`
-echo `nmap "${VAR}"` >> ~/.CRON/croninfosec.log
+IP=`curl https://domains.google.com/checkip`
+echo `nmap $IP` >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: nmap scan complete' >> ~/.CRON/croninfosec.log
 echo `date`' -- CRONINFOSEC: security check complete' >> ~/.CRON/croninfosec.log
 echo '#------------------------------------------------------------------------' >> ~/.CRON/croninfosec.log
