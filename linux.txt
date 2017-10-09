@@ -26,7 +26,7 @@ SOURCE: http://h8rt3rmin8r.com/linux
 > 0600: BUILDING & RUNNING SHELL SCRIPTS
 > 0700: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
 > 0800: LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
-> 0900: WORKING WITH THE WAVES BLOCKCHAIN
+> 0900: WORKING WITH BLOCKCHAIN
 > 1000: PERMISSIONS AND USER ACCESS
 > 1100: WORKING WITH PPAs
 > 1200: COMMANDS FOR DELETING FILES
@@ -139,6 +139,12 @@ OUTPUT: 2017-10-09-03-45-19
 # > EXAMPLE 4
 date '+%Y%m%d-%H%M%S'
 OUTPUT: 20171009-034601
+#--------------------------------------------------------------------------------------------------#
+0115: DISPLAY THE TYPE OF A BUILTIN TERMINAL COMMAND
+# To learn the general "type" of a specific terminal command, ("echo" for example) use the
+# following function:
+type echo
+OUTPUT: echo is a shell builtin
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
@@ -555,7 +561,7 @@ curl https://bittrex.com/api/v1.1/public/getcurrencies | json-tool | nano bittre
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0900: WORKING WITH THE WAVES BLOCKCHAIN
+0900: WORKING WITH BLOCKCHAIN
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
@@ -568,6 +574,22 @@ sudo systemctl start waves.service
 sudo systemctl enable waves.service
 # If you are using the systemd Waves node, you can view your live logs with the following command:
 journalctl -u waves.service -f
+#--------------------------------------------------------------------------------------------------#
+0902: UNINSTALL ETHEREUM
+# IMPORTANT NOTE: Before uninstalling any blockchain software, be sure to back up a copy of your
+# keystore files if your wallet has any digital assets inside. Otherwise you will lose access to
+# everything in your wallet. To uninstall the Mist browser/geth/wallet, use the following 
+# commands:
+rm -rf ~/.config/Ethereum\ Wallet/
+rm -rf ~/.config/Mist
+rm -rf ~/.ethereum/geth
+sudo rm -rf /opt/Ethereum\ Wallet
+sudo rm -rf /opt/Mist
+sudo rm -rf /usr/local/bin/ethereumwallet
+sudo rm -rf /usr/local/bin/mist
+# The following directory is the one which contains personal keys which allow the spending of
+# digital assets. BACK UP THIS FILE BEFORE DELETION!
+rm -rf .ethereum/keystore
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
