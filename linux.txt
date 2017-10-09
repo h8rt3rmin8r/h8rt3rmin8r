@@ -427,8 +427,34 @@ realpath MyFile.txt
 xdg-open
 # Couple this command with realpath like this:
 xdg-open `realpath MyFile.txt`
-# -------------------------------------------------------------------------------
-0604: BUILD A STRING FROM VARIABLE INPUTS
+#--------------------------------------------------------------------------------------------------#
+0604: DEFINE AND ACCESS VARIABLES
+# A variable assignment has the form of a variable name, followed by the equal sign, followed by 
+# the (optional) value. The following example is a valid variable assignment:
+ABC=123
+# To access the value stored in a variable, prefix its name with the dollar sign ($)
+# The following script will output the result: "h8rt3rmin8r"
+NAME="h8rt3rmin8r"
+echo $NAME
+# Consider these additional options
+# NOTE: The "declare" and "let" functions are only available in the bash shell
+# "eval" executes arbitrary commands.
+# If on the right side of the equal sign you have a variable that expands to some command, that 
+# command will be executed. The following code is equivalent to a=hello.
+x=a
+y='$(echo hello)'
+eval "$x=$y"
+# "declare" is a bash function to assign variables and won't execute any command. 
+# The following code is equivalent to a='$(echo hello)'.
+x=a
+y='$(echo hello)'
+declare "$x=$y"
+# "let" is similar to "declare", in that it doesn't execute commands. 
+# However, unlike "declare", "let" may be used for arithmetic operations.
+# The following code is equivalent to a=3
+let a="1 + 2"
+#--------------------------------------------------------------------------------------------------#
+0605: BUILD A STRING FROM VARIABLE INPUTS
 # Example (1):
 var="${var}string"
 # Example (2):
@@ -443,8 +469,8 @@ echo "${_p}${_u}"
 echo "${_p} and ${_u}"
 echo "${_p}/${_u}"
 echo "Output: $out"
-# --------------------------------------------------------------------------
-0605: REFERENCE LINES IN A TEXT FILE TO BE USED IN A CURL FUNCTION
+#--------------------------------------------------------------------------------------------------#
+0606: REFERENCE LINES IN A TEXT FILE TO BE USED IN A CURL FUNCTION
 # Use lines from a source text file as inclusions in a curl function
 cr=$'\r'
 while read line
@@ -453,8 +479,8 @@ do
     curl "https://gdata.youtube.com/feeds/api/users/${line}/subscriptions?v=2&alt=json" \
          > "/home/user/archive/$line"
 done < textfile.txt
-# --------------------------------------------------------------------------
-0606: CORRECT USE OF CURLY BRACKETS
+#--------------------------------------------------------------------------------------------------#
+0607: CORRECT USE OF CURLY BRACKETS
 # Use ${ } to enclosure a variable.
 # Without curly brackets:
 VAR="foo"
@@ -475,7 +501,7 @@ foobar
 #!/bin/sh
 WEBSITE="danydiop" 
 /usr/bin/mysqldump --opt -u root --ppassword ${WEBSITE} > ${WEBSITE}.sql
-# --------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0700: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
