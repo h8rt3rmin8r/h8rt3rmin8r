@@ -2,7 +2,7 @@
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-UPDATED: 20171008
+UPDATED: 20171009
 CREDITS: h8rt3rmin8r ( 161803398@email.tg )
 PUBKEY: http://h8rt3rmin8r.com
 SOURCE: http://h8rt3rmin8r.com/linux
@@ -122,6 +122,23 @@ wc awesome.txt
 # [# of new lines] [# of words] [# of characters]
 # To learn more about this tool, read the documentation at the following location: 
 URL: http://manpages.ubuntu.com/manpages/trusty/man1/wc.1.html
+#--------------------------------------------------------------------------------------------------#
+0114: DISPLAY THE SYSTEM DATE
+# Display the system date in the terminal with the following command:
+date
+# Formatting the date can be accomplished in the following ways:
+# > EXAMPLE 1
+date '+%Y%m%d'
+OUTPUT: 20171009
+# > EXAMPLE 2
+date '+%Y-%m-%d'
+OUTPUT: 2017-10-09
+# > EXAMPLE 3
+date '+%Y-%m-%d-%H-%M-%S'
+OUTPUT: 2017-10-09-03-45-19
+# > EXAMPLE 4
+date '+%Y%m%d-%H%M%S'
+OUTPUT: 20171009-034601
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
