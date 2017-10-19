@@ -2,7 +2,7 @@
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-UPDATED: 20171009
+UPDATED: 20171019
 CREDITS: h8rt3rmin8r ( 161803398@email.tg )
 PUBKEY: http://h8rt3rmin8r.com
 SOURCE: http://h8rt3rmin8r.com/linux
@@ -31,6 +31,7 @@ SOURCE: http://h8rt3rmin8r.com/linux
 > 1100: WORKING WITH PPAs
 > 1200: COMMANDS FOR DELETING FILES
 > 1300: BUILD MIND MAPS WITH GRAPHVIZ-DEV
+> 1400: NODE.JS AND NODE PACKAGE MANAGER
 
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
@@ -145,6 +146,30 @@ OUTPUT: 20171009-034601
 # following function:
 type echo
 OUTPUT: echo is a shell builtin
+#--------------------------------------------------------------------------------------------------#
+0116: CONCATENATE FILES
+# Concatenate files and print on the standard output
+# The most basic form of the "cat" command will simply output the entire contents of a specified
+# file. To read a document, "myText.txt", you could simply use the following command:
+cat myText.txt
+# You can number all output lines with the -n flag like this:
+cat -n myText.txt
+#--------------------------------------------------------------------------------------------------#
+0117: CUT SECTIONS FROM OUTPUT TEXT
+# Remove sections from each line of specific files or inputs/outputs
+# The basic command syntax for "cut" must specify a target input file if "cut" is not being used
+# as the target of a previous command.
+# Use case: to output the last modified date/time of a specific file named "myFile.txt":
+ls -l myFile.txt | cut -d ' ' -f '6-8'
+OUTPUT: Jul 26 15:05
+# Looking closer at this command, notice that the output of "ls -l myFile.txt" is the following:
+ls -l myFile.txt
+OUTPUT: -rw-rw-r-- 1 $username $username 2 Jul 26 15:05 myFile.txt
+# This output is then piped into "cut" (by using the "|" symbol) and "cut" performs the following:
+> -d ' '
+# The output of ls -l is split at every space as a delimiter resulting in 9 fields
+> -f '6-8'
+# Fields #6-#8 are retained, eliminating all other fields
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
@@ -311,7 +336,7 @@ egrep <flags> '<regular expression>' <filename>
 # The set of all lowercase letters would be input as:
 [a-z]
 # To learn more, visit the following site:
-firefox http://www.cs.columbia.edu/~tal/3261/fall07/handout/egrep_mini-tutorial.htm
+URL: http://www.cs.columbia.edu/~tal/3261/fall07/handout/egrep_mini-tutorial.htm
 # Below are some examples of egrep syntax along with their corresponding descriptions:
 > Example-1
 # Match all lines in searchfile.txt which start with a non-empty bitstring, followed 
@@ -550,14 +575,18 @@ URL: http://www.monodevelop.com/documentation/creating-aspnet-projects/
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0800: LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
+0800: FIND INFORMATION FROM THE CRYPTOCURRENCY INDUSTRY
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
+0801: API - BITTREX
 # (OPTIONAL) make the alias "shortcut" phrase in your terminal:
 alias json-tool='python -m json.tool'
 # Now pull all currency pairs from the internet and write them into a text file like this:
 curl https://bittrex.com/api/v1.1/public/getcurrencies | json-tool | nano bittrex-getcurrencies.txt
+#--------------------------------------------------------------------------------------------------#
+0802: API - MINERGATE
+curl -X GET https://api.minergate.com/1.0/pool/top/hashrate | json-tool
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
@@ -746,8 +775,54 @@ URL: https://apps.ubuntu.com/cat/applications/natty/xdot/
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
+1400: NODE.JS AND NODE PACKAGE MANAGER
 
-
+####################################################################################################
+#--------------------------------------------------------------------------------------------------#
+1401: NODE.JS INTRODUCTION
+# SOURCE: https://nodejs.org/en/
+# node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an 
+# event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package 
+# ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+#--------------------------------------------------------------------------------------------------#
+1402: NODE PACKAGE MANAGER INTRODUCTION
+# SOURCE: https://www.npmjs.com/
+# npm is the package manager for JavaScript and the world’s largest software registry. 
+# Discover packages of reusable code — and assemble them in powerful new ways.
+#--------------------------------------------------------------------------------------------------#
+1403: INSTALLING NODE.JS
+# To install node.js on Ubuntu, Debian, or similar system, use the following commands: 
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Then install the additional tools for node.js with the following: 
+sudo apt-get install -y build-essential
+# Check the version of node.js that you are running with the following command: 
+node -v
+#--------------------------------------------------------------------------------------------------#
+1404: INSTALLING NPM
+# npm is automatically installed on your system when you install node.js
+# Check the version of npm that you are running with the following command: 
+npm -v
+# npm automatically updates when you update your system. However, you can force npm to check for
+# updates with the following command:
+npm install npm@latest -g
+#--------------------------------------------------------------------------------------------------#
+1405: IMPORTANT NOTE ABOUT PERMISSIONS
+# Many users experience permissions errors while using npm and node.js. While this can be a 
+# frustrating experience, it is easily resolved with the following method found at this location:
+URL: https://docs.npmjs.com/getting-started/fixing-npm-permissions
+# In brief, the fix uses the following steps: 
+# > Find the path to node's directory like this: 
+npm config get prefix
+# > For many systems, this will be /usr/local If your system does not return this as the directory
+# then DO NOT use this method as you will mess up further permission configurations on your system
+# Moving forward, change the owner of npm's directories to the name of the current user 
+# (your username!) with the following commands: 
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+# This changes the permissions of the sub-folders used by npm and some other tools 
+# (lib/node_modules, bin, and share).
+#--------------------------------------------------------------------------------------------------#
+####################################################################################################
 
 ###############################
 ###                         ###
