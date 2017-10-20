@@ -429,6 +429,20 @@ route
 # View the same table with IP addresses instead of gateway names with this command:
 route -n
 #--------------------------------------------------------------------------------------------------#
+0510: REMOTE ACCESS VIA SECURE SHELL
+# Secure shell, known as SSH, is a powerful tool which you can use to control other computers
+# located outside of your local network. To use this tool you must first generate a new key (if it
+# is your first time using SSH). Key generation occurs with the related tool:
+ssh-keygen
+# Full syntax for the creation of a new ssh key is depicted below. Notice that the -C flag is used
+# to generate a user name comment in the keyfile:
+ssh-keygen -t rsa -f ~/.ssh/[USERKEY] -C [USER]
+# Now configure the ssh client to use the newly generated keyfile 
+ssh-rsa [USERKEY] [USER]
+# In addition to these steps, it is also recommended that you restrict access to the remote
+# connection with the following resource:
+chmod 400 ~/.ssh/[KEYFILE]
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
 0600: BUILDING & RUNNING SHELL SCRIPTS
