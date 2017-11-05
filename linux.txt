@@ -2,45 +2,43 @@
 ### /////////////////////////////// LINUX QUICK REFERENCE SHEET \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  ###
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-UPDATED: 20171019
+UPDATED: 20171105
 CREDITS: h8rt3rmin8r ( 161803398@email.tg )
 PUBKEY: http://h8rt3rmin8r.com
 SOURCE: http://h8rt3rmin8r.com/linux
 #--------------------------------------------------------------------------------------------------#
 # Each section of this document is clearly marked in the following ways: 
-> Major titles begin with a four digit numeric tag and are in all-caps
-> Minor titles begin with a four digit numeric tag and are in all-caps
+> Major titles begin with a four digit numeric tag and are in all-caps enclosed in curly braces
+> Minor titles begin with a four digit numeric tag and are in all-caps enclosed in curly braces
 > All terminal commands are written with no indent and no preceding symbols
 > Resulting terminal outputs are indicated by the "OUTPUT: " flag followed by the output
 > Online references are indicated with the "URL: " flag followed by the reference link
-> Program specific flags begin with a single "-"
+> Program specific flags begin with a single "-" or double "--"
 > List items begin with ">"
 #--------------------------------------------------------------------------------------------------#
-####################################################################################################
-
-> 0100: LINUX NAVIGATION & ESSENTIALS 
-> 0200: HARDWARE AND PROCESS MANAGEMENT
-> 0300: KEY CODING AND DEV TOOLS
-> 0400: EXTENDED GLOBAL REGEX PRINT
-> 0500: NETWORKING COMMANDS & TOOLS
-> 0600: BUILDING & RUNNING SHELL SCRIPTS
-> 0700: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
-> 0800: LIST ALL ACTIVE TOKENS ON BITTREX EXCHANGE
-> 0900: WORKING WITH BLOCKCHAIN
-> 1000: PERMISSIONS AND USER ACCESS
-> 1100: WORKING WITH PPAs
-> 1200: COMMANDS FOR DELETING FILES
-> 1300: BUILD MIND MAPS WITH GRAPHVIZ-DEV
-> 1400: NODE.JS AND NODE PACKAGE MANAGER
-
+> 0100={ESSENTIAL NAVIGATION AND PROCESSES}
+> 0200={CRYPTOGRAPHY}
+> 0300={CODING AND DEVELOPMENT TOOLS}
+> 0400={EXTENDED GLOBAL REGEX PRINT}
+> 0500={NETWORKING COMMANDS AND UTILITIES}
+> 0600={BUILDING AND USING SHELL SCRIPTS}
+> 0700={PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO}
+> 0800={WORKING WITH BLOCKCHAIN}
+> 0700={*************}
+> 1000={PERMISSIONS AND USER ACCESS}
+> 1100={WORKING WITH PPAs}
+> 1200={COMMANDS FOR DELETING FILES}
+> 1300={BUILD MIND MAPS WITH GRAPHVIZ-DEV}
+> 1400={NODE.JS AND NODE PACKAGE MANAGER}
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0100: LINUX NAVIGATION & ESSENTIALS 
+0100={ESSENTIAL NAVIGATION AND PROCESSES}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-0101: FIND THE LOCATION OF A FILE NAMED "MyFile"
+0101={FIND THE LOCATION OF A FILE}
+# The following command shows how you would look for a file named "MyFile":
 whereis MyFile
 #--------------------------------------------------------------------------------------------------#
 0102: REALPATH
@@ -52,26 +50,26 @@ realpath TARGETFILE.txt
 # Example output in the terminal after you run the command above
 OUTPUT: /var/www/public_files/TARGETFILE.txt
 #--------------------------------------------------------------------------------------------------#
-0103: FIND OUT WHERE YOU ARE
+0103={FIND OUT WHERE YOU ARE}
 # Print the name of the current/working directory
 pwd
 #--------------------------------------------------------------------------------------------------#
-0104: MAKE A NEW FOLDER NAMED "MyNewFolder"
-# The following command will create a new folder in your current directory:
+0104={MAKE A NEW FOLDER}
+# The following command will create a new folder named "MyNewFolder" in your current directory:
 mkdir MyNewFolder
 #--------------------------------------------------------------------------------------------------#
-0105: MOVE AND RENAME FILES
+0105={MOVE AND RENAME FILES}
 # Moving and renaming files are considered the same exact function since, on a basic level, they 
 # are the same (renaming is nothing more than moving data from one file name to another file name).
 # Basic syntax is as follows:
-mv "OLD LOCATION" "NEW LOCATION"
+mv "OLD/LOCATION" "NEW/LOCATION"
 # The following example shows how to move a text document called "MY-DOC.txt" from the Downloads
 # folder into the Documents folder:
 mv /home/user/Downloads/MY-DOC.txt /home/user/Documents/MY-DOC.txt
 # As stated previously, moving and renaming files is the same process. Below is an example:
 mv /home/user/MY-OldName-DOC.txt /home/user/MY-NewName-DOC.txt
 #--------------------------------------------------------------------------------------------------#
-0106: COPY FILES IN THE TERMINAL 
+0106={COPY FILES IN THE TERMINAL}
 # (A LIVE EXAMPLE)
 sudo cp -avr /home/h8rt3rmin8r/SomeEpicFilev2.0.rar /var/www/html
 # The output printed in the terminal was as follows: 
@@ -81,17 +79,17 @@ ls
 # The output printed in the terminal was as follows:
 OUTPUT: SomeEpicFilev2.0.rar  index.html
 #--------------------------------------------------------------------------------------------------#
-0107: SYNCRONIZE ONE DIRECTORY WITH ANOTHER
+0107={SYNCRONIZE ONE DIRECTORY WITH ANOTHER}
 # NOTE: This command works across SSH and remote connections as well as local files/folders
 rsync
 #--------------------------------------------------------------------------------------------------#
-0108: EXTRACTING .rar ARCHIVES
+0108={EXTRACTING .rar ARCHIVES}
 # Unpack a .rar archive with the "unrar" tool. First install it with the following command:
 sudo apt-get install unrar-free
 # Now unpack the archive (Example archive named: "ARCHIVE.rar") with this command:
 unrar e ARCHIVE.rar
 #--------------------------------------------------------------------------------------------------#
-0109: EXTRACTING .xz AND .tgz ARCHIVES
+0109={EXTRACTING .xz AND .tgz ARCHIVES}
 # Unpack a .xz archive with the tar command. First make sure you have the necessary utility
 # package installed by running the following command: 
 sudo apt-get install xz-utils
@@ -100,22 +98,19 @@ tar -xf ARCHIVE.tar.xz
 # The -xf flag works with a large number of other compression types as well. So basically, if in
 # doubt, just use the -xf flag with tar.
 #--------------------------------------------------------------------------------------------------#
-0110: EXTRACTING .gzip AND .bzip2 ARCHIVES
+0110={EXTRACTING .gzip AND .bzip2 ARCHIVES}
 # Unpack the .gzip and .bzip2 archive types with the tar command:
 tar -xfz ARCHIVE.gzip
 tar -xfz ARCHIVE.bzip2
 #--------------------------------------------------------------------------------------------------#
-0111: PRINT SYSTEM FILE TREE AS HTML
+0111={PRINT SYSTEM FILE TREE AS HTML}
 sudo apt-get update
 sudo apt-get install tree
 tree -H ./ > result.html
 # View the "result.html" tree:
 xdg-open result.html
 #--------------------------------------------------------------------------------------------------#
-0112: ENCRYPT/DECRYPT FILES AND MESSAGES
-gpg
-#--------------------------------------------------------------------------------------------------#
-0113: COUNT THE LINES, WORDS, AND CHARACTERS CONTAINED IN A FILE
+0112={COUNT THE LINES, WORDS, AND CHARACTERS CONTAINED IN A FILE}
 # This simple program is excellent for comparing versions of files, among other things.
 # To search a text document named "awesome.txt" with this tool, run the following command:
 wc awesome.txt
@@ -124,7 +119,7 @@ wc awesome.txt
 # To learn more about this tool, read the documentation at the following location: 
 URL: http://manpages.ubuntu.com/manpages/trusty/man1/wc.1.html
 #--------------------------------------------------------------------------------------------------#
-0114: DISPLAY THE SYSTEM DATE
+0113={DISPLAY THE SYSTEM DATE}
 # Display the system date in the terminal with the following command:
 date
 # Formatting the date can be accomplished in the following ways:
@@ -141,13 +136,13 @@ OUTPUT: 2017-10-09-03-45-19
 date '+%Y%m%d-%H%M%S'
 OUTPUT: 20171009-034601
 #--------------------------------------------------------------------------------------------------#
-0115: DISPLAY THE TYPE OF A BUILTIN TERMINAL COMMAND
+0114={DISPLAY THE TYPE OF A BUILTIN TERMINAL COMMAND}
 # To learn the general "type" of a specific terminal command, ("echo" for example) use the
 # following function:
 type echo
 OUTPUT: echo is a shell builtin
 #--------------------------------------------------------------------------------------------------#
-0116: CONCATENATE FILES
+0115={CONCATENATE AND VIEW FILE CONTENTS}
 # Concatenate files and print on the standard output
 # The most basic form of the "cat" command will simply output the entire contents of a specified
 # file. To read a document, "myText.txt", you could simply use the following command:
@@ -155,7 +150,7 @@ cat myText.txt
 # You can number all output lines with the -n flag like this:
 cat -n myText.txt
 #--------------------------------------------------------------------------------------------------#
-0117: CUT SECTIONS FROM OUTPUT TEXT
+0116={CUT SECTIONS FROM OUTPUT TEXT}
 # Remove sections from each line of specific files or inputs/outputs
 # The basic command syntax for "cut" must specify a target input file if "cut" is not being used
 # as the target of a previous command.
@@ -171,25 +166,19 @@ OUTPUT: -rw-rw-r-- 1 $username $username 2 Jul 26 15:05 myFile.txt
 > -f '6-8'
 # Fields #6-#8 are retained, eliminating all other fields
 #--------------------------------------------------------------------------------------------------#
-####################################################################################################
-
-0200: HARDWARE AND PROCESS MANAGEMENT
-
-####################################################################################################
-#--------------------------------------------------------------------------------------------------#
-0201: INXI 
+0117={INXI}
 # The full system component explorer tool
 # Install inxi with the following command
 sudo apt-get install inxi
 # Run inxi with the following command
 inxi
 #--------------------------------------------------------------------------------------------------#
-0202: LSHW
+0118={LSHW}
 # List all hardware installed on your system
 # NOTE: You need to run this command with "sudo" permissions
 sudo lshw
 #--------------------------------------------------------------------------------------------------#
-0203: LIVE TABLE OF ALL RUNNING PROCESSES
+0119={LIVE TABLE OF ALL RUNNING PROCESSES}
 > METHOD 1
 watch -n 1 'ps -e -o pid,uname,cmd,pmem,pcpu --sort=-pmem,-pcpu | head -15'
 # Table is constant and sorts processes by system load via the 'ps' command
@@ -210,7 +199,7 @@ htop
 # You can kill/end processes graphically using htop! Simply refer to the options displayed
 # at the bottom of the terminal screen 
 #--------------------------------------------------------------------------------------------------#
-0204: CRON AND CRONTAB
+0120={CRON AND CRONTAB}
 # cron is the tool which automates things for you
 # crontab is the tool which dictates the actions of cron (for each system user)
 # List the contents of the crontab file (if contents exist):
@@ -262,11 +251,135 @@ chmod u+x ~/.MyScript.sh
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0300: KEY CODING AND DEV TOOLS 
+0200={CRYPTOGRAPHY}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-0301: LYNX
+#
+# AN INTRODUCTION TO CRYPTOGRAPHY:
+# 
+# The power of encryption is at the core of many of the most disruptive innovations in the modern
+# world. It allows for the establishment of trust between computer users via mathematically
+# provable methods of secure communications which cannot be decrypted or cracked by any party other
+# than the intended recipiant(s). Thus, GPG is a tool which allows computer users to (among other
+# things) establish a core digital identity.
+#
+# Many various tools exist which enable users to perform the mathematical operations of encryption
+# and decryption. The GPG tool is commonly used for encypting documents in a Terminal (Mac, Linux)
+# or PowerShell (on Windows).
+#
+#--------------------------------------------------------------------------------------------------#
+0201={GENERATE AND MANAGE AN IDENTITY}
+# Begin by creating a new keypair. The following command will respond with prompts for information
+# and then the GPG tool will create a new keypair for you
+gpg --gen-key
+# Print a list of all of the keys in your public keyring
+gpg --list-keys
+# Print a list of all keys in your public keyring and their associated signatures
+gpg --list-sigs
+# Print a list of all keys in your public keyring and their associated fingerprints
+gpg --fingerprint
+#--------------------------------------------------------------------------------------------------#
+0202={IMPORT, EXPORT, AND REFRESH KEYS}
+# Import a key contained in the file named "KeyFile" and add it to your keyring:
+gpg --import KeyFile
+# Receive the key which corresponds to KeyID1, KeyID2, etc from the provided keyserver
+gpg –recv-keys KeyID1 KeyID2
+# Search for keys which contain Term1 and Term2, etc. This function provides an interactive 
+# interface to choose the correct key to import to your keyring:
+gpg --search-keys Term1 Term2
+# Export a key into a public key text file for others to use in the process of identifying you and
+# communicating with you:
+gpg --export -a KEYID > publickey.asc
+# You can send the publickey.asc via email or other means, or you can upload your public identity
+# key onto a public key server with the following command:
+gpg --send-keys KeyID
+# Refresh your keys to check if any of them are expired:
+gpg --refresh-keys
+#--------------------------------------------------------------------------------------------------#
+0203={SIGN FOREIGN GPG KEY}
+# Signing a key is a public way of stating that you have verified the validity of a specific key
+# The first thing you must do is check the local key fingerprint against the reported fingerprint:
+gpg --fingerprint UniqueID
+# If the fingerprints match sign the key with your private key
+gpg --sign-key UniqueID
+#--------------------------------------------------------------------------------------------------#
+0204={ASYMMETRIC ENCRYPTION WITH GPG}
+# Encrypting items with the GPG tool is quite simple. These are the two types of items which you
+# can encrypt with this tool:
+    > File (A named file of any type and any size containing any form of information.)
+    > Text (Typed text of any kind or length, typed into the Terminal at the time of encryption.)
+    > Text inside of a File (... this is self explanitory)
+# In addition to encrypting files and text, you can (and should most likely should) also sign the
+# items which you encrypt so that your intended recipient(s) can verify the items came from you.
+# The following command produces "MyFile.gpg" which is an encrypted version of "MyFile". This new
+# file can only be decrypted by the specified "Recipient".
+gpg -er Recipient MyFile
+# The following command produces an encrypted version of "MyText" which can only be decrypted by
+# the specified "Recipient". The output of this command prints into the terminal display.
+echo “MyText” | gpg -ear Recipient
+# The following command produces an encrypted version of "MyText" which can only be decrypted by
+# the specified "Recipient". The output of this command writes to "OutFile".
+echo “MyText” | gpg -ear Recipient > OutFile
+# The following command produces an encrypted version of the text contained in "InFile" which can
+# only be decrypted by the specified "Recipient". The output of this command prints into the
+# terminal display.
+cat InFile | gpg -ear Recipient
+# The following command produces an encrypted version of the text contained in "InFile" which can
+# only be decrypted by the specified "Recipient". The output of this command writes to "OutFile".
+cat InFile | gpg -ear Recipient > OutFile
+# The following command produces "File.gpg" which is an encrypted and signed version of "MyFile",
+# which can be decrypted and verified by the specified "Recipient".
+gpg -esr Recipient MyFile
+# The following command produces an encrypted and signed version of "MyText" which can be decrypted
+# and verified by the specified "Recipient". The output of this command prints into the 
+# terminal display.
+echo “Text” | gpg -esar Recipient MyFile
+# The following command produces an encrypted and signed version of "MyText" which can be decrypted
+# and verified by the specified "Recipient". The output of this command writes to "OutFile".
+echo “Text” | gpg -esar Recipient MyFile > OutFile
+# The following command produces an encrypted and signed version of the text in "InFile" which can
+# be decrypted and verified by the specified "Recipient". The output of this command prints into
+# the terminal display.
+cat InFile | gpg -esar Recipient
+# The following command produces an encrypted and signed version of the text in "InFile" which can
+# be decrypted and verified by the specified "Recipient". The output of this command writes 
+# to "OutFile".
+cat InFile | gpg -esar Recipient > OutFile
+#--------------------------------------------------------------------------------------------------#
+0205={ASYMMETRIC DECRYPTION WITH GPG}
+# Decrypt and/or verify File
+gpg -d InFile > OutFile
+# Decrypt and/or verify Cipher Text
+echo “Cipher Text” | gpg -d
+# Decrypt and/or verify Cipher Text and write the result to OutFile
+echo “Cipher Text” | gpg -d > OutFile
+# Decrypt and/or verify the contents of File
+cat InFile | gpg -d
+# Decrypt and/or verify the contents of File and write the result to OutFile
+cat InFile | gpg -d > OutFile
+#--------------------------------------------------------------------------------------------------#
+0206={SYMMETRIC ENCRYPTION}
+# Create a file symmetrically encrypted with a passphrase
+gpg -c File
+# Create a file symmetrically encrypted with a passphrase readable as plain text
+gpg -ca File
+# Symmetrically encrypt Test with a passphrase and output the result to the terminal
+echo “Text” | gpg -ca
+# Symmetrically encrypt Test with a passphrase and write the result to OutFile
+echo “Text” | gpg -c > OutFile
+# Symmetrically encrypt the text in InFile and output the result to the terminal
+cat InFile | gpg -ca
+# Symmetrically encrypt the text in InFile and write the result to OutFile
+cat InFile | gpg -c > OutFile
+#--------------------------------------------------------------------------------------------------#
+####################################################################################################
+
+0300={CODING AND DEVELOPMENT TOOLS}
+
+####################################################################################################
+#--------------------------------------------------------------------------------------------------#
+0301={LYNX}
 # lynx is a useful text-only terminal-based web browser
 # (AFTER INSTALL) run lynx with the following command: 
 lynx
@@ -275,15 +388,15 @@ lynx -listonly -dump url.example.com
 # Output the result of the link list dump into a text file in your current directory
 lynx -listonly -dump url.example.com | nano url.example.com.txt
 #--------------------------------------------------------------------------------------------------#
-0302: VISUAL STUDIO CODE
+0302={VISUAL STUDIO CODE}
 # (AFTER INSTALL) run Microsoft Visual Studio Code with the following command:
 code
 #--------------------------------------------------------------------------------------------------#
-0303: GOOGLE CLOUD SDK
+0303{GOOGLE CLOUD SDK}
 # Launch Google Cloud SDK and initialize a new project
 gcloud init
 #--------------------------------------------------------------------------------------------------#
-0304: XMLSTARLET
+0304={XMLSTARLET}
 # Perform many different operations on XML file types using the terminal tool, xmlstarlet.
 # Install with the following command:
 sudo apt-get install xmlstarlet
@@ -311,18 +424,35 @@ Result Output:
 3|-23|stringValue
 ===================
 #--------------------------------------------------------------------------------------------------#
+0305={DEVELOP CROSS PLATFORM SOFTWARE WITH MONO}
+# Add Mono development packages to Ubuntu
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 
+3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/ubuntu xenial main" | 
+sudo tee /etc/apt/sources.list.d/mono-official.list
+sudo apt-get update
+sudo apt-get install mono-devel
+# Install the MonoDevelop IDE
+sudo apt-get update
+sudo apt-get install monodevelop
+# Use the Mono IDE 'MonoDevelop"
+monodevelop
+# Create your first ASP.NET program
+# Read the short tutorial here: 
+URL: http://www.monodevelop.com/documentation/creating-aspnet-projects/
+#--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0400: EXTENDED GLOBAL REGEX PRINT
+0400={EXTENDED GLOBAL REGEX PRINT}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-0401: ABOUT GREP
+0401={ABOUT GREP}
 # egrep is an acronym for "Extended Global Regular Expressions Print". 
 # It is a program which scans a specified file line by line, returning lines that contain a 
 # pattern matching a given regular expression.
 #--------------------------------------------------------------------------------------------------#
-0402: STANDARD egrep COMMAND SYNTAX
+0402={STANDARD egrep COMMAND SYNTAX}
 # Example:
 egrep <flags> '<regular expression>' <filename>
 # The egrep differs from theoretical regex in that it processes strings by line where 
@@ -354,11 +484,11 @@ egrep -i '\<the\>' myletter.txt
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0500: NETWORKING COMMANDS & TOOLS
+0500={NETWORKING COMMANDS AND UTILITIES}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-0501: CHECK YOUR PUBLIC IP ADDRESS
+0501={CHECK YOUR PUBLIC IP ADDRESS]
 # Find out your current public IP address by using curl on the Google domain tool
 # for checking your IP address. Use the following command:
 curl https://domains.google.com/checkip && echo ' '
@@ -369,7 +499,7 @@ checkip
 # The output will look like this:
 OUTPUT: 192.168.0.1 -- Mon Jan 01 08:31:49 EDT 2017
 #--------------------------------------------------------------------------------------------------#
-0502: NETSTAT
+0502={NETSTAT]
 # Get a general overview of the network status for your system
 netstat
 # List all active ports and connections (external)
@@ -377,7 +507,7 @@ netstat -tunlp
 # List all active ports and connections (internal & external)
 netstat -pln
 #--------------------------------------------------------------------------------------------------#
-0503: WGET
+0503={WGET]
 # Use the wget tool to copy, download, or mirror entire websites. 
 # Download site with links not adjusted for static use, which means, all internal hyperlinks on 
 # the site will point to their original locations online.
@@ -391,11 +521,14 @@ wget -m -k -w 5 https://example.com/
 # Note that the number ("5") in the example above is the number of seconds to wait. This can be
 # adjusted to minutes by appending the suffix of "m" for minutes, "h" for hours, or "d" for days.
 #--------------------------------------------------------------------------------------------------#
-0504: ARP-SCAN
+0504={ARP-SCAN}
 # Full network analysis tool to see what IPs are connected to the local network
 # Install with the following
 sudo apt-get install arp-scan
-# Run a scan on the local network with the following command
+# Run a scan on the local network with the following command:
+sudo arp-scan --localnet
+# If connected to the local network via multiple network interfaces or connections, specify the
+# one you wish to use for the arp-scan with the --interface flag like this:
 sudo arp-scan --interface=eth0 --localnet
 # To discover which interface you are using to interact with the local network
 # run the following command
@@ -403,33 +536,45 @@ ifconfig
 # Learn more about the arp-scan tool at the following address: 
 firefox http://manpages.ubuntu.com/manpages/zesty/en/man1/arp-scan.1.html
 #--------------------------------------------------------------------------------------------------#
-0505: LSOF 
+0505={LSOF}
 # List Process IDs with corresponding port numbers and what external IP addresses are
 # connected to them
 lsof -i -P
 #--------------------------------------------------------------------------------------------------#
-0506: NETWORK MAPPING UTILITY
+0506={NETWORK MAPPING UTILITY}
 # (AFTER INSTALL) run nmap with the following command:
 nmap
 # Scan the open ports and status of a specific IP address (this example uses the IP address
 # of 192.168.1.50 as an example) with the following command: 
 nmap 192.168.1.50
+# NOTE: In many jurisdictions it is illegal to scan the ports of systems which you don't control.
+# Hackers are able to maintain a level of annonymity by spoofing their MAC address during a port
+# scan by using the --spoof-mac flag like this:
+nmap -spoof-mac 00:11:22:33:44:55 192.168.1.50
+# By spoofing your MAC address you are able to assume the identity of another trusted
+# computer on the target network (if you know the MAC address of any of the authorized computers)
+# or, at the very least, you are able to distance yourself from using the true identity of your own
+# computer. (The example above uses the false MAC address, 00:11:22:33:44:55).
+# Output the results of your nmap scan to a text file ("scan.txt")
+nmap -oN scan.txt 192.168.1.50
+# Print the output to a text file while spoofing your MAC address:
+nmap -spoof-mac 00:11:22:33:44:55 -oN scan.txt 192.168.1.50
 #--------------------------------------------------------------------------------------------------#
-0507: DISPLAY LOCAL GATEWAY
+0507={DISPLAY LOCAL GATEWAY}
 ip r
 # Additionally, you can use the following command in netstat:
 netstat -r -n
 #--------------------------------------------------------------------------------------------------#
-0508: DISPLAY THE LOCAL DNS INFORMATION
+0508={DISPLAY THE LOCAL DNS INFORMATION}
 cat /etc/resolv.conf
 #--------------------------------------------------------------------------------------------------#
-0509: KERNEL IP ROUTING TABLE
+0509={KERNEL IP ROUTING TABLE}
 # Display the system kernel's IP routing table with the following command:
 route
 # View the same table with IP addresses instead of gateway names with this command:
 route -n
 #--------------------------------------------------------------------------------------------------#
-0510: REMOTE ACCESS VIA SECURE SHELL
+0510={REMOTE ACCESS VIA SECURE SHELL}
 # Secure shell, known as SSH, is a powerful tool which you can use to control other computers
 # located outside of your local network. To use this tool you must first generate a new key (if it
 # is your first time using SSH). Key generation occurs with the related tool:
@@ -445,11 +590,11 @@ chmod 400 ~/.ssh/[KEYFILE]
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0600: BUILDING & RUNNING SHELL SCRIPTS
+0600={BUILDING AND USING SHELL SCRIPTS}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-0601: RUN SHELL SCRIPTS
+0601={RUN SHELL SCRIPTS}
 > METHOD 1
 # Once you are in the correct current folder you can run the script like this:
 ./script1.sh
@@ -471,13 +616,13 @@ chmod +x /path/to/yourscript.sh
 # directory, you can simplify this to:
 ./yourscript.sh
 #--------------------------------------------------------------------------------------------------#
-0602: SHELL SCRIPT SYNTAX CONSIDERATIONS
+0602={SHELL SCRIPT SYNTAX CONSIDERATIONS}
 # Always begin a new script file with the following opening line (including the hashtag "#"):
 #! /bin/bash
 # Be very careful to avoid unintentionally leaving white space
 # Pay attention to every last detail as the smallest mistake can cause the script to not function
 #--------------------------------------------------------------------------------------------------#
-0603: OPENING FILES LOCALLY
+0603={OPENING FILES LOCALLY}
 # One feature of a script that is often overlooked is portability. In order to be able to use a
 # script on a different system it is important to not lock your script into an unflexible 
 # configuration. Keep the script flexible by using the following function on files you wish to
@@ -490,7 +635,7 @@ xdg-open
 # Couple this command with realpath like this:
 xdg-open `realpath MyFile.txt`
 #--------------------------------------------------------------------------------------------------#
-0604: DEFINE AND ACCESS VARIABLES
+0604={DEFINE AND ACCESS VARIABLES}
 # A variable assignment has the form of a variable name, followed by the equal sign, followed by 
 # the (optional) value. The following example is a valid variable assignment:
 ABC=123
@@ -516,7 +661,7 @@ declare "$x=$y"
 # The following code is equivalent to a=3
 let a="1 + 2"
 #--------------------------------------------------------------------------------------------------#
-0605: BUILD A STRING FROM VARIABLE INPUTS
+0605={BUILD A STRING FROM VARIABLE INPUTS}
 # Example (1):
 var="${var}string"
 # Example (2):
@@ -532,7 +677,7 @@ echo "${_p} and ${_u}"
 echo "${_p}/${_u}"
 echo "Output: $out"
 #--------------------------------------------------------------------------------------------------#
-0606: REFERENCE LINES IN A TEXT FILE TO BE USED IN A CURL FUNCTION
+0606={REFERENCE LINES IN A TEXT FILE TO BE USED IN A CURL FUNCTION}
 # Use lines from a source text file as inclusions in a curl function
 cr=$'\r'
 while read line
@@ -542,7 +687,7 @@ do
          > "/home/user/archive/$line"
 done < textfile.txt
 #--------------------------------------------------------------------------------------------------#
-0607: CORRECT USE OF CURLY BRACKETS
+0607={CORRECT USE OF CURLY BRACKETS}
 # Use ${ } to enclosure a variable.
 # Without curly brackets:
 VAR="foo"
@@ -564,51 +709,49 @@ foobar
 WEBSITE="danydiop" 
 /usr/bin/mysqldump --opt -u root --ppassword ${WEBSITE} > ${WEBSITE}.sql
 #--------------------------------------------------------------------------------------------------#
-####################################################################################################
-
-0700: PROGRAM CROSS-PLATFORM SOFTWARE WITH MONO
-
-####################################################################################################
-#--------------------------------------------------------------------------------------------------#
-0701: DEPENDENCIES AND INSTALL
-# Add Mono development packages to Ubuntu
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 
-3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu xenial main" | 
-sudo tee /etc/apt/sources.list.d/mono-official.list
-sudo apt-get update
-sudo apt-get install mono-devel
-# Install the MonoDevelop IDE
-sudo apt-get update
-sudo apt-get install monodevelop
-# Use the Mono IDE 'MonoDevelop"
-monodevelop
-# Create your first ASP.NET program
-# Read the short tutorial here: 
-URL: http://www.monodevelop.com/documentation/creating-aspnet-projects/
+0608={DIALOGUE BOXES}
+# Use dialogue boxes located inside the terminal to interact with the users of your script
+# First download the package which enables this feature (make sure that you include this in your
+# script's dependencies listing as well). Install with the following command:
+sudo apt-get install dialog
+# Build a script which uses this feature like this: 
+if (dialog --title "Fun Checker"  --yesno "Are you having fun?" 6 25)
+then echo "glad you are having fun!"
+else echo "well that sucks..."
+fi
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-0800: FIND INFORMATION FROM THE CRYPTOCURRENCY INDUSTRY
+0700={*************}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-0801: API - BITTREX
-# (OPTIONAL) make the alias "shortcut" phrase in your terminal:
+
+#--------------------------------------------------------------------------------------------------#
+####################################################################################################
+
+0800={WORKING WITH BLOCKCHAIN}
+
+####################################################################################################
+#--------------------------------------------------------------------------------------------------#
+0801={BITCOIN PRICE}
+# Check the final daily bitcoin prices (averaged via Coindesk Bitcoin Price Index). Response data
+# is listed for the past month and updated daily.
+curl https://api.coindesk.com/v1/bpi/historical/close.json | python -m json.tool
+# Current BTC/USD exchange rate (as per the Coindesk Bitcoin Price Index)
+curl https://api.coindesk.com/v1/bpi/currentprice/USD | python -m json.tool
+#--------------------------------------------------------------------------------------------------#
+0802={CRITICAL API ENDPOINTS}
+# (OPTIONAL): The following commands can be shortened by creating an alias phrase (basically a
+# shortcut variable) for the Python-powered json cleaning tool with the following command:
 alias json-tool='python -m json.tool'
-# Now pull all currency pairs from the internet and write them into a text file like this:
-curl https://bittrex.com/api/v1.1/public/getcurrencies | json-tool | nano bittrex-getcurrencies.txt
+# Pull all currency pairs from Bittrex exchange and write them into a local file like this:
+curl https://bittrex.com/api/v1.1/public/getcurrencies | python -m json.tool > bittrex-getcurrencies.json
+# Check the top hashrates for the various assets connected to Minergate mining pool
+# NOTE: (Assets included are XMR, XDN, BCN, AEON, and others)
+curl https://api.minergate.com/1.0/pool/top/hashrate | python -m json.tool > minergate-thash.json
 #--------------------------------------------------------------------------------------------------#
-0802: API - MINERGATE
-curl -X GET https://api.minergate.com/1.0/pool/top/hashrate | json-tool
-#--------------------------------------------------------------------------------------------------#
-####################################################################################################
-
-0900: WORKING WITH BLOCKCHAIN
-
-####################################################################################################
-#--------------------------------------------------------------------------------------------------#
-0901: WAVES PLATFORM (LITE CLIENT AND FULL NODE)
+0803={WAVES PLATFORM LITE CLIENT AND FULL NODE}
 # Systemd users can start the node with 
 sudo systemctl start waves.service 
 # Please note: use "waves-testnet" for testnet in the previous command if you are going to be 
@@ -618,7 +761,7 @@ sudo systemctl enable waves.service
 # If you are using the systemd Waves node, you can view your live logs with the following command:
 journalctl -u waves.service -f
 #--------------------------------------------------------------------------------------------------#
-0902: UNINSTALL ETHEREUM
+0804={UNINSTALL ETHEREUM}
 # IMPORTANT NOTE: Before uninstalling any blockchain software, be sure to back up a copy of your
 # keystore files if your wallet has any digital assets inside. Otherwise you will lose access to
 # everything in your wallet. To uninstall the Mist browser/geth/wallet, use the following 
@@ -636,59 +779,61 @@ rm -rf .ethereum/keystore
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-1000: PERMISSIONS AND USER ACCESS 
+1000={PERMISSIONS AND USER ACCESS}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-1001: ADD A NEW USER
+1001={ADD A NEW USER}
+# Add a new user (or add a series of new users) to your system
 sudo adduser username1 username1 username3
 #--------------------------------------------------------------------------------------------------#
-1002: DISCOVER WHAT YOUR USERNAME IS
+1002={PRINT YOUR USERNAME IN THE TERMINAL}
 whoami
 #--------------------------------------------------------------------------------------------------#
-1003: DISCOVER WHAT USER GROUPS EXIST
+1003={DISCOVER WHAT USER GROUPS EXIST}
 groups
 #--------------------------------------------------------------------------------------------------#
-1004: DISCOVER USER (bob)s GROUP MEMBERSHIPS
+1004={DISCOVER USER GROUP MEMBERSHIPS}
+# Print the groups in which bob is a member
 groups bob
 #--------------------------------------------------------------------------------------------------#
-1005: FIND OWNER AND GROUP OF A DIRECTORY
+1005={FIND OWNER AND GROUP OF A DIRECTORY}
 sudo ls -l /path/to/file
 # such that the third column of the output is the owner (user) and the fourth column 
 # of the output is the group
 #--------------------------------------------------------------------------------------------------#
-1006: GIVE USER OWNERSHIP OF A DIRECTORY
+1006={GIVE USER OWNERSHIP OF A DIRECTORY}
 sudo chown -R username directory
 #--------------------------------------------------------------------------------------------------#
-1007: GIVE FULL READ/WRITE PERMISSIONS
+1007={GIVE FULL READ/WRITE PERMISSIONS}
 sudo chmod -R u+rX directory
 #--------------------------------------------------------------------------------------------------#
-1008: MAKE A FILE ("MyScript.File") EXECUTABLE
+1008={MAKE A FILE ("MyScript.File") EXECUTABLE}
 sudo chmod +x MyScript.File
 #--------------------------------------------------------------------------------------------------#
-1009: VIEW ALL USER ACCOUNTS ON THE SYSTEM
+1009={VIEW ALL USER ACCOUNTS ON THE SYSTEM}
 compgen -u
 # The following command will also perform this function but is said by some to be more thorough
 sudo getent passwd
 #--------------------------------------------------------------------------------------------------#
-1010: VIEW ALL USER-GROUPS ON THE SYSTEM
+1010={VIEW ALL USER-GROUPS ON THE SYSTEM}
 compgen -g
 # Also the following:
 sudo getent group
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-1100: WORKING WITH PPAs 
+1100={WORKING WITH PPAs}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-1101: ADD A NEW PPA
+1101={ADD A NEW PPA}
 sudo add-apt-repository ppa:PPA_NAME/ppa
 #--------------------------------------------------------------------------------------------------#
-1102: LIST ALL PPAs ADDED TO YOUR SYSTEM
+1102={LIST ALL PPAs ADDED TO YOUR SYSTEM}
 sudo ls /etc/apt/sources.list.d
 #--------------------------------------------------------------------------------------------------#
-1103: REMOVE PPA FROM UPDATE SOURCES
+1103={REMOVE PPA FROM UPDATE SOURCES}
 > METHOD 1
 # NOTE: Does not remove any software
 sudo add-apt-repository --remove ppa:PPA_NAME/ppa
@@ -696,7 +841,7 @@ sudo add-apt-repository --remove ppa:PPA_NAME/ppa
 # NOTE: Does not remove any software
 sudo rm -i /etc/apt/sources.list.d/PPA_NAME.list
 #--------------------------------------------------------------------------------------------------#
-1104: REMOVE PPA FROM SOURCES AND UNINSTALL SOFTWARE
+1104={REMOVE PPA FROM SOURCES AND UNINSTALL SOFTWARE}
 # Install the ppa-purge tool
 sudo apt-get install ppa-purge
 # Use the ppa-purge tool with this command
@@ -705,19 +850,20 @@ sudo ppa-purge ppa-url
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-1200: COMMANDS FOR DELETING FILES 
+1200={COMMANDS FOR DELETING FILES}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-1201: THE TERMINAL COMMAND FOR DELETING FILES 
-rm 
-1202: GENERAL FORMATTING AND SYNTAX 
+1201={THE TERMINAL COMMAND FOR DELETING FILES}
+rm
+#--------------------------------------------------------------------------------------------------#
+1202={GENERAL FORMATTING AND SYNTAX}
 rm [-f|i|I|q|R|r|v] [file]
 # rm removes a file if you specify a correct path for it 
 # Sometimes you may not have the write permissions for a file, in that case it asks 
 # you for confirmation. Type yes if you want to delete it.
 #--------------------------------------------------------------------------------------------------#
-1203: OPTIONS FOR rm
+1203={OPTIONS FOR rm}
 -f
 # Deletes read-only files immediately without any confirmation.
 # If both -f and -i are used then the one which appears last in the terminal is used by rm.
@@ -739,7 +885,7 @@ rm [-f|i|I|q|R|r|v] [file]
 # Prompts every time when an attempt is made to delete for than 3 files at a time or while
 # removing recursively. 
 #--------------------------------------------------------------------------------------------------#
-1204: IMPORTANT PRECAUTIONS
+1204={IMPORTANT PRECAUTIONS}
 # Never type the following command into a terminal:
 sudo rm -R / 
 # or 
@@ -749,18 +895,18 @@ sudo rm -r /
 # Another command to avoid using is:
 sudo rm -f /*
 #--------------------------------------------------------------------------------------------------#
-1205: ADDITIONAL NOTES
+1205={ADDITIONAL NOTES}
 # It is possible to recover files deleted through rm
 # If you want to permanently delete a file use the command:
 shred
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-1300: BUILD MIND MAPS WITH GRAPHVIZ-DEV 
+1300={BUILD MIND MAPS WITH GRAPHVIZ-DEV}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-1301: BASIC INFORMATION
+1301={BASIC INFORMATION}
 # Project Website
 firefox http://www.graphviz.org/
 # Live web-version
@@ -768,7 +914,7 @@ firefox http://www.webgraphviz.com/
 # Launchpad Profile
 firefox https://launchpad.net/~gviz-adm/+archive/ubuntu/graphviz-dev
 #--------------------------------------------------------------------------------------------------#
-1302: INSTALLING GRAPHVIZ
+1302={INSTALLING GRAPHVIZ}
 # NOTE: Do not use the instructions located on the Graphviz website for installing the program
 # onto an Ubuntu system. The instructions are outdated and have many errors. Instead, use the 
 # official Ubuntu implementation of graphviz by installing with the following command:
@@ -777,34 +923,34 @@ sudo apt-get install graphviz-dev
 /usr/lib/graphviz 
 /usr/include/graphviz
 #--------------------------------------------------------------------------------------------------#
-1303: LEARN TO DRAW FOR GRAPHVIZ
+1303={LEARN TO DRAW FOR GRAPHVIZ}
 # Graphviz (and the xdot tool below) read/write files called "dot" files. 
 # Here is the official guide to creating and working with dot files:
 URL: http://www.graphviz.org/Documentation/dotguide.pdf
 #--------------------------------------------------------------------------------------------------#
-1304: ADDITIONAL FEATURES IN THE xdot TOOL
+1304={ADDITIONAL FEATURES IN THE xdot TOOL}
 # You can also add the additional graphical features available in the xdot tool
 # xdot can read and explore files created by graphviz. Get xdot here:
 URL: https://apps.ubuntu.com/cat/applications/natty/xdot/
 #--------------------------------------------------------------------------------------------------#
 ####################################################################################################
 
-1400: NODE.JS AND NODE PACKAGE MANAGER
+1400={NODE.JS AND NODE PACKAGE MANAGER}
 
 ####################################################################################################
 #--------------------------------------------------------------------------------------------------#
-1401: NODE.JS INTRODUCTION
+1401={NODE.JS INTRODUCTION}
 # SOURCE: https://nodejs.org/en/
 # node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an 
 # event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package 
 # ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 #--------------------------------------------------------------------------------------------------#
-1402: NODE PACKAGE MANAGER INTRODUCTION
+1402={NODE PACKAGE MANAGER INTRODUCTION}
 # SOURCE: https://www.npmjs.com/
 # npm is the package manager for JavaScript and the world’s largest software registry. 
 # Discover packages of reusable code — and assemble them in powerful new ways.
 #--------------------------------------------------------------------------------------------------#
-1403: INSTALLING NODE.JS
+1403={INSTALLING NODE.JS}
 # To install node.js on Ubuntu, Debian, or similar system, use the following commands: 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -813,7 +959,7 @@ sudo apt-get install -y build-essential
 # Check the version of node.js that you are running with the following command: 
 node -v
 #--------------------------------------------------------------------------------------------------#
-1404: INSTALLING NPM
+1404={INSTALLING NPM}
 # npm is automatically installed on your system when you install node.js
 # Check the version of npm that you are running with the following command: 
 npm -v
@@ -821,7 +967,7 @@ npm -v
 # updates with the following command:
 npm install npm@latest -g
 #--------------------------------------------------------------------------------------------------#
-1405: IMPORTANT NOTE ABOUT PERMISSIONS
+1405={IMPORTANT NOTE ABOUT PERMISSIONS}
 # Many users experience permissions errors while using npm and node.js. While this can be a 
 # frustrating experience, it is easily resolved with the following method found at this location:
 URL: https://docs.npmjs.com/getting-started/fixing-npm-permissions
