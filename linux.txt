@@ -3,7 +3,7 @@
 ########################################
 
 ################        ################
-#! /bin/bash   #        #   20171109   #
+#! /bin/bash   #        #   20171112   #
 ################        ################
 
 ################################################################################
@@ -13,7 +13,7 @@
 000:001={ATTRIBUTION}
 #------------------------------------------------------------------------------#
 000:001:001={UPDATED}
-# 20171109
+# 20171112
 000:001:002={CREDITS}
 # h8rt3rmin8r
 # 161803398@email.tg
@@ -438,6 +438,20 @@ date '+%Y%m%d-%H%M%S'
 ################################################################################
 #------------------------------------------------------------------------------#
 002:001={A}
+
+002:001={A}-[ apache2 ]
+# The Apache2 server software is one of the easiest to initialize and manage of the open source web server packages available.
+# Install Apache2 with the following command:
+sudo apt-get install apache2
+# Once installation has completed, initialize the server with this command:
+sudo /etc/init.d/apache2 start
+# If you are setting up your server on the Google Compute Engine, make sure that you do the following steps to ensure that your new server is able to accept incoming HTTP requests from the Internet:
+#-> Go to the VM Instances page in the Google Cloud Platform Console. Go to the VM Instances page.
+#-> Click the name of the instance that you are trying to connect to.
+#-> Under Firewalls, make sure the Allow HTTP traffic box is checked. ...
+#-> Save your changes.
+# Now you can view your live website root by navigating to the following:
+cd /var/www
 
 002:001={A}-[ arp-scan ]
 # Full network analysis tool to see what IPs are connected to the local network
@@ -1317,12 +1331,12 @@ sudo apt-get install graphviz-dev
 # node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. 
 # Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
-004:005:001={NODE PACKAGE MANAGER INTRODUCTION}
+004:005:002={NODE PACKAGE MANAGER INTRODUCTION}
 # SOURCE: https://www.npmjs.com/
 # npm is the package manager for JavaScript and the world’s largest software registry. 
 # Discover packages of reusable code — and assemble them in powerful new ways.
 
-004:005:001={INSTALLING NODE.JS}
+004:005:003={INSTALLING NODE.JS}
 # To install node.js on Ubuntu, Debian, or similar system, use the following commands: 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -1331,14 +1345,14 @@ sudo apt-get install -y build-essential
 # Check the version of node.js that you are running with the following command: 
 node -v
 
-004:005:001={INSTALLING NPM}
+004:005:004={INSTALLING NPM}
 # npm is automatically installed on your system when you install node.js
 # Check the version of npm that you are running with the following command: 
 npm -v
 # npm automatically updates when you update your system. However, you can force npm to check for updates with the following command:
 npm install npm@latest -g
 
-004:005:001={IMPORTANT NOTE ABOUT PERMISSIONS}
+004:005:005={IMPORTANT NOTE ABOUT PERMISSIONS}
 # Many users experience permissions errors while using npm and node.js. While this can be a frustrating experience, it is easily resolved with the following method found at this location:
 URL: https://docs.npmjs.com/getting-started/fixing-npm-permissions
 # In brief, the fix uses the following steps: 
@@ -1349,7 +1363,19 @@ npm config get prefix
 sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 # This changes the permissions of the sub-folders used by npm and some other tools (lib/node_modules, bin, and share).
 #------------------------------------------------------------------------------#
-004:006={}
+004:006={APACHE2}
+# The Apache2 server software is one of the easiest to initialize and manage of the open source web server packages available.
+# Install Apache2 with the following command:
+sudo apt-get install apache2
+# Once installation has completed, initialize the server with this command:
+sudo /etc/init.d/apache2 start
+# If you are setting up your server on the Google Compute Engine, make sure that you do the following steps to ensure that your new server is able to accept incoming HTTP requests from the Internet:
+#-> Go to the VM Instances page in the Google Cloud Platform Console. Go to the VM Instances page.
+#-> Click the name of the instance that you are trying to connect to.
+#-> Under Firewalls, make sure the Allow HTTP traffic box is checked. ...
+#-> Save your changes.
+# Now you can view your live website root by navigating to the following:
+cd /var/www
 #------------------------------------------------------------------------------#
 004:007={}
 #------------------------------------------------------------------------------#
