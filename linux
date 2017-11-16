@@ -3,7 +3,7 @@
 ########################################
 
 ################        ################
-#! /bin/bash   #        #   20171112   #
+#! /bin/bash   #        #   20171116   #
 ################        ################
 
 ################################################################################
@@ -13,7 +13,7 @@
 000:001={ATTRIBUTION}
 #------------------------------------------------------------------------------#
 000:001:001={UPDATED}
-# 20171112
+# 201711126
 000:001:002={CREDITS}
 # h8rt3rmin8r
 # 161803398@email.tg
@@ -257,6 +257,20 @@ ls
 ls -a
 # View all files and folders in your current directory and INCLUDE file ownership and last-updated information in the output:
 ls -l
+# View the contents of a full series of directories and subdirectories with "ls" in the following format:
+ls project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}
+# The result of this command will output all contents of the following directories as a sectioned list with each section being the respective directory path name: 
+project/bin:
+project/demo/stat/a:
+project/doc/html:
+project/doc/info:
+project/doc/pdf:
+project/lib/ext:
+project/src:
+# The following command is a more simplified version of this listing feature:
+ls {bin,demo,doc,lib,src}
+# The command above will list the contents of all directories listed inside of the curly braces. To generate a high level of detail about each of the files listed in the output, simply add the "-al" flag like this: 
+ls -al {bin,demo,doc,lib,src}
 #------------------------------------------------------------------------------#
 001:002={FIND OUT WHERE YOU ARE}
 # Print the name of the current/working directory
@@ -332,8 +346,24 @@ whereis MyFile
 001:008={MAKING NEW FOLDERS}
 # The following command will create a new folder named "MyNewFolder" in your current directory:
 mkdir MyNewFolder
+# If you attempt to create a new directory in a location where one by the same name already exists, various complications can arrise (especially if the mkdir command is being used in a shell script). To avoid all such complications, simply use the "-p" flag like this: 
+mkdir -p MyNewFolder
+# If the directory is already in existance then the command above would result in a blank output (thus avoiding any unnecessary complications in your script). 
 # You can also create a folder in a different directory by specifying the exact path to the new directory you want to create:
 mkdir ~/Documents/MyNewFolder
+# Generate a list of directories all at the same time and in the same location with the following command: 
+mkdir -p {bin,demo,doc,lib,src}
+# Please note that when creating numerous directories at the same time, it is advised that you employ the -p command to keep the outputs clean and to avoid any errors which could cause any number of issues if undetected.
+# To create a complex array of various directories and multiple subdirectories within them, use a single command in the following format:
+mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}
+# The result will be an initial new directory ("project") inside of which the following subdirectories are created:
+#-> project/bin
+#-> project/demo/stat/a
+#-> project/doc/html
+#-> project/doc/info
+#-> project/doc/pdf
+#-> project/lib/ext
+#-> project/src
 #------------------------------------------------------------------------------#
 001:009={MAKING NEW DOCUMENTS}
 # There are many ways to create a new document and there are countless types of documents that you could create.
