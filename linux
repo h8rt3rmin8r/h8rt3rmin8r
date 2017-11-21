@@ -3,7 +3,7 @@
 ########################################
 
 ################        ################
-#! /bin/bash   #        #   20171116   #
+#! /bin/bash   #        #   20171120   #
 ################        ################
 
 ################################################################################
@@ -13,7 +13,7 @@
 000:001={ATTRIBUTION}
 #------------------------------------------------------------------------------#
 000:001:001={UPDATED}
-# 201711126
+# 20171120
 000:001:002={CREDITS}
 # h8rt3rmin8r
 # 161803398@email.tg
@@ -138,7 +138,7 @@
 # 003:005={SCHEDULING TASKS WITH CRON}
 # 003:006={CHECK YOUR IP ADDRESS}
 # 003:007={NETWORK CONNECTIONS}
-# 003:008={NETWORK AND PORT MAPPING}
+# 003:008={NETWORK AND PORT MAPPING WITH NMAP}
 # 003:009={SECURE SHELL FOR REMOTE ACCESS}
 # 003:010={DISPLAY LOCAL DNS INFORMATION}
 # 003:011={DISPLAY LOCAL GATEWAY INFORMATION}
@@ -190,11 +190,11 @@
 # 005={CRYPTOGRAPHY}
 #---------------------------------------------------#
 # 005:001={GENERATE AND MANAGE AN IDENTITY}
-# 005:002={}
-# 005:003={}
-# 005:004={}
-# 005:005={}
-# 005:006={}
+# 005:002={IMPORT, EXPORT, AND REFRESH KEYS}
+# 005:003={SIGN A FOREIGN GPG KEY}
+# 005:004={ASYMMETRIC ENCRYPTION WITH GPG}
+# 005:005={ASYMMETRIC DECRYPTION WITH GPG}
+# 005:006={SYMMETRIC ENCRYPTION}
 # 005:007={}
 # 005:008={}
 # 005:009={}
@@ -220,8 +220,8 @@
 #---------------------------------------------------#
 # 006:001={CHECK THE CURRENT BITCOIN PRICE}
 # 006:002={OTHER USEFUL CRYPTOCURRENCY APIS}
-# 006:003={}
-# 006:004={}
+# 006:003={START WAVES MASTER NODE}
+# 006:004={UNINSTALL ETHEREUM}
 # 006:005={}
 # 006:006={}
 # 006:007={}
@@ -710,6 +710,17 @@ lynx -listonly -dump url.example.com | nano url.example.com.txt
 #------------------------------------------------------------------------------#
 002:013={M}
 
+002:013={M}-[ md5sum ]
+# Calculate the md5 check sum of a file, "MyFile":
+md5sum MyFile
+# The result will be displayed in the terminal. 
+# To display the md5 sum of all files in the current directory, use the command:
+md5sum *
+# If you have two directories which contain files that you wish to compare, the following command will hash both sets of files and output the results into the terminal and into a file that you can manually inspect:
+cd $HOME/directory1/ && md5sum * | cat -n > $HOME/sumCompare.txt && cd $HOME/directory2/ && md5sum * | cat -n >> $HOME/sumCompare.txt && cat $HOME/sumCompare.txt
+# Add some additional formatting into the comparison output file with the following modifications:
+cd $HOME/directory1/ && md5sum * | cat -n > $HOME/sumCompare.txt && echo '#------------------------------------------#' >> $HOME/sumCompare.txt && cd $HOME/directory2/ && md5sum * | cat -n >> $HOME/sumCompare.txt && echo '#------------------------------------------#' >> $HOME/sumCompare.txt && cat $HOME/sumCompare.txt
+
 002:013={M}-[ mkdir ]
 # The following command will create a new folder named "MyNewFolder" in your current directory:
 mkdir MyNewFolder
@@ -1080,7 +1091,7 @@ route
 # View the same table with IP addresses instead of gateway names with this command:
 route -n
 #------------------------------------------------------------------------------#
-003:008={NETWORK AND PORT MAPPING}
+003:008={NETWORK AND PORT MAPPING WITH NMAP}
 # (AFTER INSTALL) run nmap with the following command:
 nmap
 # Scan the open ports and status of a specific IP address (this example uses the IP address
