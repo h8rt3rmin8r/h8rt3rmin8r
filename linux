@@ -3,7 +3,7 @@
 ########################################
 
 ################        ################
-#! /bin/bash   #        #   20171120   #
+#! /bin/bash   #        #   201711203  #
 ################        ################
 
 ################################################################################
@@ -13,7 +13,7 @@
 000:001={ATTRIBUTION}
 #------------------------------------------------------------------------------#
 000:001:001={UPDATED}
-# 20171120
+# 20171123
 000:001:002={CREDITS}
 # h8rt3rmin8r
 # 161803398@email.tg
@@ -1237,6 +1237,10 @@ xdg-open `realpath MyFile.txt`
 # A variable assignment has the form of a variable name, followed by the equal sign, followed by 
 # the (optional) value. The following example is a valid variable assignment:
 ABC=123
+# Please note these official guidelines when naming a variable:
+#
+# Environment variable names used by the utilities in the Shell and Utilities volume of IEEE Std 1003.1-2001 consist solely of uppercase letters, digits, and the '_' (underscore) from the characters defined in Portable Character Set and do not begin with a digit. Other characters may be permitted by an implementation; applications shall tolerate the presence of such names.
+#
 # To access the value stored in a variable, prefix its name with the dollar sign ($)
 # The following script will output the result: "h8rt3rmin8r"
 NAME="h8rt3rmin8r"
