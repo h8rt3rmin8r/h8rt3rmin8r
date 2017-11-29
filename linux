@@ -3,7 +3,7 @@
 ########################################
 
 ################        ################
-#! /bin/bash   #        #   201711203  #
+#! /bin/bash   #        #   20171129   #
 ################        ################
 
 ################################################################################
@@ -13,7 +13,7 @@
 000:001={ATTRIBUTION}
 #------------------------------------------------------------------------------#
 000:001:001={UPDATED}
-# 20171123
+# 20171129
 000:001:002={CREDITS}
 # h8rt3rmin8r
 # 161803398@email.tg
@@ -1422,7 +1422,18 @@ sudo /etc/init.d/apache2 start
 # Now you can view your live website root by navigating to the following:
 cd /var/www
 #------------------------------------------------------------------------------#
-004:007={}
+004:007={GIT}
+# Create and edit projects with remote teams using git
+# Install git with the following:
+sudo apt-get install git
+# Configure git with the legacy setting of mirroring the repository:
+git config --global push.default matching
+# To have git wait for you to make comments in an external editor prior to pushing such commit, adjust the configurations like this:
+git config --global core.editor "[your editor] -w"
+# Download updates from the repository
+git pull
+# Push new files up to the repository with notes on the commit:
+git commit -am "Some notes about this commit"
 #------------------------------------------------------------------------------#
 004:008={}
 #------------------------------------------------------------------------------#
