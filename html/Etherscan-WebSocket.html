@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 shrink-to-fit=no">
+    <title>Etherscan WebSocket API</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="https://h8rt3rmin8r.com/js/Etherscan-WebSocket.js"></script>
+</head>
+
+<body>
+    <b>Etherscan Websocket API</b>
+    <hr>
+    <br /> wss://socket.etherscan.io/wshandler
+    <br />
+    <a href="http://etherscan.io/apis#websocket">API Docs</a>
+    <br />
+    <br />
+    <br />
+    <input type="button" value="Connect To Socket Server" id="btnConnect" /> &nbsp;
+    <input type="button" value="Disconnect" id="btnDisconnect" />
+    <br />
+    <br />
+    <select id="textSelect">
+        <option>{"event": "ping"}</option>
+        <option>{"event": "txlist", "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413"}</option>
+        <option>{"event": "txlist", "address": "0x2a65aca4d5fc5b5c859090a6c34d164135398226"}</option>
+        <option>{"event": "txlist", "address": "0x151255dd9e38e44db38ea06ec66d0d113d6cbe37"}</option>
+        <option>{"event": "txlist", "address": "0x4bb96091ee9d802ed039c4d1a5f6216f90f81b01"}</option>
+        <option>{"event": "txlist", "address": "0x61c808d82a3ac53231750dadc13c777b59310bd9"}</option>
+        <option>{"event": "txlist", "address": "0x1a060b0604883a99809eb3f798df71bef6c358f1"}</option>
+        <option>{"event": "txlist", "address": "0xf8b483dba2c3b7176a3da549ad41a48bb3121069"}</option>
+        <option>Hello World</option>
+    </select>
+    <input type="button" value="Send" id="btnSend" />
+    <br />
+    <br />
+    <span id="spanStatus">(display)</span>
+    <ul id="discussion"></ul>
+</body>
+
+</html>
