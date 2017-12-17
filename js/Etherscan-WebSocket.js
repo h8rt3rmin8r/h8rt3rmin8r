@@ -1,9 +1,9 @@
 var ws;
 var socketurl;
 if (location.protocol === 'https:') {
-    socketurl = "wss://" + window.location.hostname + "/wshandler";
+    socketurl = "wss://" + "socket.etherscan.io" + "/wshandler";
 } else {
-    socketurl = "ws://" + window.location.hostname + "/wshandler";
+    socketurl = "ws://" + "socket.etherscan.io" + "/wshandler";
 }
 
 $().ready(function () {
