@@ -16,7 +16,7 @@
 # Create a cronjob to run this script every 5 minutes:
 #   $ crontab -e
 # Input the following into the crontab file:
-#   $ */5 * * * * ~/.bitcoin/btc-chain-data.sh
+#   $ 5 * * * * ~/.bitcoin/btc-chain-data.sh
 # Finally, make this script executable with the following:
 #   $ sudo chmod +x ~/.bitcoin/btc-chain-data.sh
 #
@@ -26,7 +26,7 @@
 
 # Script scheduling
 INTERVAL="5m"
-CRON="*/5 * * * *"
+CRON="5 * * * *"
 
 # Network information
 N01=`bitcoin-cli getpeerinfo`
