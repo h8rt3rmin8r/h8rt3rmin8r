@@ -1,44 +1,96 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fa.css" type="text/css">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fallout.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
     <title>Etherscan WebSocket API</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://resonova.github.io/favicons/spider/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://resonova.github.io/favicons/spider/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://resonova.github.io/favicons/spider/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://resonova.github.io/favicons/spider/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://resonova.github.io/favicons/spider/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://resonova.github.io/favicons/spider/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://resonova.github.io/favicons/spider/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://resonova.github.io/favicons/spider/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://resonova.github.io/favicons/spider/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://resonova.github.io/favicons/spider/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://resonova.github.io/favicons/spider/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://resonova.github.io/favicons/spider/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://resonova.github.io/favicons/spider/favicon-16x16.png">
+    <link rel="manifest" href="https://resonova.github.io/favicons/spider/manifest.json">
+    <link rel="icon" sizes="192x192" href="https://resonova.github.io/favicons/spider/android-icon-192x192.png">
+    <link rel="apple-touch-icon-precomposed" href="https://resonova.github.io/favicons/spider/apple-icon-precomposed.png">
+    <link rel="shortcut icon" href="https://resonova.github.io/favicons/spider/favicon.ico">
+    <meta name="msapplication-TileImage" content="https://resonova.github.io/favicons/spider/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#10871e">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#10871e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Reports">
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="https://h8rt3rmin8r.com/js/Etherscan-WebSocket.js"></script>
 </head>
 
 <body>
-    <b>Etherscan Websocket API</b>
-    <hr>
-    <br /> wss://socket.etherscan.io/wshandler
-    <br />
-    <a href="http://etherscan.io/apis#websocket">API Docs</a>
-    <br />
-    <br />
-    <br />
-    <input type="button" value="Connect To Socket Server" id="btnConnect" /> &nbsp;
-    <input type="button" value="Disconnect" id="btnDisconnect" />
-    <br />
-    <br />
-    <select id="textSelect">
-        <option>{"event": "ping"}</option>
-        <option>{"event": "txlist", "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413"}</option>
-        <option>{"event": "txlist", "address": "0x2a65aca4d5fc5b5c859090a6c34d164135398226"}</option>
-        <option>{"event": "txlist", "address": "0x151255dd9e38e44db38ea06ec66d0d113d6cbe37"}</option>
-        <option>{"event": "txlist", "address": "0x4bb96091ee9d802ed039c4d1a5f6216f90f81b01"}</option>
-        <option>{"event": "txlist", "address": "0x61c808d82a3ac53231750dadc13c777b59310bd9"}</option>
-        <option>{"event": "txlist", "address": "0x1a060b0604883a99809eb3f798df71bef6c358f1"}</option>
-        <option>{"event": "txlist", "address": "0xf8b483dba2c3b7176a3da549ad41a48bb3121069"}</option>
-        <option>Hello World</option>
-    </select>
-    <input type="button" value="Send" id="btnSend" />
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h2 class="display-3">Etherscan Websocket API</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-dark">
+            <div class="card-body">
+                <h2 class="card-title">wss://socket.etherscan.io/wshandler</h2>
+                <br>
+                <p class="card-text">
+                    <a href="http://etherscan.io/apis#websocket">API Docs</a>
+                    <pre>
+                    
+                    <input type="button" value="Connect To Socket Server" id="btnConnect" /> &nbsp;
+        <input type="button" value="Disconnect" id="btnDisconnect" />
     <br />
     <br />
-    <span id="spanStatus">(display)</span>
+    </pre>
+                </p>
+            </div>
+        </div>
+        <br>
+        <select id="textSelect">
+            <option>{"event": "ping"}</option>
+            <option>{"event": "txlist", "address": "0xbb9bc244d798123fde783fcc1c72d3bb8c189413"}</option>
+            <option>{"event": "txlist", "address": "0x2a65aca4d5fc5b5c859090a6c34d164135398226"}</option>
+            <option>{"event": "txlist", "address": "0x151255dd9e38e44db38ea06ec66d0d113d6cbe37"}</option>
+            <option>{"event": "txlist", "address": "0x4bb96091ee9d802ed039c4d1a5f6216f90f81b01"}</option>
+            <option>{"event": "txlist", "address": "0x61c808d82a3ac53231750dadc13c777b59310bd9"}</option>
+            <option>{"event": "txlist", "address": "0x1a060b0604883a99809eb3f798df71bef6c358f1"}</option>
+            <option>{"event": "txlist", "address": "0xf8b483dba2c3b7176a3da549ad41a48bb3121069"}</option>
+            <option>Hello World</option>
+        </select>
+        <input type="button" value="Send" id="btnSend" />
+        <br />
+        <br />
+        <span id="spanStatus">(display)</span>
     <ul id="discussion"></ul>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
