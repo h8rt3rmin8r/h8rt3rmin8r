@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML to JSON</title>
+  <meta content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no" name="viewport">
+
+  <style>
+    h1 {
+      font-size: 300%;
+    }
+
+    h2 {
+      font-size: 200%;
+    }
+
+    p {
+      font-size: 100%;
+    }
+
+    .badge {
+      cursor: pointer;
+      padding: 0 0 0 4px;
+    }
+
+    .inner {
+      float: left;
+      width: 100px;
+      height: 50px;
+      margin: 20px;
+      background: #ccc;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      content: "";
+      display: table;
+    }
+
+    .clearfix:after {
+      clear: both;
+    }
+
+    .btn {
+      border: none;
+      color: #ffffff;
+      padding: 8px 8px;
+      margin: 5px;
+      max-width: 40%;
+      min-width: 200px;
+      font-size: 10px;
+      cursor: pointer;
+      box-sizing: border-box;
+      box-shadow: 2px 3px 4px #000000;
+    }
+
+    .success {
+      background-color: #4CAF50;
+    }
+
+    /* Green */
+
+    .success:hover {
+      background-color: #46a049;
+    }
+
+    .info {
+      background-color: #2196F3;
+    }
+
+    /* Blue */
+
+    .info:hover {
+      background: #0b7dda;
+    }
+
+    .warning {
+      background-color: #ff9800;
+    }
+
+    /* Orange */
+
+    .warning:hover {
+      background: #e68a00;
+    }
+
+    .danger {
+      background-color: #f44336;
+    }
+
+    /* Red */
+
+    .danger:hover {
+      background: #da190b;
+    }
+
+    .default {
+      background-color: #e7e7e7;
+      color: "black";
+    }
+
+    /* Gray */
+
+    .default:hover {
+      background: #ddd;
+    }
+
+    * {
+      font-family: monospace;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 375px;
+      resize: none;
+      padding: 5px;
+    }
+
+    .content-section {
+      padding: 3px;
+      margin: 5px;
+      margin-left: 5%;
+      margin-right: 5%;
+      max-width: 90%;
+    }
+
+    .container {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      -webkit-overflow-scrolling: auto;
+      overflow: scroll;
+      display: flex;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 10px 10px 0;
+    }
+
+    .pane {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 2px;
+      font-size: 0.6em;
+      border: 1px black;
+      margin: 0px;
+      overflow: auto;
+    }
+
+    .pane label {
+      display: block;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    #source {
+      flex: 1;
+      display: flex;
+      align-self: auto;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      padding: 0px;
+      font-size: 0.6em;
+    }
+
+    #output {
+      margin: 0;
+      padding: 0;
+      font-size: 0.6em;
+      min-height: 500px;
+    }
+
+    #input {
+      margin: 0;
+      padding: 0;
+      font-size: 0.6em;
+    }
+  </style>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://resonova.com/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://resonova.com/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://resonova.com/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://resonova.com/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://resonova.com/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://resonova.com/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://resonova.com/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://resonova.com/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://resonova.com/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://resonova.com/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://resonova.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://resonova.com/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://resonova.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://resonova.com/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="https://resonova.com/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="https://resonova.com/favicon/android-icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="https://resonova.com/favicon/apple-icon-precomposed.png">
+  <meta name="msapplication-TileImage" content="https://resonova.com/favicon/ms-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <link rel="shortcut icon" href="https://resonova.com/favicon/ms-icon-144x144.png">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+  <link href="https://resonova.com/css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <!-- HEADER AREA -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="content-section">
+      <h1 class="display-3">HTML to JSON</h1>
+      <p class="lead">Adapted by
+        <a href='https://resonova.com'>ResoNova </a>from
+        <a href='http://chrisandrejewski.com'>Chris Andrejewski's </a>project,
+        <a href='https://github.com/andrejewski/himalaya'>"Himalaya"</a>
+      </p>
+    </div>
+  </div>
+  <!-- header ending -->
+
+  <!-- INSERT REFRESH BUTTON HERE -->
+  <div class="content-section">
+    <p>Paste some HTML code into the available HTML input section and refresh the page. After the refresh has completed, the
+      JSON conversion of your source code will be available in the appropriate JSON section below.</p>
+    <p>
+      <input class="btn btn-success btn-lg" type="button" value="REFRESH PAGE" onClick="history.go(0)">
+    </p>
+    <hr>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              <label>HTML (Input)</label>
+            </a>
+          </h3>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <div class='pane pane-source'>
+
+              <pre id='input'><textarea id='source' placeholder='<div>HTML to transform</div>'></textarea></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+              <label>JSON (Output)</label>
+            </a>
+          </h3>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class='pane pane-output'>
+              <pre id='output'></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+
+    <script src='https://jew.ski/himalaya/dist/himalaya.js'></script>
+    <script>
+      function $(selector) {
+        return document.querySelector(selector)
+      }
+
+      function updateOutput() {
+        var html = $('#source').value || ''
+        var code = himalaya.parse(html)
+        $('#output').innerText = JSON.stringify(code, null, 2)
+      }
+
+      $('#source').onkeyup = updateOutput
+      updateOutput()
+    </script>
+
+    <footer class="footer">
+      <hr>
+      <div class="content-section">
+        <span class="text-muted">© 2017-2018
+          <a href="https://www.ResoNova.com">ResoNova International Consulting</a>
+        </span>
+      </div>
+      <br>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.9.0/jquery.hoverIntent.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/js/superfish.min.js"></script>
+    <script src="https://resonova.com/js/morphext/morphext.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+</body>
+
+</html>
