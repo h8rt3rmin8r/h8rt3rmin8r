@@ -10,11 +10,11 @@
 
   <head>
     <title>
-      /seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js – Seattle
+      /seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js – Seattle
     </title>
         <link rel="search" href="/search" />
         <link rel="help" href="/wiki/TracGuide" />
-        <link rel="alternate" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js?format=txt" type="text/plain" title="Plain Text" /><link rel="alternate" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js" type="application/javascript; charset=iso-8859-15" title="Original Format" />
+        <link rel="alternate" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js?format=txt" type="text/plain" title="Plain Text" /><link rel="alternate" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js" type="application/javascript; charset=iso-8859-15" title="Original Format" />
         <link rel="up" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace" title="Parent directory" />
         <link rel="start" href="/wiki" />
         <link rel="stylesheet" href="/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/code.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/browser.css" type="text/css" /><link rel="stylesheet" href="/chrome/theme/pydotorg.css" type="text/css" /><link rel="stylesheet" href="/themeengine/theme.css" type="text/css" />
@@ -65,14 +65,14 @@
       <div id="ctxtnav" class="nav">
         <h2>Context Navigation</h2>
           <ul>
-              <li class="first"><a href="/changeset/4865/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">Last Change</a></li><li><a href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js?annotate=blame&amp;rev=4865" title="Annotate each line with the last changed revision (this can be time consuming...)">Annotate</a></li><li class="last"><a href="/log/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">Revision Log</a></li>
+              <li class="first"><a href="/changeset/4865/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js">Last Change</a></li><li><a href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js?annotate=blame&amp;rev=4865" title="Annotate each line with the last changed revision (this can be time consuming...)">Annotate</a></li><li class="last"><a href="/log/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js">Revision Log</a></li>
           </ul>
         <hr />
       </div>
     <div id="content" class="browser">
       <h1>
         <p><font size="3" color="red"><b>Please note that the CVS and issue trackers have moved to <a href="https://github.com/SeattleTestbed">GitHub</a>. These Trac pages are no longer kept up-to-date.</b></font></p>
-        <a class="pathentry first" title="Go to root directory" href="/browser">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View seattle" href="/browser/seattle">seattle</a><span class="pathentry sep">/</span><a class="pathentry" title="View trunk" href="/browser/seattle/trunk">trunk</a><span class="pathentry sep">/</span><a class="pathentry" title="View repy" href="/browser/seattle/trunk/repy">repy</a><span class="pathentry sep">/</span><a class="pathentry" title="View apps" href="/browser/seattle/trunk/repy/apps">apps</a><span class="pathentry sep">/</span><a class="pathentry" title="View tryrepy" href="/browser/seattle/trunk/repy/apps/tryrepy">tryrepy</a><span class="pathentry sep">/</span><a class="pathentry" title="View web" href="/browser/seattle/trunk/repy/apps/tryrepy/web">web</a><span class="pathentry sep">/</span><a class="pathentry" title="View js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js">js</a><span class="pathentry sep">/</span><a class="pathentry" title="View ace" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace">ace</a><span class="pathentry sep">/</span><a class="pathentry" title="View theme-monokai.js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">theme-monokai.js</a><br style="clear: both" />
+        <a class="pathentry first" title="Go to root directory" href="/browser">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View seattle" href="/browser/seattle">seattle</a><span class="pathentry sep">/</span><a class="pathentry" title="View trunk" href="/browser/seattle/trunk">trunk</a><span class="pathentry sep">/</span><a class="pathentry" title="View repy" href="/browser/seattle/trunk/repy">repy</a><span class="pathentry sep">/</span><a class="pathentry" title="View apps" href="/browser/seattle/trunk/repy/apps">apps</a><span class="pathentry sep">/</span><a class="pathentry" title="View tryrepy" href="/browser/seattle/trunk/repy/apps/tryrepy">tryrepy</a><span class="pathentry sep">/</span><a class="pathentry" title="View web" href="/browser/seattle/trunk/repy/apps/tryrepy/web">web</a><span class="pathentry sep">/</span><a class="pathentry" title="View js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js">js</a><span class="pathentry sep">/</span><a class="pathentry" title="View ace" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace">ace</a><span class="pathentry sep">/</span><a class="pathentry" title="View keybinding-vim.js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js">keybinding-vim.js</a><br style="clear: both" />
         </h1>
       <div id="jumprev">
         <form action="" method="get">
@@ -86,7 +86,7 @@
       <table id="info" summary="Revision info">
         <tr>
           <th scope="col">
-            Revision <a href="/changeset/4865">4865</a>, <span title="2441 bytes">2.4 KB</span>
+            Revision <a href="/changeset/4865">4865</a>, <span title="3219 bytes">3.1 KB</span>
             (checked in by albert, <a class="timeline" href="/timeline?from=2011-10-24T06%3A41%3A12-0700&amp;precision=second" title="2011-10-24T06:41:12-0700 in Timeline">6 years</a> ago)
           </th>
         </tr>
@@ -99,7 +99,7 @@ First commit of Lukas Puehringer's 'Try Repy' web-based IDE<br />
         </tr>
       </table>
       <div id="preview" class="searchable">
-    <table class="code"><thead><tr><th class="lineno" title="Line numbers">Line</th><th class="content"> </th></tr></thead><tbody><tr><th id="L1"><a href="#L1">1</a></th><td>define("ace/theme/monokai",["require","exports","module"],function(a,b,c){var d=a("pilot/dom"),e=".ace-monokai .ace_editor {\n  border: 2px solid rgb(159, 159, 159);\n}\n\n.ace-monokai .ace_editor.ace_focus {\n  border: 2px solid #327fbd;\n}\n\n.ace-monokai .ace_gutter {\n  width: 50px;\n  background: #e8e8e8;\n  color: #333;\n  overflow : hidden;\n}\n\n.ace-monokai .ace_gutter-layer {\n  width: 100%;\n  text-align: right;\n}\n\n.ace-monokai .ace_gutter-layer .ace_gutter-cell {\n  padding-right: 6px;\n}\n\n.ace-monokai .ace_print_margin {\n  width: 1px;\n  background: #e8e8e8;\n}\n\n.ace-monokai .ace_scroller {\n  background-color: #272822;\n}\n\n.ace-monokai .ace_text-layer {\n  cursor: text;\n  color: #F8F8F2;\n}\n\n.ace-monokai .ace_cursor {\n  border-left: 2px solid #F8F8F0;\n}\n\n.ace-monokai .ace_cursor.ace_overwrite {\n  border-left: 0px;\n  border-bottom: 1px solid #F8F8F0;\n}\n \n.ace-monokai .ace_marker-layer .ace_selection {\n  background: #49483E;\n}\n\n.ace-monokai .ace_marker-layer .ace_step {\n  background: rgb(198, 219, 174);\n}\n\n.ace-monokai .ace_marker-layer .ace_bracket {\n  margin: -1px 0 0 -1px;\n  border: 1px solid #49483E;\n}\n\n.ace-monokai .ace_marker-layer .ace_active_line {\n  background: #49483E;\n}\n\n       \n.ace-monokai .ace_invisible {\n  color: #49483E;\n}\n\n.ace-monokai .ace_keyword {\n  color:#F92672;\n}\n\n.ace-monokai .ace_keyword.ace_operator {\n  \n}\n\n.ace-monokai .ace_constant {\n  \n}\n\n.ace-monokai .ace_constant.ace_language {\n  color:#AE81FF;\n}\n\n.ace-monokai .ace_constant.ace_library {\n  \n}\n\n.ace-monokai .ace_constant.ace_numeric {\n  color:#AE81FF;\n}\n\n.ace-monokai .ace_invalid {\n  color:#F8F8F0;\nbackground-color:#F92672;\n}\n\n.ace-monokai .ace_invalid.ace_illegal {\n  \n}\n\n.ace-monokai .ace_invalid.ace_deprecated {\n  color:#F8F8F0;\nbackground-color:#AE81FF;\n}\n\n.ace-monokai .ace_support {\n  \n}\n\n.ace-monokai .ace_support.ace_function {\n  color:#66D9EF;\n}\n\n.ace-monokai .ace_function.ace_buildin {\n  \n}\n\n.ace-monokai .ace_string {\n  color:#E6DB74;\n}\n\n.ace-monokai .ace_string.ace_regexp {\n  \n}\n\n.ace-monokai .ace_comment {\n  color:#75715E;\n}\n\n.ace-monokai .ace_comment.ace_doc {\n  \n}\n\n.ace-monokai .ace_comment.ace_doc.ace_tag {\n  \n}\n\n.ace-monokai .ace_variable {\n  \n}\n\n.ace-monokai .ace_variable.ace_language {\n  \n}\n\n.ace-monokai .ace_xml_pe {\n  \n}";d.importCssString(e),b.cssClass="ace-monokai"})</td></tr></tbody></table>
+    <table class="code"><thead><tr><th class="lineno" title="Line numbers">Line</th><th class="content"> </th></tr></thead><tbody><tr><th id="L1"><a href="#L1">1</a></th><td>define("ace/keyboard/keybinding/vim",["require","exports","module","ace/keyboard/state_handler"],function(a,b,c){var d=a("ace/keyboard/state_handler").StateHandler,e=a("ace/keyboard/state_handler").matchCharacterOnly,f={start:[{key:"i",then:"insertMode"},{key:"d",then:"deleteMode"},{key:"a",exec:"gotoright",then:"insertMode"},{key:"shift-i",exec:"gotolinestart",then:"insertMode"},{key:"shift-a",exec:"gotolineend",then:"insertMode"},{key:"shift-c",exec:"removetolineend",then:"insertMode"},{key:"shift-r",exec:"overwrite",then:"replaceMode"},{regex:["([0-9]*)","(k|up)"],exec:"golineup",params:[{name:"times",match:1,type:"number",defaultValue:1}]},{regex:["([0-9]*)","(j|down|enter)"],exec:"golinedown",params:[{name:"times",match:1,type:"number",defaultValue:1}]},{regex:["([0-9]*)","(l|right)"],exec:"gotoright",params:[{name:"times",match:1,type:"number",defaultValue:1}]},{regex:["([0-9]*)","(h|left)"],exec:"gotoleft",params:[{name:"times",match:1,type:"number",defaultValue:1}]},{key:"shift-g",exec:"gotoend"},{key:"b",exec:"gotowordleft"},{key:"e",exec:"gotowordright"},{key:"x",exec:"del"},{key:"shift-x",exec:"backspace"},{key:"shift-d",exec:"removetolineend"},{comment:"Catch some keyboard input to stop it here",match:e}],insertMode:[{key:"esc",then:"start"}],replaceMode:[{key:"esc",exec:"overwrite",then:"start"}],deleteMode:[{key:"d",exec:"removeline",then:"start"}]};b.Vim=new d(f)}),define("ace/keyboard/state_handler",["require","exports","module"],function(a,b,c){function e(a){this.keymapping=this.$buildKeymappingRegex(a)}var d=!1;e.prototype={$buildKeymappingRegex:function(a){for(state in a)this.$buildBindingsRegex(a[state]);return a},$buildBindingsRegex:function(a){a.forEach(function(a){a.key?a.key=new RegExp("^"+a.key+"$"):Array.isArray(a.regex)?(a.key=new RegExp("^"+a.regex[1]+"$"),a.regex=new RegExp(a.regex.join("")+"$")):a.regex&amp;&amp;(a.regex=new RegExp(a.regex+"$"))})},$composeBuffer:function(a,b,c){if(a.state==null||a.buffer==null)a.state="start",a.buffer="";var d=[];b&amp;1&amp;&amp;d.push("ctrl"),b&amp;8&amp;&amp;d.push("command"),b&amp;2&amp;&amp;d.push("option"),b&amp;4&amp;&amp;d.push("shift"),c&amp;&amp;d.push(c);var e=d.join("-"),f=a.buffer+e;b!=2&amp;&amp;(a.buffer=f);return{bufferToUse:f,symbolicName:e}},$find:function(a,b,c,e,f){var g={};this.keymapping[a.state].some(function(h){var i;if(h.key&amp;&amp;!h.key.test(c))return!1;if(h.regex&amp;&amp;!(i=h.regex.exec(b)))return!1;if(h.match&amp;&amp;!h.match(b,e,f,c))return!1;if(h.disallowMatches)for(var j=0;j&lt;h.disallowMatches.length;j++)if(!!i[h.disallowMatches[j]])return!1;if(h.exec){g.command=h.exec;if(h.params){var k;g.args={},h.params.forEach(function(a){a.match!=null&amp;&amp;i!=null?k=i[a.match]||a.defaultValue:k=a.defaultValue,a.type==="number"&amp;&amp;(k=parseInt(k)),g.args[a.name]=k})}a.buffer=""}h.then&amp;&amp;(a.state=h.then,a.buffer=""),g.command==null&amp;&amp;(g.command="null"),d&amp;&amp;console.log("KeyboardStateMapper#find",h);return!0});if(g.command)return g;a.buffer="";return!1},handleKeyboard:function(a,b,c){if(b==0||c!=""&amp;&amp;c!=String.fromCharCode(0)){var e=this.$composeBuffer(a,b,c),f=e.bufferToUse,g=e.symbolicName;e=this.$find(a,f,g,b,c),d&amp;&amp;console.log("KeyboardStateMapper#match",f,g,e);return e}return null}},b.matchCharacterOnly=function(a,b,c,d){return b==0?!0:b==4&amp;&amp;c.length==1?!0:!1},b.StateHandler=e})</td></tr></tbody></table>
       </div>
       <div id="help">
         <strong>Note:</strong> See <a href="/wiki/TracBrowser">TracBrowser</a>
@@ -108,8 +108,8 @@ First commit of Lukas Puehringer's 'Try Repy' web-based IDE<br />
       <div id="anydiff">
         <form action="/diff" method="get">
           <div class="buttons">
-            <input type="hidden" name="new_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js" />
-            <input type="hidden" name="old_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js" />
+            <input type="hidden" name="new_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js" />
+            <input type="hidden" name="old_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js" />
             <input type="hidden" name="new_rev" />
             <input type="hidden" name="old_rev" />
             <input type="submit" value="View changes..." title="Select paths and revs for Diff" />
@@ -121,9 +121,9 @@ First commit of Lukas Puehringer's 'Try Repy' web-based IDE<br />
       <h3>Download in other formats:</h3>
       <ul>
         <li class="first">
-          <a rel="nofollow" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js?format=txt">Plain Text</a>
+          <a rel="nofollow" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js?format=txt">Plain Text</a>
         </li><li class="last">
-          <a rel="nofollow" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">Original Format</a>
+          <a rel="nofollow" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/keybinding-vim.js">Original Format</a>
         </li>
       </ul>
     </div>

@@ -10,11 +10,11 @@
 
   <head>
     <title>
-      /seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js – Seattle
+      /seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js – Seattle
     </title>
         <link rel="search" href="/search" />
         <link rel="help" href="/wiki/TracGuide" />
-        <link rel="alternate" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js?format=txt" type="text/plain" title="Plain Text" /><link rel="alternate" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js" type="application/javascript; charset=iso-8859-15" title="Original Format" />
+        <link rel="alternate" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js?format=txt" type="text/plain" title="Plain Text" /><link rel="alternate" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js" type="application/javascript; charset=iso-8859-15" title="Original Format" />
         <link rel="up" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace" title="Parent directory" />
         <link rel="start" href="/wiki" />
         <link rel="stylesheet" href="/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/code.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/browser.css" type="text/css" /><link rel="stylesheet" href="/chrome/theme/pydotorg.css" type="text/css" /><link rel="stylesheet" href="/themeengine/theme.css" type="text/css" />
@@ -65,14 +65,14 @@
       <div id="ctxtnav" class="nav">
         <h2>Context Navigation</h2>
           <ul>
-              <li class="first"><a href="/changeset/4865/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">Last Change</a></li><li><a href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js?annotate=blame&amp;rev=4865" title="Annotate each line with the last changed revision (this can be time consuming...)">Annotate</a></li><li class="last"><a href="/log/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">Revision Log</a></li>
+              <li class="first"><a href="/changeset/4865/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js">Last Change</a></li><li><a href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js?annotate=blame&amp;rev=4865" title="Annotate each line with the last changed revision (this can be time consuming...)">Annotate</a></li><li class="last"><a href="/log/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js">Revision Log</a></li>
           </ul>
         <hr />
       </div>
     <div id="content" class="browser">
       <h1>
         <p><font size="3" color="red"><b>Please note that the CVS and issue trackers have moved to <a href="https://github.com/SeattleTestbed">GitHub</a>. These Trac pages are no longer kept up-to-date.</b></font></p>
-        <a class="pathentry first" title="Go to root directory" href="/browser">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View seattle" href="/browser/seattle">seattle</a><span class="pathentry sep">/</span><a class="pathentry" title="View trunk" href="/browser/seattle/trunk">trunk</a><span class="pathentry sep">/</span><a class="pathentry" title="View repy" href="/browser/seattle/trunk/repy">repy</a><span class="pathentry sep">/</span><a class="pathentry" title="View apps" href="/browser/seattle/trunk/repy/apps">apps</a><span class="pathentry sep">/</span><a class="pathentry" title="View tryrepy" href="/browser/seattle/trunk/repy/apps/tryrepy">tryrepy</a><span class="pathentry sep">/</span><a class="pathentry" title="View web" href="/browser/seattle/trunk/repy/apps/tryrepy/web">web</a><span class="pathentry sep">/</span><a class="pathentry" title="View js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js">js</a><span class="pathentry sep">/</span><a class="pathentry" title="View ace" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace">ace</a><span class="pathentry sep">/</span><a class="pathentry" title="View theme-monokai.js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">theme-monokai.js</a><br style="clear: both" />
+        <a class="pathentry first" title="Go to root directory" href="/browser">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View seattle" href="/browser/seattle">seattle</a><span class="pathentry sep">/</span><a class="pathentry" title="View trunk" href="/browser/seattle/trunk">trunk</a><span class="pathentry sep">/</span><a class="pathentry" title="View repy" href="/browser/seattle/trunk/repy">repy</a><span class="pathentry sep">/</span><a class="pathentry" title="View apps" href="/browser/seattle/trunk/repy/apps">apps</a><span class="pathentry sep">/</span><a class="pathentry" title="View tryrepy" href="/browser/seattle/trunk/repy/apps/tryrepy">tryrepy</a><span class="pathentry sep">/</span><a class="pathentry" title="View web" href="/browser/seattle/trunk/repy/apps/tryrepy/web">web</a><span class="pathentry sep">/</span><a class="pathentry" title="View js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js">js</a><span class="pathentry sep">/</span><a class="pathentry" title="View ace" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace">ace</a><span class="pathentry sep">/</span><a class="pathentry" title="View theme-mono_industrial.js" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js">theme-mono_industrial.js</a><br style="clear: both" />
         </h1>
       <div id="jumprev">
         <form action="" method="get">
@@ -86,7 +86,7 @@
       <table id="info" summary="Revision info">
         <tr>
           <th scope="col">
-            Revision <a href="/changeset/4865">4865</a>, <span title="2441 bytes">2.4 KB</span>
+            Revision <a href="/changeset/4865">4865</a>, <span title="2820 bytes">2.8 KB</span>
             (checked in by albert, <a class="timeline" href="/timeline?from=2011-10-24T06%3A41%3A12-0700&amp;precision=second" title="2011-10-24T06:41:12-0700 in Timeline">6 years</a> ago)
           </th>
         </tr>
@@ -99,7 +99,7 @@ First commit of Lukas Puehringer's 'Try Repy' web-based IDE<br />
         </tr>
       </table>
       <div id="preview" class="searchable">
-    <table class="code"><thead><tr><th class="lineno" title="Line numbers">Line</th><th class="content"> </th></tr></thead><tbody><tr><th id="L1"><a href="#L1">1</a></th><td>define("ace/theme/monokai",["require","exports","module"],function(a,b,c){var d=a("pilot/dom"),e=".ace-monokai .ace_editor {\n  border: 2px solid rgb(159, 159, 159);\n}\n\n.ace-monokai .ace_editor.ace_focus {\n  border: 2px solid #327fbd;\n}\n\n.ace-monokai .ace_gutter {\n  width: 50px;\n  background: #e8e8e8;\n  color: #333;\n  overflow : hidden;\n}\n\n.ace-monokai .ace_gutter-layer {\n  width: 100%;\n  text-align: right;\n}\n\n.ace-monokai .ace_gutter-layer .ace_gutter-cell {\n  padding-right: 6px;\n}\n\n.ace-monokai .ace_print_margin {\n  width: 1px;\n  background: #e8e8e8;\n}\n\n.ace-monokai .ace_scroller {\n  background-color: #272822;\n}\n\n.ace-monokai .ace_text-layer {\n  cursor: text;\n  color: #F8F8F2;\n}\n\n.ace-monokai .ace_cursor {\n  border-left: 2px solid #F8F8F0;\n}\n\n.ace-monokai .ace_cursor.ace_overwrite {\n  border-left: 0px;\n  border-bottom: 1px solid #F8F8F0;\n}\n \n.ace-monokai .ace_marker-layer .ace_selection {\n  background: #49483E;\n}\n\n.ace-monokai .ace_marker-layer .ace_step {\n  background: rgb(198, 219, 174);\n}\n\n.ace-monokai .ace_marker-layer .ace_bracket {\n  margin: -1px 0 0 -1px;\n  border: 1px solid #49483E;\n}\n\n.ace-monokai .ace_marker-layer .ace_active_line {\n  background: #49483E;\n}\n\n       \n.ace-monokai .ace_invisible {\n  color: #49483E;\n}\n\n.ace-monokai .ace_keyword {\n  color:#F92672;\n}\n\n.ace-monokai .ace_keyword.ace_operator {\n  \n}\n\n.ace-monokai .ace_constant {\n  \n}\n\n.ace-monokai .ace_constant.ace_language {\n  color:#AE81FF;\n}\n\n.ace-monokai .ace_constant.ace_library {\n  \n}\n\n.ace-monokai .ace_constant.ace_numeric {\n  color:#AE81FF;\n}\n\n.ace-monokai .ace_invalid {\n  color:#F8F8F0;\nbackground-color:#F92672;\n}\n\n.ace-monokai .ace_invalid.ace_illegal {\n  \n}\n\n.ace-monokai .ace_invalid.ace_deprecated {\n  color:#F8F8F0;\nbackground-color:#AE81FF;\n}\n\n.ace-monokai .ace_support {\n  \n}\n\n.ace-monokai .ace_support.ace_function {\n  color:#66D9EF;\n}\n\n.ace-monokai .ace_function.ace_buildin {\n  \n}\n\n.ace-monokai .ace_string {\n  color:#E6DB74;\n}\n\n.ace-monokai .ace_string.ace_regexp {\n  \n}\n\n.ace-monokai .ace_comment {\n  color:#75715E;\n}\n\n.ace-monokai .ace_comment.ace_doc {\n  \n}\n\n.ace-monokai .ace_comment.ace_doc.ace_tag {\n  \n}\n\n.ace-monokai .ace_variable {\n  \n}\n\n.ace-monokai .ace_variable.ace_language {\n  \n}\n\n.ace-monokai .ace_xml_pe {\n  \n}";d.importCssString(e),b.cssClass="ace-monokai"})</td></tr></tbody></table>
+    <table class="code"><thead><tr><th class="lineno" title="Line numbers">Line</th><th class="content"> </th></tr></thead><tbody><tr><th id="L1"><a href="#L1">1</a></th><td>define("ace/theme/mono_industrial",["require","exports","module"],function(a,b,c){var d=a("pilot/dom"),e=".ace-mono-industrial .ace_editor {\n  border: 2px solid rgb(159, 159, 159);\n}\n\n.ace-mono-industrial .ace_editor.ace_focus {\n  border: 2px solid #327fbd;\n}\n\n.ace-mono-industrial .ace_gutter {\n  width: 50px;\n  background: #e8e8e8;\n  color: #333;\n  overflow : hidden;\n}\n\n.ace-mono-industrial .ace_gutter-layer {\n  width: 100%;\n  text-align: right;\n}\n\n.ace-mono-industrial .ace_gutter-layer .ace_gutter-cell {\n  padding-right: 6px;\n}\n\n.ace-mono-industrial .ace_print_margin {\n  width: 1px;\n  background: #e8e8e8;\n}\n\n.ace-mono-industrial .ace_scroller {\n  background-color: #222C28;\n}\n\n.ace-mono-industrial .ace_text-layer {\n  cursor: text;\n  color: #FFFFFF;\n}\n\n.ace-mono-industrial .ace_cursor {\n  border-left: 2px solid #FFFFFF;\n}\n\n.ace-mono-industrial .ace_cursor.ace_overwrite {\n  border-left: 0px;\n  border-bottom: 1px solid #FFFFFF;\n}\n \n.ace-mono-industrial .ace_marker-layer .ace_selection {\n  background: rgba(145, 153, 148, 0.40);\n}\n\n.ace-mono-industrial .ace_marker-layer .ace_step {\n  background: rgb(198, 219, 174);\n}\n\n.ace-mono-industrial .ace_marker-layer .ace_bracket {\n  margin: -1px 0 0 -1px;\n  border: 1px solid rgba(102, 108, 104, 0.50);\n}\n\n.ace-mono-industrial .ace_marker-layer .ace_active_line {\n  background: rgba(12, 13, 12, 0.25);\n}\n\n       \n.ace-mono-industrial .ace_invisible {\n  color: rgba(102, 108, 104, 0.50);\n}\n\n.ace-mono-industrial .ace_keyword {\n  color:#A39E64;\n}\n\n.ace-mono-industrial .ace_keyword.ace_operator {\n  color:#A8B3AB;\n}\n\n.ace-mono-industrial .ace_constant {\n  color:#E98800;\n}\n\n.ace-mono-industrial .ace_constant.ace_language {\n  \n}\n\n.ace-mono-industrial .ace_constant.ace_library {\n  \n}\n\n.ace-mono-industrial .ace_constant.ace_numeric {\n  color:#E98800;\n}\n\n.ace-mono-industrial .ace_invalid {\n  color:#FFFFFF;\nbackground-color:rgba(153, 0, 0, 0.68);\n}\n\n.ace-mono-industrial .ace_invalid.ace_illegal {\n  \n}\n\n.ace-mono-industrial .ace_invalid.ace_deprecated {\n  \n}\n\n.ace-mono-industrial .ace_support {\n  \n}\n\n.ace-mono-industrial .ace_support.ace_function {\n  color:#588E60;\n}\n\n.ace-mono-industrial .ace_function.ace_buildin {\n  \n}\n\n.ace-mono-industrial .ace_string {\n  \n}\n\n.ace-mono-industrial .ace_string.ace_regexp {\n  \n}\n\n.ace-mono-industrial .ace_comment {\n  color:#666C68;\nbackground-color:#151C19;\n}\n\n.ace-mono-industrial .ace_comment.ace_doc {\n  \n}\n\n.ace-mono-industrial .ace_comment.ace_doc.ace_tag {\n  \n}\n\n.ace-mono-industrial .ace_variable {\n  \n}\n\n.ace-mono-industrial .ace_variable.ace_language {\n  color:#648BD2;\n}\n\n.ace-mono-industrial .ace_xml_pe {\n  \n}";d.importCssString(e),b.cssClass="ace-mono-industrial"})</td></tr></tbody></table>
       </div>
       <div id="help">
         <strong>Note:</strong> See <a href="/wiki/TracBrowser">TracBrowser</a>
@@ -108,8 +108,8 @@ First commit of Lukas Puehringer's 'Try Repy' web-based IDE<br />
       <div id="anydiff">
         <form action="/diff" method="get">
           <div class="buttons">
-            <input type="hidden" name="new_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js" />
-            <input type="hidden" name="old_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js" />
+            <input type="hidden" name="new_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js" />
+            <input type="hidden" name="old_path" value="/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js" />
             <input type="hidden" name="new_rev" />
             <input type="hidden" name="old_rev" />
             <input type="submit" value="View changes..." title="Select paths and revs for Diff" />
@@ -121,9 +121,9 @@ First commit of Lukas Puehringer's 'Try Repy' web-based IDE<br />
       <h3>Download in other formats:</h3>
       <ul>
         <li class="first">
-          <a rel="nofollow" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js?format=txt">Plain Text</a>
+          <a rel="nofollow" href="/browser/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js?format=txt">Plain Text</a>
         </li><li class="last">
-          <a rel="nofollow" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-monokai.js">Original Format</a>
+          <a rel="nofollow" href="/export/7591/seattle/trunk/repy/apps/tryrepy/web/js/ace/theme-mono_industrial.js">Original Format</a>
         </li>
       </ul>
     </div>
