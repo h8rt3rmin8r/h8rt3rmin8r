@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- 
+    PROOF OF CONCEPT: Automated Updating News Feeds
+    By h8rt3rmin8r
+    Email: 161803398@email.tg
+    PGP: https://h8rt3rmin8r.com 
+    -->
+
+    <meta charset="utf-8">
+    <title>Bittrex | VRC-BTC</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 shrink-to-fit=no">
+
+    <!-- FAVICON BRANDING -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://resonova.github.io/favicons/spider/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://resonova.github.io/favicons/spider/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://resonova.github.io/favicons/spider/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://resonova.github.io/favicons/spider/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://resonova.github.io/favicons/spider/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://resonova.github.io/favicons/spider/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://resonova.github.io/favicons/spider/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://resonova.github.io/favicons/spider/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://resonova.github.io/favicons/spider/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://resonova.github.io/favicons/spider/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://resonova.github.io/favicons/spider/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://resonova.github.io/favicons/spider/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://resonova.github.io/favicons/spider/favicon-16x16.png">
+    <link rel="manifest" href="https://resonova.github.io/favicons/spider/manifest.json">
+    <link rel="icon" sizes="192x192" href="https://resonova.github.io/favicons/spider/android-icon-192x192.png">
+    <link rel="apple-touch-icon-precomposed" href="https://resonova.github.io/favicons/spider/apple-icon-precomposed.png">
+    <link rel="shortcut icon" href="https://resonova.github.io/favicons/spider/favicon.ico">
+    <meta name="msapplication-TileImage" content="https://resonova.github.io/favicons/spider/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#10871e">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://resonova.github.io/favicons/spider/ms-icon-144x144.png">
+    <meta name="theme-color" content="#10871e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="VRC-BTC">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fa.css" type="text/css">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fallout.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+    <!-- CRYPTOWATCH IFRAME STYLES (Source: https://github.com/cryptowatch/embed) -->
+    <style>
+    #chart-container {
+        width: 100%;
+        height: 450px;
+      }
+    </style>
+
+    <!-- SITE HEAD SCRIPTS -->
+    <script type="text/javascript" src="https://h8rt3rmin8r.com/js/cryptowatch-embed.bundle.js"></script>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h2 class="display-3">Bittrex: VRC-BTC</h2>
+            <p class="lead">Live cryptocurrency asset data</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-dark border-success">
+            <div class="card-body">
+                <h2 class="card-title">Interactive Chart</h2>
+                <br>
+                <p class="card-text">
+
+                    <!-- CRYPTOWATCH CHART IFRAME -->
+                    <div id="chart-container"></div>
+                    
+                    <script>
+                        var chart = new cryptowatch.Embed('bittrex', 'vrcbtc', {
+                            timePeriod: '1h',
+                            width: 650,
+                            presetColorScheme: 'delek'
+                        });
+                        chart.mount('#chart-container');
+                    </script>
+                    <!-- IFRAME END -->
+
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SITE SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.0.0/json2html.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
