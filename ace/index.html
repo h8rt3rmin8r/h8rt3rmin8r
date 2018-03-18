@@ -42,10 +42,11 @@
         <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fallout2.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
         <style>
+            /*
             .codeBox {
-                border-style: hidden; 
-                border-width: 5px;
+                
             }
+            */
             .split {
                 height: 100%;
                 width: 50%;
@@ -62,6 +63,16 @@
 
             .right {
                 right: 0;
+            }
+            
+            #codeContainer1 {
+                border-style: hidden; 
+                border-width: 5px;
+            }
+            
+            #codeContainer2 {
+                border-style: hidden; 
+                border-width: 5px;
             }
             
             #myEditor1 {
@@ -105,7 +116,7 @@
     <body>
         
         <!-- Ace Editor div and script [LEFT] -->
-        <div class="split left">
+        <div class="split left" id="codeContainer1">
         <div class="codeBox" id="myEditor1"></div>
         <script>
             YUI().use(
@@ -122,7 +133,7 @@
         </div>
         
         <!-- Ace Editor div and script [RIGHT] -->
-        <div class="split right">
+        <div class="split right" id="codeContainer2">
         <div class="codeBox" id="myEditor2"></div>
         <script>
             YUI().use(
