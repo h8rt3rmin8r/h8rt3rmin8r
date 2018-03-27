@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DL-Verify</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Verify driver's license number inputs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/animate.css">
+
+    <!-- FONT SELECTIONS -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fa.css" type="text/css">
+
+    <!-- HEAD SCRIPTS -->
+    <script data-require="jquery@*" data-semver="3.3.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <input id="license">
+        <br>
+        <button id="check">Check</button>
+    </div>
+
+    <script>
+        $("#check").click(function () {
+
+            //license number
+            var strFilter = /^[0-3][0-9]{7}$/;
+            var obj = document.getElementById("license");
+
+            if (!strFilter.test(obj.value)) {
+                alert("Please enter valid 8-digit license number\r\n(Only digits)");
+                obj.focus();
+                obj.style.background = "#DFE32D";
+                obj.value = "";
+                return false;
+            }
+        });
+    </script>
+
+    <!-- Bootstrap 4.0.0-beta.2 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
