@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+
+    ADAPTED FROM THE FOLLOWING SOURCES:
+
+    JSFiddle Source: 
+    http://jsfiddle.net/jfriend00/ZUajd/
+
+    StackOverflow Source: 
+    https://stackoverflow.com/questions/8223237/license-number-validation-in-javascript
+
+    -->
+    <title>Verify Identity</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Verify user identification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/animate.css">
+
+    <!-- FONT SELECTIONS -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fa.css" type="text/css">
+
+    <!-- HEAD SCRIPTS -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+
+    <script src="https://unpkg.com/react@15.3.1/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="https://h8rt3rmin8r.com/libphonenumber/input-format.js"></script>
+    <script src="https://h8rt3rmin8r.com/libphonenumber/libphonenumber-js.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="wrapper">
+                <div id="header">
+                    <h1>VERIFY IDENTITY</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <div id="inputs">
+                <h3>Full Name</h3>
+                <p>Input your full name</p>
+                <p>
+                    <input title="Full Name" id="name">
+                </p>
+                <hr>
+                <h3>Driver's License Number</h3>
+                <p>Please input your driver's license number</p>
+                <p>
+                    <input title="License Number" id="license">
+                </p>
+                <hr>
+                <button id="check" class="btn btn-primary">Check</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#check").click(function() {
+            //full name
+            var namestrFilter = /^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
+            var objA = document.getElementById("name");
+
+            if (!namestrFilter.test(objA.value)) {
+                alert("Please enter valid name\r\n");
+                objA.focus();
+                objA.style.background = "#ffec82";
+                objA.value = "";
+                return false;
+            }
+
+            //license number
+            var licensestrFilter = /^[0-9]{10}$/;
+            var objB = document.getElementById("license");
+
+            if (!licensestrFilter.test(objB.value)) {
+                alert("Please enter valid license number\r\n(10 digits)");
+                objB.focus();
+                objB.style.background = "#ffec82";
+                objB.value = "";
+                return false;
+            }
+        });
+    </script>
+
+    <!-- libphonenumber-js -->
+
+    <div id="content"></div>
+
+    <script type="text/babel">
+        var Content = React.createClass ({ getInitialState: function() { return { value : '+12133734253', parse : '213-373-4253', format : '2133734253', country : 'US', findNumbers : 'The number is +7 (800) 555-35-35 and not (213) 373-4253 as written in the document.' } }, render: function() { // const libphonenumber = window.libphonenumber const input_format = window['input-format'] const ReactInput = input_format.ReactInput const templateParser = input_format.templateParser const templateFormatter = input_format.templateFormatter const parseDigit = input_format.parseDigit let asYouType let parsed_number = 'Unknown country' let parsed_number_extended = 'Unknown country' let national_formatted_number = 'Unknown country' let international_formatted_number = 'Unknown country' let international_formatted_number_in_E164 = 'Unknown country' let international_formatted_number_in_RFC3966 = 'Unknown country' let numbers_found = [] const { country, parse, format, value, findNumbers } = this.state try { asYouType = new libphonenumber.AsYouType(country) asYouType.input(value) parsed_number = JSON.stringify(libphonenumber.parse(parse, country)) parsed_number_extended = JSON.stringify(libphonenumber.parse(parse, country, { extended: true })) const number_to_format = libphonenumber.parse(format, country) national_formatted_number = libphonenumber.format(number_to_format, 'National') international_formatted_number = libphonenumber.format(number_to_format, 'International') international_formatted_number_in_E164 = libphonenumber.format(number_to_format, 'E.164') international_formatted_number_in_RFC3966 = libphonenumber.format(number_to_format, 'RFC3966') numbers_found = libphonenumber.findPhoneNumbers(findNumbers, country) } catch (error) { if (error.message.indexOf('Unknown country') === 0) { // } else if (error.message.indexOf('A phone number must either be a string or an object of shape') === 0) { // } else { throw error } } return (
+        <div>
+            <h2>As you type</h2> {/* type="tel" introduces bugs on Samsung Android phones */} {/* https://github.com/catamphetamine/react-phone-number-input/issues/59 */}
+            <ReactInput autoFocus value={this.state.value} onChange={value=> this.setState({ value })} parse={(character, value) => { // Leading plus is allowed if (character === '+') { if (!value) { return character } } // Digits are allowed return parseDigit(character) }} format={(value) => { let text let template try { const asYouType = new libphonenumber.AsYouType(this.state.country) text = asYouType.input(value) template = asYouType.template } catch (error) { if (error.message.indexOf('Unknown country') === 0) { text = value template = value.replace(/./g, 'x') } else { throw error } } return { text, template } }}/>
+
+                <div className="section">
+                    <div className="section__line">Value: {this.state.value}</div>
+                    <div className="section__line">Default country:
+                        <input type="text" value={this.state.country} onChange={event=> this.setState({ country: event.target.value })} style={{ width: '40px', marginLeft: '6px' }}/>
+                    </div>
+                    <div className="section__line">Actual country: {asYouType ? asYouType.country : 'Unknown country'}</div>
+                    <div className="section__line">National: {asYouType ? asYouType.country && libphonenumber.format(asYouType.national_number, asYouType.country, 'National') : 'Unknown country'}</div>
+                    <div className="section__line">Valid: {asYouType ? String(libphonenumber.isValidNumber(this.state.value, asYouType.country)) : 'Unknown country'}
+                    </div>
+
+                    <br/> Note: Phone number validation here is loose because it uses the (default) reduced metadata set. For more precise phone number validation use
+                    <code>metadata.full.json</code>.
+                    <a href="https://github.com/catamphetamine/libphonenumber-js#isvalidnumberparsednumber">Read more</a>
+                </div>
+
+                <h2>Parse</h2>
+
+                <input type="text" value={this.state.country} onChange={event=> this.setState({ country: event.target.value })} style={{ width: '40px', marginRight: '10px' }}/>
+
+                <input type="text" value={this.state.parse} onChange={event=> this.setState({ parse: event.target.value })}/>
+
+                <div className="section">
+                    <code>{parsed_number}</code>
+                </div>
+
+                <h2>Parse (extended)</h2>
+
+                <input type="text" value={this.state.country} onChange={event=> this.setState({ country: event.target.value })} style={{ width: '40px', marginRight: '10px' }}/>
+
+                <input type="text" value={this.state.parse} onChange={event=> this.setState({ parse: event.target.value })}/>
+
+                <div className="section">
+                    <code>{parsed_number_extended}</code>
+                </div>
+
+                <h2>Format</h2>
+
+                <input type="text" value={this.state.country} onChange={event=> this.setState({ country: event.target.value })} style={{ width: '40px', marginRight: '10px' }}/>
+
+                <input type="text" value={this.state.format} onChange={event=> this.setState({ format: event.target.value })}/>
+
+                <div className="section">
+                    <div className="section__line">
+                        <code>National: {national_formatted_number}</code>
+                    </div>
+                    <div className="section__line">
+                        <code>International: {international_formatted_number}</code>
+                    </div>
+                    <div className="section__line">
+                        <code>E.164: {international_formatted_number_in_E164}</code>
+                    </div>
+                    <div className="section__line">
+                        <code>RFC3966: {international_formatted_number_in_RFC3966}</code>
+                    </div>
+                </div>
+
+                <h2>Find phone numbers</h2>
+
+                <textarea value={this.state.findNumbers} onChange={event=> this.setState({ findNumbers: event.target.value })} className="find-numbers-text"/> { numbers_found.length === 0 && 'No phone numbers found' } { numbers_found.length > 0 && 'Phone numbers found: ' + numbers_found.length } { numbers_found.length > 0 &&
+                    <ContentEditable html={highlight_phones(this.state.findNumbers, numbers_found)} onChange={event=> this.setState({ findNumbers: strip_marks(event.target.value) })} readOnly className="find-numbers-highlighted" /> } { numbers_found.length > 0 &&
+                        <ul className="numbers-found">
+                            {numbers_found.map((number, i) => (
+                            <li key={i}>
+                                Country: {number.country}, Phone: {number.phone}, Starts at: {number.startsAt}, Ends at: {number.endsAt}
+                            </li>
+                            ))}
+                        </ul>
+                        }
+        </div>
+        ) } }) // https://stackoverflow.com/questions/22677931/react-js-onchange-event-for-contenteditable/27255103#27255103 var ContentEditable = React.createClass({ render: function(){ return
+        <div id="contenteditable" onInput={this.emitChange} onBlur={this.emitChange} className={this.props.className} contentEditable={!this.props.readOnly} dangerouslySetInnerHTML={{__html: this.props.html}}></div>; }, getDOMNode: function() { return ReactDOM.findDOMNode(this); }, shouldComponentUpdate: function(nextProps) { return nextProps.html !== this.getDOMNode().innerHTML; }, componentDidUpdate: function() { if ( this.props.html !== this.getDOMNode().innerHTML ) { this.getDOMNode().innerHTML = this.props.html; } }, emitChange: function() { var html = this.getDOMNode().innerHTML; if (this.props.onChange && html !== this.lastHtml) { this.props.onChange({ target: { value: html } }); } this.lastHtml = html; } }) ReactDOM.render (
+        <Content />, document.getElementById('content') ) function highlight_phones(html, phones) { let endedAt = 0 return phones.reduce((result, { startsAt, endsAt }) => { const previousEndsAt = endedAt endedAt = endsAt return result + html.slice(previousEndsAt, startsAt) + '
+        <mark>' + html.slice(startsAt, endsAt) + '
+        </mark>' }, '') + html.slice(endedAt) } function strip_marks(html) { return html.replace(/
+        <\/?mark>/g, '') }
+    </script>
+
+    <!-- Bootstrap 4.0.0-beta.2 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</body>
+
+</html>
