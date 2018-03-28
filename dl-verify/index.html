@@ -61,9 +61,9 @@
 
             if (!namestrFilter.test(objA.value)) {
                 alert("Please enter valid name\r\n");
-                obj.focus();
-                obj.style.background = "#ffec82";
-                obj.value = "";
+                objA.focus();
+                objA.style.background = "#ffec82";
+                objA.value = "";
                 return false;
             }
 
@@ -73,9 +73,9 @@
 
             if (!licensestrFilter.test(objB.value)) {
                 alert("Please enter valid license number\r\n(10 digits)");
-                obj.focus();
-                obj.style.background = "#ffec82";
-                obj.value = "";
+                objB.focus();
+                objB.style.background = "#ffec82";
+                objB.value = "";
                 return false;
             }
         });
