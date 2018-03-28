@@ -40,13 +40,13 @@
         $("#check").click(function () {
 
             //license number
-            var strFilter = /^[0-3][0-9]{7}$/;
+            var strFilter = /^[0-9]{10}$/;
             var obj = document.getElementById("license");
 
             if (!strFilter.test(obj.value)) {
-                alert("Please enter valid 8-digit license number\r\n(Only digits)");
+                alert("Please enter valid license number\r\n(10 digits)");
                 obj.focus();
-                obj.style.background = "#DFE32D";
+                obj.style.background = "#e0351a";
                 obj.value = "";
                 return false;
             }
