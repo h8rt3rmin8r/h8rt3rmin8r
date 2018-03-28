@@ -59,7 +59,7 @@
             var namestrFilter = /^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
             var objA = document.getElementById("name");
 
-            if (!namestrFilter.test(obj.value)) {
+            if (!namestrFilter.test(objA.value)) {
                 alert("Please enter valid name\r\n");
                 obj.focus();
                 obj.style.background = "#ffec82";
@@ -71,7 +71,7 @@
             var licensestrFilter = /^[0-9]{10}$/;
             var objB = document.getElementById("license");
 
-            if (!licensestrFilter.test(obj.value)) {
+            if (!licensestrFilter.test(objB.value)) {
                 alert("Please enter valid license number\r\n(10 digits)");
                 obj.focus();
                 obj.style.background = "#ffec82";
