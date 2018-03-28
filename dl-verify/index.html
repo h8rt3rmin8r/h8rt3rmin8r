@@ -3,6 +3,8 @@
 
 <head>
     <!-- 
+        
+    ADAPTED FROM THE FOLLOWING SOURCES:
 
     JSFiddle Source: 
     http://jsfiddle.net/jfriend00/ZUajd/
@@ -30,15 +32,22 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="wrapper">
-            <div id="drivers-license">
+            <div id="inputs">
+                <h3>Full Name</h3>
+                <p>Input your full name</p>
+                <p>
+                    <input title="Full Name" id="name">
+                </p>
+                <hr>
                 <h3>Driver's License Number</h3>
                 <p>Please input your driver's license number</p>
                 <p>
-                    <input id="license">
+                    <input title="License Number" id="license">
                 </p>
-                <br>
+                <hr>
                 <button id="check" class="btn btn-primary">Check</button>
             </div>
         </div>
@@ -46,15 +55,26 @@
 
     <script>
         $("#check").click(function () {
+            //full name
+            var namestrFilter = /^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
+            var objA = document.getElementById("name");
+
+            if (!namestrFilter.test(obj.value)) {
+                alert("Please enter valid name\r\n");
+                obj.focus();
+                obj.style.background = "#ffec82";
+                obj.value = "";
+                return false;
+            }
 
             //license number
-            var strFilter = /^[0-9]{10}$/;
-            var obj = document.getElementById("license");
+            var licensestrFilter = /^[0-9]{10}$/;
+            var objB = document.getElementById("license");
 
-            if (!strFilter.test(obj.value)) {
+            if (!licensestrFilter.test(obj.value)) {
                 alert("Please enter valid license number\r\n(10 digits)");
                 obj.focus();
-                obj.style.background = "#e0351a";
+                obj.style.background = "#ffec82";
                 obj.value = "";
                 return false;
             }
