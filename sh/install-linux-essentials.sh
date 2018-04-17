@@ -3,7 +3,7 @@
 #  INSTALL LINUX ESSENTIALS  #
 ##############################
 #
-#   install-linux-essentials.sh - (Version 1.0.1)
+#   install-linux-essentials.sh - (Version 1.0.2)
 #   See changes in the "updates log" at the end of this file
 #
 # ---------------------------# ATTRIBUTION #------------------------------------
@@ -225,22 +225,22 @@ cd ~/.sh
 wget https://pastebin.com/raw/KEh8dfFk
 touch fix-gcloud-key
 mv KEh8dfFk fix-gcloud-key
-chmod +x fix-gcloud-key && cp fix-gcloud-key /bin/fix-gcloud-key
-dos2unix -k -o /bin/fix-gcloud-key
+chmod +x fix-gcloud-key && cp fix-gcloud-key /usr/local/bin/fix-gcloud-key
+dos2unix -k -o /usr/local/bin/fix-gcloud-key
 
 # CREATE AND ENABLE "checkip"
 wget https://pastebin.com/raw/yhV0nTH4
 touch checkip
 mv yhV0nTH4 checkip
-chmod +x checkip && cp checkip /bin/checkip
-dos2unix -k -o /bin/checkip
+chmod +x checkip && cp checkip /usr/local/bin/checkip
+dos2unix -k -o /usr/local/bin/checkip
 
 # CREATE AND ENABLE "btcusd"
 wget https://pastebin.com/raw/wZTWNkhd
 touch btcusd
 mv wZTWNkhd btcusd
-chmod +x btcusd && cp btcusd /bin/btcusd
-dos2unix -k -o /bin/btcusd
+chmod +x btcusd && cp btcusd /usr/local/bin/btcusd
+dos2unix -k -o /usr/local/bin/btcusd
 
 echo ${DT2}" -- Additional bash scripts have been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: Additional bash scripts have been installed successfully!"
@@ -282,6 +282,7 @@ exit
 #               scripts installed to /bin
 # 20180416 ---- Added dos2unix (to fix errors); included execution of dos2unix
 #               on the scripts installed to /bin to correct the errors
+# 20180417 ---- Changed install of binaries from /bin to /usr/local/bin
 #
 ################################################################################
                                                    #                           #
