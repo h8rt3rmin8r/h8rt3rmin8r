@@ -3,13 +3,16 @@
 #  INSTALL LINUX ESSENTIALS  #
 ##############################
 #
+#   install-linux-essentials.sh - (Version 1.0.1)
+#   See changes in the "updates log" at the end of this file
+#
 # ---------------------------# ATTRIBUTION #------------------------------------
 #
 #   AUTHOR:     h8rt3rmin8r
 #   DATE:       20180416
 #   EMAIL:      161803398@email.tg
 #   PGP:        https://h8rt3rmin8r.com
-#   SOURCE-1:   https://pastebin.com/raw/Ls5JuEGH
+#   SOURCE-1:	https://pastebin.com/raw/Ls5JuEGH
 #   SOURCE-2:   https://h8rt3rmin8r.com/sh/install-linux-essentials.sh
 #
 # ---------------------------# DESCRIPTION #------------------------------------
@@ -58,6 +61,7 @@
 #   jq          (JSON Utility)
 #   htop        (Interactive process viewer)
 #   html2text   (HTML to text conversion tool)
+#   dos2unix    (DOS/Mac to Unix text file format converter)
 #   xmlstarlet  (Command line XML/XSLT toolkit)
 #   nmap        (Network mapping tool)
 #   arp-scan    (The classic ARP scanner)
@@ -159,6 +163,9 @@ apt-get install -y htop
 # INSTALL: HTML2TEXT
 apt-get install -y html2text
 
+# INSTALL: DOS2UNIX
+apt-get install -y dos2unix
+
 # INSTALL: XMLSTARTLET
 apt-get install -y xmlstarlet
 
@@ -219,18 +226,21 @@ wget https://pastebin.com/raw/KEh8dfFk
 touch fix-gcloud-key
 mv KEh8dfFk fix-gcloud-key
 chmod +x fix-gcloud-key && cp fix-gcloud-key /bin/fix-gcloud-key
+dos2unix -k -o /bin/fix-gcloud-key
 
 # CREATE AND ENABLE "checkip"
 wget https://pastebin.com/raw/yhV0nTH4
 touch checkip
 mv yhV0nTH4 checkip
 chmod +x checkip && cp checkip /bin/checkip
+dos2unix -k -o /bin/checkip
 
 # CREATE AND ENABLE "btcusd"
 wget https://pastebin.com/raw/wZTWNkhd
 touch btcusd
 mv wZTWNkhd btcusd
 chmod +x btcusd && cp btcusd /bin/btcusd
+dos2unix -k -o /bin/btcusd
 
 echo ${DT2}" -- Additional bash scripts have been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: Additional bash scripts have been installed successfully!"
@@ -263,6 +273,16 @@ echo ""
 
 exit
 
+################################################################################
+#  UPDATES LOG  #
+#################
+#
+# 20180416 ---- Script created
+# 20180416 ---- Conducted first run of the script; encountered errors with the
+#               scripts installed to /bin
+# 20180416 ---- Added dos2unix (to fix errors); included execution of dos2unix
+#               on the scripts installed to /bin to correct the errors
+#
 ################################################################################
                                                    #                           #
                                                    #  "think outside the box"  #
