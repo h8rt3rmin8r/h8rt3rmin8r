@@ -3,7 +3,7 @@
 #  INSTALL LINUX ESSENTIALS  #
 ##############################
 #
-#   install-linux-essentials.sh - (Version 1.0.2)
+#   install-linux-essentials.sh - (Version 1.0.3)
 #   See changes in the "updates log" at the end of this file
 #
 # ---------------------------# ATTRIBUTION #------------------------------------
@@ -67,6 +67,7 @@
 #   arp-scan    (The classic ARP scanner)
 #   lynx        (Command line web browser)
 #   git         (Repository management utility)
+#   unzip       (The unzip tool for extracting zipped directories)
 #   tree        (Directory tree viewer)
 #   gdebi       (Simple tool to install deb files)
 #   gcloud      (Google Cloud SDK) #Uncomment to enable installation!
@@ -181,6 +182,9 @@ apt-get install -y lynx
 # INSTALL: GIT
 apt-get install -y git
 
+# INSTALL: UNZIP
+apt-get install -y unzip
+
 # INSTALL: TREE
 apt-get install -y tree
 
@@ -277,12 +281,13 @@ exit
 #  UPDATES LOG  #
 #################
 #
-# 20180416 ---- Script created
+# 20180416 ---- Script created (1.0.0)
 # 20180416 ---- Conducted first run of the script; encountered errors with the
 #               scripts installed to /bin
 # 20180416 ---- Added dos2unix (to fix errors); included execution of dos2unix
-#               on the scripts installed to /bin to correct the errors
-# 20180417 ---- Changed install of binaries from /bin to /usr/local/bin
+#               on the scripts installed to /bin to correct the errors (1.0.1)
+# 20180417 ---- Changed install of binaries from /bin to /usr/local/bin (1.0.2)
+# 20180417 ---- Added install: unzip (1.0.3)
 #
 ################################################################################
                                                    #                           #
