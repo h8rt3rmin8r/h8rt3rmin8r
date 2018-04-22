@@ -3,7 +3,7 @@
 #  INSTALL LINUX ESSENTIALS  #
 ##############################
 #
-#   install-linux-essentials.sh - (Version 1.0.3)
+#   install-linux-essentials.sh - (Version 1.0.4)
 #   See changes in the "updates log" at the end of this file
 #
 # ---------------------------# ATTRIBUTION #------------------------------------
@@ -56,6 +56,7 @@
 #
 #   curl        (Command line URL tool)
 #   wget        (The non-interactive network downloader)
+#   wscat       (Communicate over websocket)
 #   gcsfuse     (Google Cloud Storage utility)
 #   apache2     (Web Server)
 #   jq          (JSON Utility)
@@ -145,6 +146,9 @@ apt-get install -y curl
 
 # INSTALL: WGET
 apt-get install -y wget
+
+# INSTALL: WSCAT
+apt install -y node-ws
 
 # INSTALL: GOOGLE CLOUD STORAGE UTILITY (gcsfuse)
 export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
@@ -288,6 +292,7 @@ exit
 #               on the scripts installed to /bin to correct the errors (1.0.1)
 # 20180417 ---- Changed install of binaries from /bin to /usr/local/bin (1.0.2)
 # 20180417 ---- Added install: unzip (1.0.3)
+# 20180422 ---- Added wscat to installation list (1.0.4)
 #
 ################################################################################
                                                    #                           #
