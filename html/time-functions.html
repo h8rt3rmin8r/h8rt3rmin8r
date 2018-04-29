@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML and JS | Time Functions</title>
+	<meta name="description" content="Check the current price of Bitcoin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<!-- Website styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/cryptocurrency.css">
+</head>
+<body>
+
+    <main role="main">
+
+    <!-- Main jumbotron -->
+    <div class="jumbotron btc-border" id="btc-header">
+        <div class="container">
+        <table>
+            <tr class="v-positioning-mid">    
+                <td class="h-positioning-lft">
+                    <img src="https://resonova.github.io/favicons/coding/apple-icon-72x72.png" border="0" />
+                </td>
+                <td class="h-positioning-mid"></td>
+                <td class="h-positioning-rit">
+                    <h1 class="display-4" id="btc-header-text">HTML & JS</h1>
+                </td>
+            </tr>
+            <tr class="v-positioning-btm">
+            	<td class="h-positioning-lft"></td>
+                <td class="h-positioning-mid"></td>
+                <td class="h-positioning-rit"><h4>JavaScript Time Functions</h4></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card btc-border-dynamic">
+            <div class="card-text data-space-sm btc-color">
+                <br>
+                <h4 class="animated fadeIn">UTC Time Offset</h4>
+                <hr>
+            </div>
+            <div class="card-text data-space-lg animated fadeIn">
+				<p>Click the button to display the time difference between UTC and local time.</p>
+				<button class="btn btn-success" onclick="myFunction1()">TRY IT #1</button>
+				<pre id="demo1" class="btc-color-invert">&nbsp;</pre>
+            </div>
+        </div>
+    </div>
+	<br>
+	<div class="container">
+        <div class="card btc-border-dynamic">
+            <div class="card-text data-space-sm btc-color">
+                <br>
+                <h4 class="animated fadeIn">UTC Hour</h4>
+                <hr>
+            </div>
+            <div class="card-text data-space-lg animated fadeIn">
+				<p>Click the button to display the hour, according to UTC.</p>
+				<button class="btn btn-success" onclick="myFunction2()">TRY IT #2</button>
+				<pre id="demo2" class="btc-color-invert">&nbsp;</pre>
+            </div>
+        </div>
+    </div>
+	<br>
+	<div class="container">
+        <p class="sidenote">
+            <i>Learn more at <a href="https://w3schools.org">w3schools.org</a></i>
+        </p>
+    </div>
+        
+	</main>
+	<!-- Website Footer -->
+    <footer class="footer" id="btc-footer">
+        <div class="container">
+            <span class="text-muted" id="btc-footer-text">© 2018
+                <a href="https://www.ResoNova.com">ResoNova International Consulting</a>
+            </span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script>
+		function myFunction1() {
+		    var d = new Date();
+		    var n = d.getTimezoneOffset();
+		    document.getElementById("demo1").innerHTML = n;
+		}
+		function myFunction2() {
+		    var d = new Date();
+		    var n = d.getUTCHours();
+		    document.getElementById("demo2").innerHTML = n;
+		}
+	</script>
+</body>
+
+</html>
