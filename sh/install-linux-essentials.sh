@@ -3,7 +3,7 @@
 #  INSTALL LINUX ESSENTIALS  #
 ##############################
 #
-#   install-linux-essentials.sh - (Version 1.0.4)
+#   install-linux-essentials.sh - (Version 1.0.5)
 #   See changes in the "updates log" at the end of this file
 #
 # ---------------------------# ATTRIBUTION #------------------------------------
@@ -56,6 +56,7 @@
 #
 #   curl        (Command line URL tool)
 #   wget        (The non-interactive network downloader)
+#   bc          (An arbitrary precision calculator language)
 #   wscat       (Communicate over websocket)
 #   gcsfuse     (Google Cloud Storage utility)
 #   apache2     (Web Server)
@@ -146,6 +147,9 @@ apt-get install -y curl
 
 # INSTALL: WGET
 apt-get install -y wget
+
+# INSTALL: BC
+apt-get install bc
 
 # INSTALL: WSCAT
 apt install -y node-ws
@@ -293,6 +297,7 @@ exit
 # 20180417 ---- Changed install of binaries from /bin to /usr/local/bin (1.0.2)
 # 20180417 ---- Added install: unzip (1.0.3)
 # 20180422 ---- Added wscat to installation list (1.0.4)
+# 20180508 ---- Added bc to installation list (1.0.5)
 #
 ################################################################################
                                                    #                           #
