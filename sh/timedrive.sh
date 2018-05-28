@@ -203,7 +203,7 @@ cd ..
 wget -q https://pastebin.com/raw/SY8CLk7G
 touch now-a.sh && cp SY8CLk7G now-a.sh && rm SY8CLk7G
 dos2unix -k -o now-a.sh
-wget -q https://pastebin/raw/WseuNSs8
+wget -q https://pastebin.com/raw/WseuNSs8
 touch now-b.sh && cp WseuNSs8 now-b.sh && rm WseuNSs8
 dos2unix -k -o now-b.sh
 
