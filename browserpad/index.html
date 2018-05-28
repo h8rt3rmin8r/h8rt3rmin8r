@@ -4,11 +4,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BrowserPad</title>
+    <meta name="description" content="A simple browser-based notepad">
 
     <!-- ****** FAVICONS AND BRANDING ****** -->
-    <!-- This site uses a favicon generator service provided by favicon-generator.org -->
+
     <link rel="apple-touch-icon" sizes="57x57" href="https://h8rt3rmin8r.com/images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://h8rt3rmin8r.com/images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://h8rt3rmin8r.com/images/apple-icon-72x72.png">
@@ -38,8 +39,9 @@
     <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/images/ms-icon-144x144.png">
     <meta name="msapplication-TileColor" content="#3372DF">
     <link rel="shortcut icon" href="https://h8rt3rmin8r.com/images/images/favicon.png">
-    
+
     <!-- Site Styles -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/darkly/bootstrap.min.css" rel="stylesheet">
     <style>
         html {
             position: relative;
@@ -47,7 +49,7 @@
         }
 
         body {
-            margin-bottom: 60px;
+            margin-bottom: 0px;
             /* Footer height */
         }
 
@@ -68,10 +70,13 @@
             max-height: 78vh;
             width: 100%;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 1.2em;
+            font-size: 1.0em;
+            font-weight: 500;
+            line-height: 1em;
             color: green;
             background-color: black;
-            border: 2px solid green;
+            border: 1px solid rgba(24, 24, 24, 0.897);
+            padding: 8px;
         }
 
         .card {
@@ -79,7 +84,6 @@
             padding: 2px;
             font-family: 'Courier New', Courier, monospace;
             color: green;
-            font-size: 1.2em;
             width: 100%;
         }
 
@@ -87,7 +91,7 @@
             font-family: 'Courier New', Courier, monospace;
             color: green;
             text-align: center;
-            font-size: 40px;
+            font-size: 35px;
             position: auto;
             margin-top: -22px;
         }
@@ -107,11 +111,14 @@
 
         .jumbotron {
             height: 10vh;
-            border: 2px solid black;
+            border: 2px solid rgba(0, 0, 0, 0.897);
+            background: rgb(20, 20, 20);
         }
     </style>
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/darkly/bootstrap.min.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Roboto|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- jQuery v3.3.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -125,7 +132,7 @@
     </div>
     <div class="container">
         <div class="card">
-            <textarea rows="40" id="my-textarea"></textarea>
+            <textarea rows="50" id="my-textarea"></textarea>
         </div>
     </div>
 
