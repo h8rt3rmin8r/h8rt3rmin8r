@@ -207,6 +207,9 @@ wget -q https://pastebin.com/raw/WseuNSs8
 touch now-b.sh && cp WseuNSs8 now-b.sh && rm WseuNSs8
 dos2unix -k -o now-b.sh
 
+# Enable loop execution
+sudo chmod +x now-*
+
 echo "(make-timedrive.sh)  Installation COMPLETE!"
 
 # Self-destruct ----------------------------------------------------------------
