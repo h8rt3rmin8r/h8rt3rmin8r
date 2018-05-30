@@ -3,7 +3,7 @@
 #  INSTALL LINUX ESSENTIALS  #
 ##############################
 #
-#   install-linux-essentials.sh - (Version 1.0.5)
+#   install-linux-essentials.sh - (Version 1.0.6)
 #   See changes in the "updates log" at the end of this file
 #
 # ---------------------------# ATTRIBUTION #------------------------------------
@@ -71,6 +71,7 @@
 #   git         (Repository management utility)
 #   unzip       (The unzip tool for extracting zipped directories)
 #   tree        (Directory tree viewer)
+#   virtualenv  (Python virtual environment creator and management tool)
 #   gdebi       (Simple tool to install deb files)
 #   gcloud      (Google Cloud SDK) #Uncomment to enable installation!
 #
@@ -87,6 +88,7 @@
 #   fix-gcloud-key  (Fix expired Google Cloud Shell expired keys error)
 #   checkip         (Check your system IP address)
 #   btcusd          (Check the current bitcoin/USD exchange rate)
+#   nova            (Calculate floating point arithmetic in the terminal)
 #
 ################################################################################
 #  FUNCTIONS  #
@@ -196,6 +198,9 @@ apt-get install -y unzip
 # INSTALL: TREE
 apt-get install -y tree
 
+# INSTALL: VIRTUALENV
+apt-get install -y virtualenv
+
 # INSTALL: GDEBI
 apt-get install -y gdebi
 
@@ -234,6 +239,7 @@ echo "[ install-linux-essentials.sh ]: Downloading and enabling additional bash 
 cd ~/.sh
 
 # CREATE AND ENABLE "fix-gcloud-key"
+# Description: Repair outdated Google Cloud PGP keys when they expire
 wget https://pastebin.com/raw/KEh8dfFk
 touch fix-gcloud-key
 mv KEh8dfFk fix-gcloud-key
@@ -241,6 +247,7 @@ chmod +x fix-gcloud-key && cp fix-gcloud-key /usr/local/bin/fix-gcloud-key
 dos2unix -k -o /usr/local/bin/fix-gcloud-key
 
 # CREATE AND ENABLE "checkip"
+# Description: 
 wget https://pastebin.com/raw/yhV0nTH4
 touch checkip
 mv yhV0nTH4 checkip
@@ -248,11 +255,21 @@ chmod +x checkip && cp checkip /usr/local/bin/checkip
 dos2unix -k -o /usr/local/bin/checkip
 
 # CREATE AND ENABLE "btcusd"
+# Description: 
 wget https://pastebin.com/raw/wZTWNkhd
 touch btcusd
 mv wZTWNkhd btcusd
 chmod +x btcusd && cp btcusd /usr/local/bin/btcusd
 dos2unix -k -o /usr/local/bin/btcusd
+
+# CREATE AND ENABLE "nova"
+# Description: Calculate floating point arithmetic in the terminal
+wget https://pastebin.com/raw/61fHwRCC
+touch install-nova.sh
+mv 61fHwRCC install-nova.sh
+chmod +x install-nova.sh
+dos2unix -k -o install-nova.sh
+sudo ./install-nova.sh
 
 echo ${DT2}" -- Additional bash scripts have been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: Additional bash scripts have been installed successfully!"
@@ -265,6 +282,7 @@ echo "--------------------------------------------------------------------------
 echo "'fix-gcloud-key'  (Repair outdated Google Cloud PGP keys when they expire)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "'checkip'         (Check your system's public IP address)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "'btcusd'          (Check the current bitcoin/USD exchange rate)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo "'nova'            (Calculate floating point arithmetic in the terminal)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "--------------------------------------------------------------------------" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "exiting script..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 
@@ -280,6 +298,7 @@ echo "--------------------------------------------------------------------------
 echo "'fix-gcloud-key'  (Repair outdated Google Cloud PGP keys when they expire)"
 echo "'checkip'         (Check your system's public IP address)"
 echo "'btcusd'          (Check the current bitcoin/USD exchange rate)"
+echo "'nova'            (Calculate floating point arithmetic in the terminal)"
 echo "--------------------------------------------------------------------------"
 echo ""
 
@@ -292,12 +311,14 @@ exit
 # 20180416 ---- Script created (1.0.0)
 # 20180416 ---- Conducted first run of the script; encountered errors with the
 #               scripts installed to /bin
-# 20180416 ---- Added dos2unix (to fix errors); included execution of dos2unix
+# 20180416 ---- Added 'dos2unix' (to fix errors); included execution of dos2unix
 #               on the scripts installed to /bin to correct the errors (1.0.1)
 # 20180417 ---- Changed install of binaries from /bin to /usr/local/bin (1.0.2)
-# 20180417 ---- Added install: unzip (1.0.3)
-# 20180422 ---- Added wscat to installation list (1.0.4)
-# 20180508 ---- Added bc to installation list (1.0.5)
+# 20180417 ---- Added install: 'unzip' (1.0.3)
+# 20180422 ---- Added 'wscat' to installation list (1.0.4)
+# 20180508 ---- Added 'bc' to installation list (1.0.5)
+# 20180530 ---- Added 'virtualenv' to installation list; added 'nova' to bash
+#               script installations (1.0.6)
 #
 ################################################################################
                                                    #                           #
