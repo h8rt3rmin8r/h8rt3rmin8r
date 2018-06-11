@@ -112,20 +112,23 @@ if [ "$uid" == "0" ]
     then
         echo "[ install-linux-essentials.sh ]: User is root"
     else
-        echo "[ install-linux-essentials.sh ]: You need to have root access, run again in sudo"
+        echo "[ install-linux-essentials.sh ]: You need to have root access. Run with sudo"
     exit 1
 fi
 
-# MOVE TO HOME DIRECTORY AND CREATE HIDDEN DIRECTORY ".sh"
+# Move to home directory and create core installation directories
 cd ${HOME}
-mkdir .sh && cd .sh
-mkdir install-linux-essentials && cd install-linux-essentials
+mkdir -p .software/{install-linux-essentials,fix-gcloud-key,checkip,btcusd,nova}
+cd .software/install-linux-essentials
+
+# Create the install log file and assign the appropriate variable
 touch install-linux-essentials.log
-echo ${DT}" -- Beginning processes as root user" > ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo ${DT}" -- Updating package list and installing initial system updates" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+LOG="~/.software/install-linux-essentials/install-linux-essentials.log"
+echo ${DT}" -- Beginning processes as root user" > ${LOG}
+echo ${DT}" -- Updating package list and installing initial system updates" >> ${LOG}
 echo "[ install-linux-essentials.sh ]: Updating package list and installing initial system updates"
 
-# UPDATE THE PACKAGE LIST & INSTALL UPDATES
+# Update the package list and install updates
 apt-get update
 apt-get -y upgrade
 apt-get -y dist-upgrade
@@ -136,8 +139,8 @@ apt-get -y dist-upgrade
 #
 #-------------------------------------------------------------------------------
 
-echo ${DT}" -- Installing non-graphical software packages..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "[ install-linux-essentials.sh ]: 'Installing non-graphical software packages...'"
+echo ${DT}" -- Installing non-graphical software packages..." >> ${LOG}
+echo "[ install-linux-essentials.sh ]: Installing non-graphical software packages..."
 
 # INSTALL: CURL
 apt-get install -y curl
@@ -206,7 +209,7 @@ apt-get install -y gdebi
 # FINISH PHASE 2 BY UPDATING THE PACKAGE LIST
 apt-get update
 
-echo ${DT}" -- Non-graphical software has been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Non-graphical software has been installed successfully!" >> ${LOG}
 echo "[ install-linux-essentials.sh ]: Non-graphical software has been installed successfully!"
 
 # [ PHASE 3 ] ------------------------------------------------------------------
@@ -228,30 +231,31 @@ echo "[ install-linux-essentials.sh ]: Non-graphical software has been installed
 #
 #-------------------------------------------------------------------------------
 
-echo ${DT}" -- Downloading and enabling additional bash scripts..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Downloading and enabling additional bash scripts..." >> ${LOG}
 echo "[ install-linux-essentials.sh ]: Downloading and enabling additional bash scripts..."
-
-cd ~/.sh
 
 # CREATE AND ENABLE "fix-gcloud-key"
 # Description: Repair outdated Google Cloud PGP keys when they expire
-wget https://pastebin.com/raw/KEh8dfFk
+cd ~/.software/fix-gcloud-key
+wget -q https://pastebin.com/raw/KEh8dfFk
 touch fix-gcloud-key
 mv KEh8dfFk fix-gcloud-key
 chmod +x fix-gcloud-key && cp fix-gcloud-key /usr/local/bin/fix-gcloud-key
 dos2unix -k -o /usr/local/bin/fix-gcloud-key
 
 # CREATE AND ENABLE "checkip"
-# Description: 
-wget https://pastebin.com/raw/yhV0nTH4
+# Description: Check the local system's public-facing IP address
+cd ~/.software/checkip
+wget -q https://pastebin.com/raw/yhV0nTH4
 touch checkip
 mv yhV0nTH4 checkip
 chmod +x checkip && cp checkip /usr/local/bin/checkip
 dos2unix -k -o /usr/local/bin/checkip
 
 # CREATE AND ENABLE "btcusd"
-# Description: 
-wget https://pastebin.com/raw/wZTWNkhd
+# Description: Check the current bitcoin/USD exchange rate
+cd ~/.software/btcusd
+wget -q https://pastebin.com/raw/wZTWNkhd
 touch btcusd
 mv wZTWNkhd btcusd
 chmod +x btcusd && cp btcusd /usr/local/bin/btcusd
@@ -259,27 +263,36 @@ dos2unix -k -o /usr/local/bin/btcusd
 
 # CREATE AND ENABLE "nova"
 # Description: Calculate floating point arithmetic in the terminal
-wget https://pastebin.com/raw/61fHwRCC
+cd ~/.software/nova
+wget -q https://pastebin.com/raw/61fHwRCC
 touch install-nova.sh
 mv 61fHwRCC install-nova.sh
 chmod +x install-nova.sh
 dos2unix -k -o install-nova.sh
 sudo ./install-nova.sh
 
-echo ${DT}" -- Additional bash scripts have been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+# Make a local copy of this install script
+cd .software/install-linux-essentials
+wget -q https://pastebin.com/raw/Ls5JuEGH
+touch install-linux-essentials.sh
+mv Ls5JuEGH install-linux-essentials.sh
+chmod +x install-linux-essentials.sh
+dos2unix -k -o install-linux-essentials.sh
+
+echo ${DT}" -- Additional bash scripts have been installed successfully!" >> ${LOG}
 echo "[ install-linux-essentials.sh ]: Additional bash scripts have been installed successfully!"
 
-echo ${DT}" -- ALL PROCESSES COMPLETE!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "Read the logs at ~/.sh/install-linux-essentials/install-linux-essentials.log" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "Email questions to h8rt3rmin8r at 161803398@email.tg" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "New commands available:" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "--------------------------------------------------------------------------" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "'fix-gcloud-key'  (Repair outdated Google Cloud PGP keys when they expire)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "'checkip'         (Check your system's public IP address)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "'btcusd'          (Check the current bitcoin/USD exchange rate)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "'nova'            (Calculate floating point arithmetic in the terminal)" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "--------------------------------------------------------------------------" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo "exiting script..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- ALL PROCESSES COMPLETE!" >> ${LOG}
+echo "Read the logs at ${LOG}" >> ${LOG}
+echo "Email questions to h8rt3rmin8r at 161803398@email.tg" >> ${LOG}
+echo "New commands available:" >> ${LOG}
+echo "--------------------------------------------------------------------------" >> ${LOG}
+echo "'fix-gcloud-key'  (Repair outdated Google Cloud PGP keys when they expire)" >> ${LOG}
+echo "'checkip'         (Check your system's public IP address)" >> ${LOG}
+echo "'btcusd'          (Check the current bitcoin/USD exchange rate)" >> ${LOG}
+echo "'nova'            (Calculate floating point arithmetic in the terminal)" >> ${LOG}
+echo "--------------------------------------------------------------------------" >> ${LOG}
+echo "exiting script..." >> ${LOG}
 
 # EXIT ROOT USER AND RETURN TO HOME
 cd ${HOME}
@@ -314,7 +327,8 @@ exit
 # 20180508 ---- Added 'bc' to installation list (1.0.5)
 # 20180530 ---- Added 'virtualenv' to installation list; added 'nova' to bash
 #               script installations (1.0.6)
-# 20180611 ---- Removed unused date variables (1.0.7)
+# 20180611 ---- Removed unused date variables; cleaned script by making use of
+#               variables; moved core directory from .sh to .software (1.0.7)
 #
 ################################################################################
                                                    #                           #
