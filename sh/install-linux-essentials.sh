@@ -3,7 +3,7 @@
 #  INSTALL LINUX ESSENTIALS  #
 ##############################
 #
-#   install-linux-essentials.sh - (Version 1.0.6)
+#   install-linux-essentials.sh - (Version 1.0.7)
 #   See changes in the "updates log" at the end of this file
 #
 # ---------------------------# ATTRIBUTION #------------------------------------
@@ -100,12 +100,8 @@
 #
 #-------------------------------------------------------------------------------
 
-# DATE-TIME VARIABLES
-DATE="`date '+%Y%m%d%H%M%S'`"
-DT=${DATE}
-DT0="`date`"
-DT1="`date '+%Y%m%d%H%M%S'`"
-DT2="`date '+%Y%m%d-%H%M%S'`"
+# DATE-TIME VARIABLE
+DT="`date '+%Y%m%d-%H%M%S'`"
 
 echo "[ install-linux-essentials.sh ]: BEGINNING PROCESSES..."
 
@@ -117,7 +113,6 @@ if [ "$uid" == "0" ]
         echo "[ install-linux-essentials.sh ]: User is root"
     else
         echo "[ install-linux-essentials.sh ]: You need to have root access, run again in sudo"
-        echo "[ install-linux-essentials.sh ]: Operate as root with the command, 'sudo -s'"
     exit 1
 fi
 
@@ -126,8 +121,8 @@ cd ${HOME}
 mkdir .sh && cd .sh
 mkdir install-linux-essentials && cd install-linux-essentials
 touch install-linux-essentials.log
-echo ${DT2}" -- Beginning processes as root user" > ~/.sh/install-linux-essentials/install-linux-essentials.log
-echo ${DT2}" -- Updating package list and installing initial system updates" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Beginning processes as root user" > ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Updating package list and installing initial system updates" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: Updating package list and installing initial system updates"
 
 # UPDATE THE PACKAGE LIST & INSTALL UPDATES
@@ -141,7 +136,7 @@ apt-get -y dist-upgrade
 #
 #-------------------------------------------------------------------------------
 
-echo ${DT2}" -- Installing non-graphical software packages..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Installing non-graphical software packages..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: 'Installing non-graphical software packages...'"
 
 # INSTALL: CURL
@@ -151,7 +146,7 @@ apt-get install -y curl
 apt-get install -y wget
 
 # INSTALL: BC
-apt-get install bc
+apt-get install -y bc
 
 # INSTALL: WSCAT
 apt install -y node-ws
@@ -211,7 +206,7 @@ apt-get install -y gdebi
 # FINISH PHASE 2 BY UPDATING THE PACKAGE LIST
 apt-get update
 
-echo ${DT2}" -- Non-graphical software has been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Non-graphical software has been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: Non-graphical software has been installed successfully!"
 
 # [ PHASE 3 ] ------------------------------------------------------------------
@@ -233,7 +228,7 @@ echo "[ install-linux-essentials.sh ]: Non-graphical software has been installed
 #
 #-------------------------------------------------------------------------------
 
-echo ${DT2}" -- Downloading and enabling additional bash scripts..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Downloading and enabling additional bash scripts..." >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: Downloading and enabling additional bash scripts..."
 
 cd ~/.sh
@@ -271,10 +266,10 @@ chmod +x install-nova.sh
 dos2unix -k -o install-nova.sh
 sudo ./install-nova.sh
 
-echo ${DT2}" -- Additional bash scripts have been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- Additional bash scripts have been installed successfully!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "[ install-linux-essentials.sh ]: Additional bash scripts have been installed successfully!"
 
-echo ${DT2}" -- ALL PROCESSES COMPLETE!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
+echo ${DT}" -- ALL PROCESSES COMPLETE!" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "Read the logs at ~/.sh/install-linux-essentials/install-linux-essentials.log" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "Email questions to h8rt3rmin8r at 161803398@email.tg" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
 echo "New commands available:" >> ~/.sh/install-linux-essentials/install-linux-essentials.log
@@ -319,6 +314,7 @@ exit
 # 20180508 ---- Added 'bc' to installation list (1.0.5)
 # 20180530 ---- Added 'virtualenv' to installation list; added 'nova' to bash
 #               script installations (1.0.6)
+# 20180611 ---- Removed unused date variables (1.0.7)
 #
 ################################################################################
                                                    #                           #
