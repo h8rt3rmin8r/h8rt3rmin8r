@@ -119,16 +119,16 @@
 # DATE-TIME VARIABLE
 DT="`date '+%Y%m%d-%H%M%S'`"
 
-echo "[ install-linux-essentials.sh ]: BEGINNING PROCESSES..."
+echo "[ ${0} ]: BEGINNING PROCESSES..."
 
 # VERIFY ROOT ACCESS
 uid=`id -u $USERNAME`
 
 if [ "$uid" == "0" ]
     then
-        echo "[ install-linux-essentials.sh ]: User is root"
+        echo "[ ${0} ]: User is root"
     else
-        echo "[ install-linux-essentials.sh ]: You need to have root access. Run with sudo"
+        echo "[ ${0} ]: You need to have root access. Run with sudo"
     exit 1
 fi
 
@@ -142,7 +142,7 @@ touch install-linux-essentials.log
 LOG="~/.software/install-linux-essentials/install-linux-essentials.log"
 echo ${DT}" -- Beginning processes as root user" > ${LOG}
 echo ${DT}" -- Updating package list and installing initial system updates" >> ${LOG}
-echo "[ install-linux-essentials.sh ]: Updating package list and installing initial system updates"
+echo "[ ${0} ]: Updating package list and installing initial system updates"
 
 # Update the package list and install updates
 apt-get update
@@ -156,77 +156,137 @@ apt-get -y dist-upgrade
 #-------------------------------------------------------------------------------
 
 echo ${DT}" -- Installing non-graphical software packages..." >> ${LOG}
-echo "[ install-linux-essentials.sh ]: Installing non-graphical software packages..."
+echo "[ ${0} ]: Installing non-graphical software packages..."
 
 # INSTALL: CURL
+echo "[ ${0} ]: Installing curl"
+echo ${DT}" -- Installing curl" >> ${LOG}
+sleep 0.5
 apt-get install -y curl
 
 # INSTALL: WGET
+echo "[ ${0} ]: Installing wget"
+echo ${DT}" -- Installing wget" >> ${LOG}
+sleep 0.5
 apt-get install -y wget
 
 # INSTALL: BC
+echo "[ ${0} ]: Installing bc"
+echo ${DT}" -- Installing bc" >> ${LOG}
+sleep 0.5
 apt-get install -y bc
 
 # INSTALL: WSCAT
+echo "[ ${0} ]: Installing wscat"
+echo ${DT}" -- Installing wscat" >> ${LOG}
+sleep 0.5
 apt install -y node-ws
 
 # INSTALL: GOOGLE CLOUD STORAGE UTILITY (gcsfuse)
+echo "[ ${0} ]: Installing gcsfuse"
+echo ${DT}" -- Installing gcsfuse" >> ${LOG}
+sleep 0.5
 export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
 echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get install -y gcsfuse
 
 # INSTALL: APACHE2
+echo "[ ${0} ]: Installing apache2"
+echo ${DT}" -- Installing apache2" >> ${LOG}
+sleep 0.5
 apt-get install -y apache2
 
 # INSTALL: JQ
+echo "[ ${0} ]: Installing jq"
+echo ${DT}" -- Installing jq" >> ${LOG}
+sleep 0.5
 apt-get install -y jq
 
 # INSTALL: HTOP
+echo "[ ${0} ]: Installing htop"
+echo ${DT}" -- Installing htop" >> ${LOG}
+sleep 0.5
 apt-get install -y htop
 
 # INSTALL: HTML2TEXT
+echo "[ ${0} ]: Installing html2text"
+echo ${DT}" -- Installing html2text" >> ${LOG}
+sleep 0.5
 apt-get install -y html2text
 
 # INSTALL: DOS2UNIX
+echo "[ ${0} ]: Installing dos2unix"
+echo ${DT}" -- Installing dos2unix" >> ${LOG}
+sleep 0.5
 apt-get install -y dos2unix
 
 # INSTALL: XMLSTARTLET
+echo "[ ${0} ]: Installing xmlstarlet"
+echo ${DT}" -- Installing xmlstarlet" >> ${LOG}
+sleep 0.5
 apt-get install -y xmlstarlet
 
 # INSTALL: NMAP
+echo "[ ${0} ]: Installing nmap"
+echo ${DT}" -- Installing nmap" >> ${LOG}
+sleep 0.5
 apt-get install -y nmap
 
 # INSTALL: ARP-SCAN
+echo "[ ${0} ]: Installing arp-scan"
+echo ${DT}" -- Installing arp-scan" >> ${LOG}
+sleep 0.5
 apt-get install -y arp-scan
 
 # INSTALL: LYNX
+echo "[ ${0} ]: Installing lynx"
+echo ${DT}" -- Installing lynx" >> ${LOG}
+sleep 0.5
 apt-get install -y lynx
 
 # INSTALL: GIT
+echo "[ ${0} ]: Installing git"
+echo ${DT}" -- Installing git" >> ${LOG}
+sleep 0.5
 apt-get install -y git
 
 # INSTALL: UNZIP
+echo "[ ${0} ]: Installing unzip"
+echo ${DT}" -- Installing unzip" >> ${LOG}
+sleep 0.5
 apt-get install -y unzip
 
 # INSTALL: TREE
+echo "[ ${0} ]: Installing tree"
+echo ${DT}" -- Installing tree" >> ${LOG}
+sleep 0.5
 apt-get install -y tree
 
 # INSTALL: VIRTUALENV
+echo "[ ${0} ]: Installing virtualenv"
+echo ${DT}" -- Installing virtualenv" >> ${LOG}
+sleep 0.5
 apt-get install -y virtualenv
 
 # INSTALL: GDEBI
+echo "[ ${0} ]: Installing gdebi"
+echo ${DT}" -- Installing gdebi" >> ${LOG}
+sleep 0.5
 apt-get install -y gdebi
 
 # INSTALL: GOOGLE CLOUD SDK
-# Uncomment the following line to enable installation
+# Uncomment the following 4 lines to enable installation
+#echo "[ ${0} ]: Installing gcloud"
+#echo ${DT}" -- Installing gcloud" >> ${LOG}
+#sleep 0.5
 #curl https://sdk.cloud.google.com | bash
 
 # FINISH PHASE 2 BY UPDATING THE PACKAGE LIST
 apt-get update
 
 echo ${DT}" -- Non-graphical software has been installed successfully!" >> ${LOG}
-echo "[ install-linux-essentials.sh ]: Non-graphical software has been installed successfully!"
+echo "[ ${0} ]: Non-graphical software has been installed successfully!"
 
 # [ PHASE 3 ] ------------------------------------------------------------------
 #
@@ -248,7 +308,7 @@ echo "[ install-linux-essentials.sh ]: Non-graphical software has been installed
 #-------------------------------------------------------------------------------
 
 echo ${DT}" -- Downloading and enabling additional bash scripts..." >> ${LOG}
-echo "[ install-linux-essentials.sh ]: Downloading and enabling additional bash scripts..."
+echo "[ ${0} ]: Downloading and enabling additional bash scripts..."
 
 # CREATE AND ENABLE "fix-gcloud-key"
 # Description: Repair outdated Google Cloud PGP keys when they expire
@@ -296,9 +356,10 @@ chmod +x install-linux-essentials.sh
 dos2unix -k -o install-linux-essentials.sh
 
 echo ${DT}" -- Additional bash scripts have been installed successfully!" >> ${LOG}
-echo "[ install-linux-essentials.sh ]: Additional bash scripts have been installed successfully!"
+echo "[ ${0} ]: Additional bash scripts have been installed successfully!"
 
 echo ${DT}" -- ALL PROCESSES COMPLETE!" >> ${LOG}
+echo "--------------------------------------------------------------------------" >> ${LOG}
 echo "Read the logs at ${LOG}" >> ${LOG}
 echo "Email questions to h8rt3rmin8r at 161803398@email.tg" >> ${LOG}
 echo "New commands available:" >> ${LOG}
@@ -313,7 +374,8 @@ echo "exiting script..." >> ${LOG}
 # EXIT ROOT USER AND RETURN TO HOME
 cd ${HOME}
 echo ""
-echo "[ install-linux-essentials.sh ]: ALL PROCESSES COMPLETE!"
+echo "[ ${0} ]: ALL PROCESSES COMPLETE!"
+echo "--------------------------------------------------------------------------"
 echo "Read the logs at ~/.sh/install-linux-essentials/install-linux-essentials.log"
 echo "Email questions to h8rt3rmin8r at 161803398@email.tg"
 echo ""
