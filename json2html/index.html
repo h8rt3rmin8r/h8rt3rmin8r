@@ -2016,13 +2016,74 @@
     <!-- Meta -->
     <meta name="description" content="JSON2HTML is a jQuery plug-in used to transform json objects into html.">
 
-    <script src="http://json2html.com/js/jquery-3.2.1.slim.min.js.download"></script>
-    <script src="http://json2html.com/js/popper.min.js.download"></script>
-    <script src="http://json2html.com/js/bootstrap.min.js.download"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.4/beautify-html.min.js"></script>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link href="http://json2html.com/js/prettify.css" rel="stylesheet">
-    <script type="text/javascript" src="http://json2html.com/js/prettify.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.4/beautify-html.min.js"></script>
+    <link rel="stylesheet" href="https//fonts.googleapis.com/css?family=Lato:300,400,700">
+    <!--<link href="http://json2html.com/js/prettify.css" rel="stylesheet">-->
+    <style>
+        .com {
+            color: #93A1A1;
+        }
+
+        .lit {
+            color: #195F91;
+        }
+
+        .pun,
+        .opn,
+        .clo {
+            color: #93A1A1;
+        }
+
+        .fun {
+            color: #DC322F;
+        }
+
+        .str,
+        .atv {
+            color: #DD1144;
+        }
+
+        .kwd,
+        .prettyprint .tag {
+            color: #1E347B;
+        }
+
+        .typ,
+        .atn,
+        .dec,
+        .var {
+            color: teal;
+        }
+
+        .pln {
+            color: #48484C;
+        }
+
+        .prettyprint {
+            background-color: #F7F7F9;
+            border: 1px solid #E1E1E8;
+            padding: 8px;
+        }
+
+        .prettyprint.linenums {
+            box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset;
+        }
+
+        ol.linenums {
+            margin: 0 0 0 33px;
+        }
+
+        ol.linenums li {
+            color: #BEBEC5;
+            line-height: 20px;
+            padding-left: 12px;
+            text-shadow: 0 1px 0 #FFFFFF;
+        }
+    </style>
+    <script type="text/javascript" src="https://h8rt3rmin8r.com/js/prettify.js"></script>
 
     <style>
         textarea {
@@ -2043,14 +2104,17 @@
         }
     </style>
 
-    <link href="http://json2html.com/img/favicon.ico" rel="icon" type="image/ico">
+    <link href="https://resonova.github.io/favicons/spider/apple-icon-57x57.png" rel="icon" type="image/ico">
 </head>
 
 <body>
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark text-white mb-0">
 
         <a class="navbar-brand mr-0 mr-md-2" href="http://json2html.com/" aria-label="JSON2HTML">
-            <h4><b>json2html</b></h4><p>Pure javascript HTML templating</p>
+            <h4>
+                <b>json2html</b>
+            </h4>
+            <p>Pure javascript HTML templating</p>
             <!--<img src="http://json2html.com/img/json2html-logo-white.png" style="width:36px;height:36px;" />-->
         </a>
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
