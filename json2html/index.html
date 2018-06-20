@@ -27,10 +27,10 @@
     <link rel="apple-touch-icon-precomposed" href="https://resonova.github.io/favicons/spider/apple-icon-precomposed.png">
     <link rel="shortcut icon" href="https://resonova.github.io/favicons/spider/favicon.ico">
     <meta name="msapplication-TileImage" content="https://resonova.github.io/favicons/spider/ms-icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#10871e">
+    <meta name="msapplication-TileColor" content="#0b1a31">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="https://resonova.github.io/favicons/spider/ms-icon-144x144.png">
-    <meta name="theme-color" content="#10871e">
+    <meta name="theme-color" content="#0b1a31">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -2092,15 +2092,31 @@
             border: none;
             color: #3d3d3d;
             padding-top: 10px;
-            background-color: #e2e2e2;
+            background-color: #bdbdbd;
         }
 
         .tab-content {
-            border-bottom: thin solid #ddd;
+            border-bottom: thin solid rgb(207, 207, 207);
         }
 
         .hide-soft {
             display: none;
+        }
+
+        .btn {
+            min-width: 134px;
+            max-width: 135px;
+            margin: 8px;
+        }
+
+        .card {
+            padding: 12px;
+            margin: 12px;
+        }
+
+        h4 {
+            line-height: 34px;
+            padding: 6px;
         }
     </style>
 
@@ -2111,61 +2127,63 @@
     <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark text-white mb-0">
 
         <a class="navbar-brand mr-0 mr-md-2" href="http://json2html.com/" aria-label="JSON2HTML">
-            <h4>
-                <b>json2html</b>
-            </h4>
-            <p>Pure javascript HTML templating</p>
-            <!--<img src="http://json2html.com/img/json2html-logo-white.png" style="width:36px;height:36px;" />-->
+            <span>
+                <h3>
+                    <b>json2html</b>
+                </h3>
+                <p>Pure javascript HTML templating</p>
+                <!--<img src="http://json2html.com/img/json2html-logo-white.png" style="width:36px;height:36px;" />-->
+            </span>
         </a>
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         </ul>
-
-        <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="https://github.com/moappi/jquery.json2html/archive/master.zip">Download</a>
     </header>
 
     <div class="container" style="padding-top:50px;">
-
-        <h4>JSON2HTML Transform Builder</h4>
-        <hr>
-        <p>Use the transform builder below to help encode an HTML template into a json transform.</p>
-
-        <p>Simply enter the HTML temlate and click on the "JSON Transform" tab to get the transform. You can also enter the
-            JSON Transform and get the HTML Template as well.</p>
-
-        <p>
-            <i>Note: Transforms require that all text be wrapped in an html element; mixed text with html elements will result
-                in text being removed.</i>
-        </p>
-
-        <div id="error-msg" class="alert alert-danger hide-soft" role="alert">
-            <strong>Ooops there was an Error</strong>
-            <br>
-            <p></p>
-        </div>
-
-        <ul class="nav nav-tabs" style="padding-top:15px">
-            <li class="nav-item">
-                <a id="json2html" class="nav-link active" href="#html-tab">HTML Template</a>
-            </li>
-            <li class="nav-item">
-                <a id="html2json" class="nav-link" href="#json-tab">JSON Transform</a>
-            </li>
-        </ul>
-
-        <div class="tab-content">
-            <div id="html-tab" class="tab-pane fade show active" role="tabpanel" aria-labelledby="html-tab">
-                <textarea placeholder="Enter HTML Template (Valid HTML)">
-                    <div id="${id}">
-                        <ul>
-                            <li>First Name: ${fname}</li>
-                            <li>Last Name: ${lname}</li>
-                            <li>Age: ${age}</li>
-                        </ul>
-                    </div>
-                </textarea>
+        <div class="card information-card">
+            <div class="card-title bg-dark text-white">
+                <h4>Transform Builder</h4>
             </div>
-            <div id="json-tab" class="tab-pane fade" role="tabpanel" aria-labelledby="json-tab">
-                <textarea placeholder="Enter JSON Transform (Valid JSON Object)"></textarea>
+            <div class="card-text">
+                <p>Use the transform builder below to help encode an HTML template into a json transform.</p>
+                <p>Simply enter the HTML temlate and click on the "JSON Transform" tab to get the transform. You can also enter
+                    the JSON Transform and get the HTML Template as well.</p>
+                <p>Note: Transforms require that all text be wrapped in an html element; mixed text with html elements will
+                    result in text being removed.</p>
+                <a class="btn btn-dark d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="http://json2html.com/">Documentation</a>
+                <a class="btn btn-dark d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="https://github.com/moappi/jquery.json2html/archive/master.zip">Download</a>
+
+                <div id="error-msg" class="alert alert-danger hide-soft" role="alert">
+                    <strong>Ooops there was an Error</strong>
+                    <br>
+                    <p></p>
+                </div>
+                <hr>
+                <ul class="nav nav-tabs" style="padding-top:15px">
+                    <li class="nav-item">
+                        <a id="json2html" class="nav-link active" href="#html-tab">HTML Template</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="html2json" class="nav-link" href="#json-tab">JSON Transform</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="html-tab" class="tab-pane fade show active" role="tabpanel" aria-labelledby="html-tab">
+                        <textarea placeholder="Enter HTML Template (Valid HTML)">
+                            <div id="${id}">
+                                <ul>
+                                    <li>First Name: ${fname}</li>
+                                    <li>Last Name: ${lname}</li>
+                                    <li>Age: ${age}</li>
+                                </ul>
+                            </div>
+                        </textarea>
+                    </div>
+                    <div id="json-tab" class="tab-pane fade" role="tabpanel" aria-labelledby="json-tab">
+                        <textarea placeholder="Enter JSON Transform (Valid JSON Object)"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
