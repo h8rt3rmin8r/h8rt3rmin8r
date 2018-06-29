@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Controlling popup windows via HTML buttons with JavaScript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parent Window</title>
+
+    <!-- Website styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        article,
+        aside,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        p {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="card-title">
+            <h1>Window Controls</h1>
+        </div>
+        <br>
+        <div class="card-text">
+            <p>
+                <input type='button' id='btnOpen' value='Open Child'>
+                <input type='button' id='btnClose' value='Close Child'>
+                <input type='button' id='btnRefresh' value='Refresh Child'>
+            </p>
+        </div>
+    </div>
+    <script type='text/javascript'>
+        (function () {
+            var childWindow;
+
+            document.getElementById('btnOpen').onclick = openChildWindow;
+            document.getElementById('btnClose').onclick = closeChildWindow;
+            document.getElementById('btnRefresh').onclick = refreshChildWindow;
+
+            function openChildWindow() {
+                if (childWindow) {
+                    alert("We already have one open.");
+                } else {
+                    debugger
+                    childWindow = window.open("https://clox.io/r/", "_blank", "width=1000,height=480,resizable");
+                }
+            }
+
+            function closeChildWindow() {
+                if (!childWindow) {
+                    alert("There is no child window open.");
+                } else {
+                    childWindow.close();
+                    childWindow = undefined;
+                    alert("Window closed successfully");
+                }
+            }
+
+            function refreshChildWindow() {
+                if (!childWindow) {
+                    alert("There is no child window open.");
+                } else {
+                    childWindow.location.reload(true);
+                }
+            }
+        })();
+    </script>
+    <!-- Debug throws security error due to XSS on child window -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
