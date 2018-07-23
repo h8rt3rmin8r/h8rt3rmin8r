@@ -47,13 +47,19 @@
             padding: 3;
             }
             input {
-            height: 40px;
-            width: 350px;
+            min-height: 40px;
+            min-width: 240px;
             border-radius: 0.3rem;
+            position: relative;
+            text-align: left;
+            display: block;
+            box-sizing: border-box;
+            margin: 0.5rem auto;
+            font-size: 1rem;
             }
             #ss-submit {
             display: block;
-            width: 240px;
+            min-width: 240px;
             box-sizing: border-box;
             margin: 0.5rem auto;
             font-size: 1rem;
@@ -73,10 +79,6 @@
             }
             #ss-submit:hover{
             background: #187f4a;
-            }
-            .custom-content {
-            position: relative;
-            text-align: left;
             }
             .form-group{
             text-align: left;
