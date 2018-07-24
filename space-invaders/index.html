@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Space Invaders</title>
+    <title>Space Invaders JS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/slate/bootstrap.min.css">
     <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fallout3.css">
     <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fonts-ubuntu.css">
@@ -68,23 +68,23 @@
 
 <body>
     <br>
-    <h1>Javascript Space Invaders</h1>
+    <h1 class="animated zoomIn">Space Invaders JS</h1>
     <h3>Interval
         <span id="inter"></span> ms</h3>
     <p><i>(Use the arrow keys and space bar to control the gun)</i></p>
 
     <div id="levelDiv">
         <h2>Level</h2>
-        <span id="level"></span>
+        <span id="level" class="flipInX"></span>
     </div>
     <br>
     <div id="scoreDiv">
         <h2>Score</h2>
-        <span id="score"></span>
+        <span id="score" class="flipInX"></span>
     </div>
     <div id="alivesDiv">
         <h2>Aliens</h2>
-        <span id="alives"></span>
+        <span id="alives" class="flipInX"></span>
 
     </div>
     <canvas id="aliensCanvas" class="mesCanvas" width="530" height="500">Unfortunately, your browser doesn't support the canvas element :( </canvas>
@@ -403,7 +403,7 @@
             var canvas = element.getContext('2d');
 
             var pic = new Image();
-            pic.src = 'https://github.com/gregquat/inbeda/raw/master/sprite.png';
+            pic.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAAAtCAYAAAByBT9fAAAAAXNSR0IArs4c6QAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB9wCBQ01E8phxZ0AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAABsUlEQVR42u2ay47DIAxFQ8X/f3FHdDHTxaRCfqconLtswYTIJzbGx4EQWkfNOmGMMf4ZaK1lPtDbvtaudbx2Xx8vKnmfH3oev+v3w7XOA1/ejMirPVYizUuitA/zC4zu+03iWUYyIXIXIq0eXB2rvOtmk5i2b4hEKiJn2an192g2PCPJuq5kR5uVa+2IxEV1IhYidyOyKmZUxS4tSWUxsorECZkQeRN1ycPO5zUplnmzNykmRudrY6c1Zq4iiLw7kTPCZh6ZReZVMdablWftDyKRLWuVyPSOqyLGay/7+chaEUIIIYS+kbVWZ3/R7Pc2PTucI9fW+JP2d++8HvXYKBHn+doK0ex/7bwsYlchtcNMceyaOKZ0KWF10O71xKtilbS+tfJU8elcgUyIXITM2ada6yhd68HVtwPRnp2s7jtvzw4xclMys8fTs3PRetW3Qpwjd6vseNPirMrKVV+CcB8rlZ29Kz3R8d1KYkUX3Rjj4bXjHR/NWlfr3Vkla207kKgJTd6SZbeSaH0QZVz78Xq4dV3p3Ovtf4VISGyWCtCq7ZjbJjfZ11gIIYQQQgitrxddCSg6qhtnqQAAAABJRU5ErkJggg==';
 
             Game.init(530, 500);
 
