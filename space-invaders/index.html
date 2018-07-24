@@ -5,13 +5,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Suppress browser request for favicon.ico -->
+    <link rel="shortcut icon"type="image/x-icon" href="data:image/x-icon;,">
+    <meta name="theme-color" content="#000000">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Space Invaders JS">
+    <!-- MS Windows Tile Icon -->
+    <meta name="msapplication-TileColor" content="#41df33">
+    
     <title>Space Invaders JS</title>
+    <meta name="description" content="Play the classic Space Invaders arcade game">
+    <meta name="keywords" content="arcade, space invaders, space invaders js, javascript games, h8rt3rmin8r">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/slate/bootstrap.min.css">
     <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fallout3.css">
     <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fonts-ubuntu.css">
     <link rel="stylesheet" href="https://resonova.github.io/cdn/css/animate.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        @-ms-viewport {
+            width: device-width;
+        }
+        
         body{
             margin-left: 30px;
         }
@@ -43,7 +62,7 @@
         #level {
             display: block;
             width: 90px;
-            height: 30px;
+            height: 33px;
             border: 2px solid rgba(109, 5, 5, 0.753);
             border-radius: 7px 7px 7px;
             text-align: center;
@@ -63,6 +82,64 @@
             margin: 0;
         }
     </style>
+    <!-- Favicon branding script -->
+    <script>
+        var favIcon = "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAAB\
+zenr0AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAA\
+ICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAP8A/wD/oL2\
+nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAABfJJREFUWMPdl0uPHVcVhb99qu6j2\
+4+2nQxIO4OICIkRauE5MPPPyC+EEX8ApFgMkGCIEJYDNsRxE3ff7lu3HuecvRj\
+s6tttY9mJwogjlVTPs9dee+1HGf/j9dnv3rz+6pfvf9+uTn4quAt0Di5A81MBz\
+VtfCfAbX1+9n+Keyrx5c+O5wSLBRwYV+L3dBNBg1DcBvQvkO2B8yDm951tdvWR\
+fPvnyi3tH934lVN80qHfs+cOWYRJKL56/+O3jx49/3QIp5/yLnPMXP3j377gkM\
+QzDqZn9pgVsGAbbLXY8+cMTnr14SkopYgzII5Z7bq5IcKARclBWxF7BmC1CBzI\
+h16wjUSfn5z97xMnJCX3fG2BtGJFJ8Le//5W/bP/M4mBBvVRsNM2aG4S1IIGqw\
+ARLoSqml8IOZ+NLkAsh0m1RtvGuLUX/r8JH9z7m5OQEl+8BmMuRnNQmLLe0t1q\
+a+yKtQwZ1J7gnaKBcOp6huW2ogfzaae+IdCeeWyvqCGkNtjQ0ObRgK0hL2zPl7\
+gbQAnh1cxcqom7EODrNEbAKz8tWpKWwNZTeSWvIXXjmWaQjyBvHVsKW4MWpo0g\
+JyuCwEO1t0LoiHPc49iFwd+SOkmAhJMcd6mnErw5ifCXaB0FtzeFF3QWA9gDst\
+mNLQQJbC+GwhuoV74QdgZsjKRio1WAuHe7V3D08kscGcnwUduiwdpQcOxBljHM\
+1Ts2VWitlLKQHDisn7wr980IZKl4rZXDK1ilTpeSCy5GL+kYI3HE5nkUdnZKct\
+BBuQBa1F6Vz2EDphCfhRaFyE2Un/HxmbxZn3ojizlhHum6AlxOXzwb6nwxha2a\
+gBajuJheOw1LhyVakJUybYIIDwSEwOWUQ6RAwhxK0VxfeOdN5YfSB7qJn+sdIX\
+kxMXUEbYOW41ZsMzFmwF0UYZ2loErUKuxW53NwVLMEJgXEgyrlYfCr6rwvd2Y5\
+p1ZPTwOVXY4SyNdiBD9DeAQ4NxE0R7kNgLsddsHTsTkKjU86ddg1qhZYhuPHUs\
+VZgzvlpx/DtjkkD3cuRdFe098EzWGssHhhlIwzwETSFMxGCKw2kqyxQoFo7niq\
+1Op5E6USdBH3EdmRgN27Jr3vOX/Y0D0R731gcz4XIjHRLeA/lXPjAvkvaYi5q7\
+lSvb4nQHa9ifF1JK1Ca06iKPBT6qadnyy7tyCXTOChBOgyKawfLY6M5hNpDfhU\
+Bbo6gXkRhqqPtHb0Ogc8hmGtBLZXhVVS/UgrjqmPTXTLWnvG0klbG6jPDe4AoP\
+GkZJRtFz6hbSKswjoElUAbfag9Ab2lgf9ih40vn7NUF235LXgyUjWNmUA1NUM5\
+ARSgLs0RazT2gBhBroHaiuTRogyEsWLrBwH+HoFJ5/fqMvu/pznt8gOYA6sZob\
+oVXXsKj5sjIs9G6g3RomAWAdDB7PIFvwHvQKFiD0DuzAJez63d8u/k35ZuENbD\
+8kUWna+cNc8Q1HYDvQtm+FeUM2o+jdauPECBYPICyDfGV03DgGkCINs3tOIrDz\
+pn+GZvP4wtmoebodCGo8Zn2tPoY4GwBPhv2XcwLdYwuGB3nakbU3uE9gDkt8El\
+4FzOH9zA+Fz5C3cTGZmFMBcprYQ00dyMTrgCnQ8MWsyB3QA7QN6ehm90wAdQaT\
+cXdseWMOoFfKIw7UCPeaQXNndlzD3DlTNhqNjopxt75mTJ4pz0D7pFdtVQjMhl\
+KKZRSIhT5OqVqFx/bFdXjHPc+2NjfH8AvoLyKsXZml3QI9SzAU6M2ePEAUMteh\
+CqlkHOmeg0BtTFqKbMfjOtFjGMxH8wgFpBa8CKmb6COovV5bHORTwWNxQzgQAm\
+2w+F6nQW5ZHLOPHr0iE8+/YRkFkMo17G9AmLLWXB9iMva+XweXNP6Wif78js7I\
+sTnP/6caZoo5ZoB+l3Parni+PiYhw8ffoe5+sZ0fPP8XddvLXen6zrGcdwD8Kd\
+Pn/5xsVgcX1Wn95j93v8mhqEr95mbVUp+dnb2J4iZx4Aj4D77vnXD4Ju/WB8G+\
+OF7ELI8Ay6/nzv/j+s/Cn3b2M4Bs9cAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTc\
+tMDgtMjBUMTg6MTE6MjIrMDA6MDD+x3x8AAAAJXRFWHRkYXRlOm1vZGlmeQAyM\
+DE3LTA4LTIwVDE4OjExOjIyKzAwOjAwj5rEwAAAAEZ0RVh0c29mdHdhcmUASW1\
+hZ2VNYWdpY2sgNi43LjgtOSAyMDE0LTA1LTEyIFExNiBodHRwOi8vd3d3LmltY\
+WdlbWFnaWNrLm9yZ9yG7QAAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXM\
+AMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADE5Mg8AcoUAAAAXd\
+EVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMTky06whCAAAABl0RVh0VGh1bWI6Ok1\
+pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTAzM\
+jUyNjgyBxEoXQAAAA90RVh0VGh1bWI6OlNpemUAMEJClKI+7AAAAFZ0RVh0VGh\
+1bWI6OlVSSQBmaWxlOi8vL21udGxvZy9mYXZpY29ucy8yMDE3LTA4LTIwLzY1Y\
+jExMmY5MDU2MzE5YmNkN2IzNTUxZDU4MTFiNzNiLmljby5wbmdl7KcSAAAAAEl\
+FTkSuQmCC";
+        
+        var docHead = document.getElementsByTagName('head')[0];
+        var newLink = document.createElement('link');
+        newLink.rel = 'shortcut icon';
+        newLink.type = 'image/x-icon';
+        newLink.href = 'data:image/png;base64,'+favIcon;
+        docHead.appendChild(newLink);
+    </script>
 
 </head>
 
@@ -75,16 +152,16 @@
 
     <div id="levelDiv">
         <h2>Level</h2>
-        <span id="level" class="flipInX"></span>
+        <span id="level" class="animated flipInX"></span>
     </div>
     <br>
     <div id="scoreDiv">
         <h2>Score</h2>
-        <span id="score" class="flipInX"></span>
+        <span id="score" class="animated flipInX"></span>
     </div>
     <div id="alivesDiv">
         <h2>Aliens</h2>
-        <span id="alives" class="flipInX"></span>
+        <span id="alives" class="animated flipInX"></span>
 
     </div>
     <canvas id="aliensCanvas" class="mesCanvas" width="530" height="500">Unfortunately, your browser doesn't support the canvas element :( </canvas>
