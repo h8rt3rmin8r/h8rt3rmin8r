@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--
-    VIEW LIVE AT https://h8rt3rmin8r.com/html/tradingview.html
-    -->
+<!-- VIEW LIVE AT https://h8rt3rmin8r.com/html/tradingview.html -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,205 +14,267 @@
         @-ms-viewport {
             width: device-width;
         }
-
+        
         * {
             box-sizing: border-box;
         }
-
+        
         html {
             position: relative;
             min-height: 100%;
         }
+        
         body {
-            padding:0;
-            margin:0
-            z-index: -1;
+            padding: 0;
+            margin: 0 z-index: -1;
             background-color: black;
         }
-        .container {
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            display:flex; 
-            flex-wrap: wrap;
-            padding: 0;
-            margin: 0;
-            height: 100vh;
-            width: 100vw;
-            z-index: 1;
-        }
-        .child {
-            /*flex-grow: 1;*/
-            width:50vw;
-            height: 50vh;
-            /*height:33.3333vh;*/
-            z-index: 2;
-        }
-        #childA {position: fixed; top: 0; left: 0;}
-        #childB {position: fixed; top: 0; right: 0;}
-        #childC {position: fixed; bottom: 0; left: 0;}
-        #childD {position: fixed; bottom: 0; right: 0;}
         
-        /* SCROLLBAR STYLES */
-
-/* Scrollbar Width */
-::-webkit-scrollbar {
-    width: 7px;
-    cursor: crosshair;
-    /*max-height: 50px;*/
-}
-
-/* Scrollbar Track */
-::-webkit-scrollbar-track {
-    background: rgba(5, 44, 3, 0.925);
-    box-shadow: inset 0 0 2px rgba(18, 100, 22, 0.8);
-    border: 1px solid rgb(18, 100, 22);
-}
-
-/* Scrollbar Handle */
-::-webkit-scrollbar-thumb {
-    background: rgba(87, 20, 20, 0.911);
-    border-radius: 3px;
-    border: 1px solid rgb(145, 21, 21);
-    /* Transition Effects */
-    -webkit-transition-property: background;
-    -webkit-transition-duration: 0.5s;
-    -o-transition-property: background;
-    -o-transition-duration: 0.5s;
-    -moz-transition-property: background;
-    -moz-transition-duration: 0.5s;
-    transition-property: background;
-    transition-duration: 0.5s;
-}
-
-/* Scrollbar Handle on Hover */
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(145, 21, 21);
-}
+        // Medium devices (tablets, less than 992px)
+		@media screen and (min-width: 10px) {
+        	.child {
+            	width: 100%;
+            	height: 50%;
+        	}
+        
+        	#childA {
+            	position: absolute;
+            	top: 0;
+                bottom: 50vh;
+            	left: 0;
+                right: 0;
+                z-index: 2 !important;
+        	}
+        
+        	#childB {
+            	position: absolute;
+                top: 50vh;
+            	bottom: 0;
+                left: 0;
+            	right: 0;
+                z-index: 2 !important;
+        	}
+            
+            #childC {
+            	display: none !important;
+                z-index: -3 !important;
+            }
+            
+            #childD {
+            	display: none !important;
+                z-index: -3 !important;
+            }
+        
+        	.child-group-b {
+            	display: none !important;
+                z-index: -3 !important;
+        	}
+        }
+        
+		@media screen and (max-width: 991.98px) {
+        	.child {
+            	width: 100%;
+            	height: 50%;
+        	}
+        
+        	#childA {
+            	position: absolute;
+            	top: 0;
+                bottom: 50vh;
+            	left: 0;
+                right: 0;
+                z-index: 2 !important;
+        	}
+        
+        	#childB {
+            	position: absolute;
+                top: 50vh;
+            	bottom: 0;
+                left: 0;
+            	right: 0;
+                z-index: 2 !important;
+        	}
+            
+            #childC {
+            	display: none !important;
+                z-index: -3 !important;
+            }
+            
+            #childD {
+            	display: none !important;
+                z-index: -3 !important;
+            }
+        
+        	.child-group-b {
+            	display: none !important;
+                z-index: -3 !important;
+        	}
+        }
+        
+        // All larger devices (greater than 992px)
+		@media screen and (min-width: 992px) {
+        	.child {
+            	width: 50vw;
+            	height: 50vh;
+            	z-index: 2 !important;
+        	}
+        
+        	#childA {
+            	position: fixed;
+            	top: 0;
+                bottom: 50vh;
+            	left: 0;
+                right: 50vw;
+        	}
+        
+        	#childB {
+            	position: fixed;
+            	top: 0;
+                bottom: 50vh;
+                left: 50vw;
+            	right: 0;
+        	}
+        
+        	#childC {
+            	position: fixed;
+                top: 50vh;
+            	bottom: 0;
+            	left: 0;
+                right: 50vw;
+        	}
+        
+        	#childD {
+            	position: fixed;
+                top: 50vh;
+            	bottom: 0;
+                top: 50vh;
+            	right: 0;
+        	}
+        }
+        
+        @media screen and (max-width: 9999px) {
+        	.child {
+            	width: 50vw;
+            	height: 50vh;
+            	z-index: 2 !important;
+        	}
+        
+        	#childA {
+            	position: fixed;
+            	top: 0;
+                bottom: 50vh;
+            	left: 0;
+                right: 50vw;
+        	}
+        
+        	#childB {
+            	position: fixed;
+            	top: 0;
+                bottom: 50vh;
+                left: 50vw;
+            	right: 0;
+        	}
+        
+        	#childC {
+            	position: fixed;
+                top: 50vh;
+            	bottom: 0;
+            	left: 0;
+                right: 50vw;
+        	}
+        
+        	#childD {
+            	position: fixed;
+                top: 50vh;
+            	bottom: 0;
+                top: 50vh;
+            	right: 0;
+        	}
+        }
     </style>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 </head>
+
 <body>
-<div class='container d-flex justify-content-center'>
-  <div class='child' id="childA">
-  <script type="text/javascript">
-    new TradingView.widget({
-      "width": "100%",
-      "height": "100%",
-      "symbol": "COINBASE:BTCUSD",
-      "interval": "15",
-      "timezone": "Etc/UTC",
-      "theme": "Dark",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#d6d6d6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "save_image": false,
-      "hideideas": true
-    });
-  </script>  
-  </div>
-  <div class='child' id="childB">
-  <script type="text/javascript">
-    new TradingView.widget({
-      "width": "100%",
-      "height": "100%",
-      "symbol": "COINBASE:ETHUSD",
-      "interval": "15",
-      "timezone": "Etc/UTC",
-      "theme": "Dark",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#d6d6d6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "save_image": false,
-      "hideideas": true
-    });
-  </script>  
-  </div>  
-  <div class='child' id="childC">
-  <script type="text/javascript">
-    new TradingView.widget({
-      "width": "100%",
-      "height": "100%",
-      "symbol": "HITBTC:WAVESBTC",
-      "interval": "15",
-      "timezone": "Etc/UTC",
-      "theme": "Dark",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#d6d6d6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "save_image": false,
-      "hideideas": true
-    });
-  </script>  
-  </div>   
-  <div class='child' id="childD">
-  <script type="text/javascript">
-    new TradingView.widget({
-      "width": "100%",
-      "height": "100%",
-      "symbol": "BITTREX:WAVESBTC",
-      "interval": "15",
-      "timezone": "Etc/UTC",
-      "theme": "Dark",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#d6d6d6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "save_image": false,
-      "hideideas": true
-    });
-  </script>  
-  </div>     
-  <!--<div class='child'>
-   <script type="text/javascript">
-    new TradingView.widget({
-      "width": "100%",
-      "height": "100%",
-      "symbol": "COINBASE:LTCUSD",
-      "interval": "15",
-      "timezone": "Etc/UTC",
-      "theme": "Dark",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#d6d6d6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "save_image": false,
-      "hideideas": true
-    });
-  </script>  
-  </div>-->
-   <!--<div class='child'>
-   <script type="text/javascript">
-    new TradingView.widget({
-      "width": "100%",
-      "height": "100%",
-      "symbol": "COINBASE:LTCEUR",
-      "interval": "15",
-      "timezone": "Etc/UTC",
-      "theme": "Dark",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#d6d6d6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "save_image": false,
-      "hideideas": true
-    });
-  </script>  
-  </div>-->
-  </div>
+        <div class='child child-group-a' id="childA">
+            <script type="text/javascript">
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": "100%",
+                    "symbol": "COINBASE:BTCUSD",
+                    "interval": "15",
+                    "timezone": "Etc/UTC",
+                    "theme": "Dark",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#d6d6d6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "save_image": false,
+                    "hideideas": true
+                });
+            </script>
+        </div>
+        <div class='child child-group-a' id="childB">
+            <script type="text/javascript">
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": "100%",
+                    "symbol": "BITTREX:WAVESBTC",
+                    "interval": "15",
+                    "timezone": "Etc/UTC",
+                    "theme": "Dark",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#d6d6d6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "save_image": false,
+                    "hideideas": true
+                });
+            </script>
+        </div>
+        <div class='child child-group-b' id="childC">
+            <script type="text/javascript">
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": "100%",
+                    "symbol": "HITBTC:WAVESBTC",
+                    "interval": "15",
+                    "timezone": "Etc/UTC",
+                    "theme": "Dark",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#d6d6d6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "save_image": false,
+                    "hideideas": true
+                });
+            </script>
+        </div>
+        <div class='child child-group-a' id="childD">
+            <script type="text/javascript">
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": "100%",
+                    "symbol": "BINANCE:WAVESBTC",
+                    "interval": "15",
+                    "timezone": "Etc/UTC",
+                    "theme": "Dark",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#d6d6d6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "save_image": false,
+                    "hideideas": true
+                });
+            </script>
+        </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
