@@ -11,13 +11,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
-            padding:0; margin:0
+            padding:0;
+            margin:0
             z-index: -1;
         }
         .container {
-            position: absolute;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
             display:flex; 
             flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
             height: 100vh;
             width: 100vw;
             z-index: 1;
@@ -37,7 +44,7 @@
         <h1>TradingView Charts</h1>
     </div>
 </div>-->
-<div class='container'>
+<div class='container d-flex justify-content-center'>
   <div class='child'>
   <script type="text/javascript">
     new TradingView.widget({
