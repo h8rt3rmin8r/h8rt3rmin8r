@@ -3,8 +3,10 @@
 #
 #    i-cryptohaze.sh
 #    Install Cryptohaze, the GPU rainbow table cracking software
+#
 #    Assembled by h8rt3rmin8r on 20181009 for ResoNova (resonova.com)
 #
+#    Installation script source: http://bit.ly/install-cryptohaze
 #    Cryptohaze project website: http://bit.ly/cryptohaze-website
 #    Read the user manual at http://bit.ly/cryptohaze-manual
 #
