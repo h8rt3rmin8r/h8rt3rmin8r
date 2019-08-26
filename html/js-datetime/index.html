@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JS Date Construction</title>
+	<link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+    <link rel="stylesheet" href="https://willinspire.github.io/hterm.css/hterm.css">
+</head>
+<body>
+	<h2>JavaScript Date Construction</h2>
+	<hr><br>
+	<span>Today's Date:&nbsp;&nbsp;<span id="todayDate"></span></span><br>
+	<span>Current Time:&nbsp;&nbsp;<span id="currentTime"></span></span><br>
+	<span>Unix Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="unixTime"></span></span><br>
+
+<script>
+function addZero(i) {
+	if (i < 10) {i = "0" + i;} return i;
+}
+
+function tDate() {
+	var dNow = new Date();
+    var dtx = document.getElementById("todayDate");
+	var mName = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+    dtx.innerHTML = dNow.getDate() + " " + mName[dNow.getMonth()] + ", " + dNow.getFullYear();
+}
+
+function cTime() {
+    var d = new Date();
+    var ctx = document.getElementById("currentTime");
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    ctx.innerHTML = h + ":" + m + ":" + s;
+}
+
+function uTime() {
+	var uNow = new Date();
+    var utx = document.getElementById("unixTime");
+    var uTimeOut = Date.now();
+    utx.innerHTML = uTimeOut;
+}
+
+tDate();
+cTime();
+uTime();
+
+</script>
+
+</body>
+</html>
