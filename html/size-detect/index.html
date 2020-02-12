@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Size Detect</title>
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://glitchpad.com/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="Size Detect">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+    	h1 {
+        	text-transform: uppercase;
+        	font-size: 1.5em;
+        }
+        .btn {
+        	text-transform: uppercase;
+        }
+    	#targetHome {
+        	text-align: center;
+        	background-color: #2d5b9a;
+        	max-height: 90vh;
+        }
+        #targetDiv {
+        	text-align: center;
+        	max-height: 75vh;
+        }
+        .statText {
+            bottom: 0px;
+            text-align: center;
+            width: 100%;
+            font-size: 1.0em;
+            padding: 0px;
+            margin: 0px;
+            color: black;
+            background-color: #ebebeb;
+        }
+    </style>
+</head>
+<body id="docBody">
+	<br>
+	<div class="container" id="targetHome">
+    	<br>
+    	<div class="card" id="targetDiv">
+        	<div class="card-body">
+            	<div class="card-title">
+                	<h1>Size Detect</h1>
+                    <hr>
+                </div>
+                <div class="card-text">
+	            	<div class="btn-group animated bounceIn" role="group" aria-label="Basic example">
+    	            	<button type="button" class="btn btn-secondary" onclick="popScreenRes();">Screen Size</button>
+	                	<button type="button" class="btn btn-secondary" onclick="popTargetRes();">Card Size</button>
+                        <button type="button" class="btn btn-secondary" onclick="popDocBodyRes();">Body Size</button>
+    	            </div>
+	    			<p>&nbsp;</p>
+					<button type="button" class="btn btn-secondary animated bounceIn" id="resizerButton" onclick="alterSize()">RESIZER</button>
+					<p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="statText">
+			<p>(&nbsp;<i id="cardStat"></i>&nbsp;&nbsp;|&nbsp;&nbsp;<i id="screenStat"></i>&nbsp;)</p>
+		</div>
+        <br>
+	</div>
+<script>
+	
+    function alterSize() {
+    	/*===========================================================================
+         *
+         * Detect the size of an element by its ID
+         *  
+         *    Reference: https://stackoverflow.com/a/4787561/8672154
+         * 
+         *    client(Width/Height) ==> only includes internal width
+         *    offset(Width/Height) ==> includes border width and scrollbars
+         *
+    	===========================================================================*/
+        //var targetWidth = document.getElementById("targetHome").clientWidth;
+        //var targetHeight = document.getElementById("targetHome").clientHeight;
+        // Get the targetHome height and width
+        var thW = document.getElementById("targetHome").offsetWidth;
+        var thH = document.getElementById("targetHome").offsetHeight;
+        // Get the targetDiv height and width
+        var tdW = document.getElementById("targetDiv").offsetWidth;
+        var tdH = document.getElementById("targetDiv").offsetHeight;
+        // Get the document body's height and width
+        var bW = document.getElementById("docBody").offsetWidth;
+        var bH = document.getElementById("docBody").offsetHeight;
+        // Resize the target div's width
+    	document.getElementById('targetDiv').setAttribute("style","display:block;width:" + thW + "px");
+		document.getElementById('targetDiv').style.width= thW + 'px';
+        // Resize the target div's height
+		document.getElementById('targetDiv').setAttribute("style","height:" + thH + "px");
+		document.getElementById('targetDiv').style.height= thH + 'px';
+        // Update the stat text in the card footer
+        document.getElementById("cardStat").innerHTML = "card: "+tdW+"x"+tdH;
+        document.getElementById("screenStat").innerHTML = "body: "+bW+"x"+bH;
+	}
+    function popScreenRes() {
+    	var sH = window.screen.height;
+    	var sW = window.screen.width;
+        var pR = window.devicePixelRatio
+        alert("SCREEN: "+sW*window.devicePixelRatio+"x"+sH*window.devicePixelRatio);
+    }
+    function popTargetRes() {
+    	var tdW = document.getElementById("targetDiv").offsetWidth;
+        var tdH = document.getElementById("targetDiv").offsetHeight;
+        alert("CARD: "+tdW*window.devicePixelRatio+"x"+tdH*window.devicePixelRatio);
+    }
+    function popDocBodyRes() {
+    	var bW = document.getElementById("docBody").offsetWidth;
+        var bH = document.getElementById("docBody").offsetHeight;
+        alert("BODY: "+bW*window.devicePixelRatio+"x"+bH*window.devicePixelRatio);
+    }
+    alterSize();
+    window.addEventListener("resize", alterSize);
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
